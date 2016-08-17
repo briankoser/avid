@@ -55,22 +55,23 @@ export default {
         team: this.teams[this.current.teamIndex]
       }
 
-      this.current.pickNumberOverall += 1
-      this.current.pickNumberRound += 1
-      this.current.teamIndex = this.getNextTeamIndex()
+      this.updateCurrentState()
+
       if (pick) {
         this.picks.push(pick)
         this.newPick = ''
       }
     },
-    getNextTeamIndex: function () {
+    updateCurrentState: function () {
       if (this.order === this.orderTypes.sequential) {
         if (this.current.teamIndex === this.teams.length - 1) {
           this.current.round += 1
           this.current.pickNumberRound = 1
-          return 0
+          this.current.teamIndex = 0
         } else {
-          return this.current.teamIndex + 1
+          this.current.pickNumberOverall += 1
+          this.current.pickNumberRound += 1
+          this.current.teamIndex += 1
         }
       } else if (this.order === this.orderTypes.serpentine) {
         if (this.current.teamIndex === this.teams.length - 1 || (this.current.teamIndex === 0 && this.picks.length > 0)) {
@@ -78,7 +79,9 @@ export default {
           this.current.pickNumberRound = 1
         }
 
-        return this.current.round % 2 ? this.current.teamIndex + 1 : this.current.teamIndex - 1
+        this.current.pickNumberOverall += 1
+        this.current.pickNumberRound += 1
+        this.current.teamIndex = this.current.round % 2 ? this.current.teamIndex + 1 : this.current.teamIndex - 1
       } else {
         throw new this.UserException(this.order + ' order type not implemented')
       }
