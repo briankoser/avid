@@ -33,12 +33,14 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [Wing](http://usewing.ml/)?
 
 ## Must
-- [ ] Pre-draft ranking view
-- [ ] Roster view
+- [ ] Timer for each pick
+- [ ] When timer runs out: auto-pick highest ranked player, skip pick, pause until pick entered
 
 ## Nice
+- [x] Enter picks with keyboard only
+- [ ] Pre-draft ranking view
+- [ ] Roster view
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
-- [ ] Enter picks with keyboard only
 - [ ] Autofill picks
 - [ ] Bye-week view, so you can see when each of your players has a bye week
 - [ ] Mark target players
