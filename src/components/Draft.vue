@@ -1,12 +1,14 @@
 <template>
   <article class="draft">
     <section>
-        <h1>Current Round {{ current.round }}</h1>
+        <template v-for="round in rounds"> 
+        <h1>Round {{ round.number }}</h1>
         <ol>
-            <li v-for="pick in picks">
+            <li v-for="pick in round.picks">
               {{ pick.team }} picked {{ pick.player }}
             </li>
         </ol>
+        </template>
     </section>
   </article>
 
@@ -43,6 +45,23 @@ export default {
         'Team D',
         'Team E'
       ]
+    }
+  },
+  computed: {
+    rounds: function () {
+      let rounds = []
+
+      for (let pick of this.picks) {
+        let round = rounds.find(x => x.number === pick.round)
+        if (!round) {
+          round = { number: pick.round, picks: [] }
+          rounds.push(round)
+        }
+
+        rounds.find(x => x.number === pick.round).picks.push(pick)
+      }
+
+      return rounds
     }
   },
   methods: {
