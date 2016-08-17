@@ -64,27 +64,33 @@ export default {
     },
     updateCurrentState: function () {
       if (this.order === this.orderTypes.sequential) {
-        if (this.current.teamIndex === this.teams.length - 1) {
-          this.current.round += 1
-          this.current.pickNumberRound = 1
-          this.current.teamIndex = 0
-        } else {
-          this.current.pickNumberOverall += 1
-          this.current.pickNumberRound += 1
-          this.current.teamIndex += 1
-        }
+        this.updateCurrentStateSequential()
       } else if (this.order === this.orderTypes.serpentine) {
-        if (this.current.teamIndex === this.teams.length - 1 || (this.current.teamIndex === 0 && this.picks.length > 0)) {
-          this.current.round += 1
-          this.current.pickNumberRound = 1
-        }
-
-        this.current.pickNumberOverall += 1
-        this.current.pickNumberRound += 1
-        this.current.teamIndex = this.current.round % 2 ? this.current.teamIndex + 1 : this.current.teamIndex - 1
+        this.updateCurrentStateSerpentine()
       } else {
         throw new this.UserException(this.order + ' order type not implemented')
       }
+    },
+    updateCurrentStateSequential: function () {
+      if (this.current.teamIndex === this.teams.length - 1) {
+        this.current.round += 1
+        this.current.pickNumberRound = 1
+        this.current.teamIndex = 0
+      } else {
+        this.current.pickNumberOverall += 1
+        this.current.pickNumberRound += 1
+        this.current.teamIndex += 1
+      }
+    },
+    updateCurrentStateSerpentine: function () {
+      if (this.current.teamIndex === this.teams.length - 1 || (this.current.teamIndex === 0 && this.picks.length > 0)) {
+        this.current.round += 1
+        this.current.pickNumberRound = 1
+      }
+
+      this.current.pickNumberOverall += 1
+      this.current.pickNumberRound += 1
+      this.current.teamIndex = this.current.round % 2 ? this.current.teamIndex + 1 : this.current.teamIndex - 1
     }
   }
 }
