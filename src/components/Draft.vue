@@ -83,14 +83,21 @@ export default {
       }
     },
     updateCurrentStateSerpentine: function () {
-      if (this.current.teamIndex === this.teams.length - 1 || (this.current.teamIndex === 0 && this.picks.length > 0)) {
+      this.current.pickNumberOverall += 1
+
+      if (this.current.pickNumberOverall % (this.teams.length) === 1) {
         this.current.round += 1
         this.current.pickNumberRound = 1
+      } else {
+        this.current.pickNumberRound += 1
       }
 
-      this.current.pickNumberOverall += 1
-      this.current.pickNumberRound += 1
-      this.current.teamIndex = this.current.round % 2 ? this.current.teamIndex + 1 : this.current.teamIndex - 1
+      if (this.current.pickNumberRound === 1) {
+        return
+      } else {
+        const isEvenRound = this.current.round % 2
+        this.current.teamIndex = isEvenRound ? this.current.teamIndex + 1 : this.current.teamIndex - 1
+      }
     }
   }
 }
