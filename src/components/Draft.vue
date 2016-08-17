@@ -10,7 +10,10 @@
     </section>
   </article>
 
-  <input v-model="newPick" v-on:keyup.enter="addPick">
+  <div class="pick">
+    Current pick: {{ teams[currentTeamIndex] }}
+    <input v-model="newPick" v-on:keyup.enter="addPick">
+  </div>
 </template>
 
 <script>
