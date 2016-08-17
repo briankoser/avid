@@ -66,6 +66,10 @@ export default {
   },
   methods: {
     addPick: function () {
+      if (this.newPick.trim() === '') {
+        return
+      }
+
       const pick = {
         numberOverall: this.current.pickNumberOverall,
         numberRound: this.current.pickNumberRound,
