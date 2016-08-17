@@ -1,7 +1,7 @@
 <template>
   <article class="draft">
     <section>
-        <h1>Round {{ current.round }}</h1>
+        <h1>Current Round {{ current.round }}</h1>
         <ol>
             <li v-for="pick in picks">
               {{ pick.team }} picked {{ pick.player }}
@@ -21,6 +21,8 @@ export default {
   data () {
     return {
       current: {
+        pickNumberOverall: 1,
+        pickNumberRound: 1,
         round: 1,
         teamIndex: 0
       },
@@ -46,11 +48,15 @@ export default {
   methods: {
     addPick: function () {
       const pick = {
-        team: this.teams[this.current.teamIndex],
+        numberOverall: this.current.pickNumberOverall,
+        numberRound: this.current.pickNumberRound,
         player: this.newPick.trim(),
-        round: this.current.round
+        round: this.current.round,
+        team: this.teams[this.current.teamIndex]
       }
 
+      this.current.pickNumberOverall += 1
+      this.current.pickNumberRound += 1
       this.current.teamIndex = this.getNextTeamIndex()
       if (pick) {
         this.picks.push(pick)
@@ -61,6 +67,7 @@ export default {
       if (this.order === this.orderTypes.sequential) {
         if (this.current.teamIndex === this.teams.length - 1) {
           this.current.round += 1
+          this.current.pickNumberRound = 1
           return 0
         } else {
           return this.current.teamIndex + 1
@@ -68,6 +75,7 @@ export default {
       } else if (this.order === this.orderTypes.serpentine) {
         if (this.current.teamIndex === this.teams.length - 1 || (this.current.teamIndex === 0 && this.picks.length > 0)) {
           this.current.round += 1
+          this.current.pickNumberRound = 1
         }
 
         return this.current.round % 2 ? this.current.teamIndex + 1 : this.current.teamIndex - 1
