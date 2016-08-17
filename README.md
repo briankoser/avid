@@ -42,6 +42,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Roster view
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
 - [ ] Autofill picks
+- [ ] Transitions
 - [ ] Bye-week view, so you can see when each of your players has a bye week
 - [ ] Mark target players
 - [ ] Work offline

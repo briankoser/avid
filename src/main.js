@@ -12,3 +12,7 @@ new Vue({
     }
   }
 })
+
+Vue.filter('two_digits', function (n) {
+  return ('0' + n).slice(-2)
+})

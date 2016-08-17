@@ -70,6 +70,8 @@ export default {
         return
       }
 
+      // todo: reset countdown timer
+
       const pick = {
         numberOverall: this.current.pickNumberOverall,
         numberRound: this.current.pickNumberRound,
