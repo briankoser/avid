@@ -8,6 +8,7 @@ Fantasy Football draft helper
 - [Wing](http://usewing.ml/)?
 
 ## Must
+- [ ] Pre-draft ranking view
 - [ ] Roster view
 
 ## Nice
@@ -19,5 +20,4 @@ Fantasy Football draft helper
 - [ ] Work offline
 - [ ] Variable league size
 - [ ] Load player list from online
-- [ ] Pre-ranking players
 - [ ] Multi-user mode (SignalR)
