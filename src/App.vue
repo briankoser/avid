@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/logo.png">
+    <h1 class="site-title">avid</h1>
 
     <draft></draft>
   </div>
@@ -32,10 +32,8 @@ body {
 
 #app {
   color: #2c3e50;
-  margin-top: -100px;
   max-width: 600px;
-  font-family: Rubik, Source Sans Pro, Helvetica, sans-serif;
-  text-align: center;
+  font-family: Rubik, 'Source Sans Pro', Helvetica, sans-serif;
 }
 
 #app a {
@@ -43,8 +41,11 @@ body {
   text-decoration: none;
 }
 
-.logo {
-  width: 100px;
-  height: 100px
+.site-title {
+  background-color: #4caf50;
+  color: #fafafa;
+  text-align: center;
+  border-left: 30px solid #bdbdbd;
+  border-right: 30px solid #bdbdbd;
 }
 </style>
