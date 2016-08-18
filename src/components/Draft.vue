@@ -1,4 +1,8 @@
 <template>
+  <countdown :seconds.sync="current.pickSecondsLeft" ></countdown>
+
+  <button v-on:click="resetPickSecondsLeft">Start draft!</button>
+
   <article class="draft">
     <section>
         <template v-for="round in rounds"> 
@@ -19,12 +23,19 @@
 </template>
 
 <script>
+import Countdown from './Countdown'
+
 export default {
+  components: {
+    Countdown
+  },
+
   data () {
     return {
       current: {
         pickNumberOverall: 1,
         pickNumberRound: 1,
+        pickSecondsLeft: 0,
         round: 1,
         teamIndex: 0
       },
@@ -38,6 +49,9 @@ export default {
       picks: [
         // { team: 'From Wentz it Came', player: 'Dawkins' }
       ],
+      settings: {
+        secondsPerPick: 60
+      },
       teams: [
         'Team A',
         'Team B',
@@ -47,6 +61,7 @@ export default {
       ]
     }
   },
+
   computed: {
     rounds: function () {
       let rounds = []
@@ -64,13 +79,14 @@ export default {
       return rounds
     }
   },
+
   methods: {
     addPick: function () {
       if (this.newPick.trim() === '') {
         return
       }
 
-      // todo: reset countdown timer
+      this.resetPickSecondsLeft()
 
       const pick = {
         numberOverall: this.current.pickNumberOverall,
@@ -86,6 +102,9 @@ export default {
         this.picks.push(pick)
         this.newPick = ''
       }
+    },
+    resetPickSecondsLeft: function () {
+      this.current.pickSecondsLeft = this.settings.secondsPerPick
     },
     updateCurrentState: function () {
       if (this.order === this.orderTypes.sequential) {

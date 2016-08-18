@@ -1,19 +1,16 @@
 <template>
   <div id="app">
     <img class="logo" src="./assets/logo.png">
-    <countdown :seconds="60"></countdown>
 
     <draft></draft>
   </div>
 </template>
 
 <script>
-import Countdown from './components/Countdown'
 import Draft from './components/Draft'
 
 export default {
   components: {
-    Countdown,
     Draft
   }
 }

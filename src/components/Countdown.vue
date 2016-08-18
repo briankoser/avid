@@ -12,25 +12,19 @@ export default {
     }
   },
 
-  data () {
-    return {
-      now: this.seconds
-    }
-  },
-
   computed: {
     minutesLeft () {
-      return Math.floor(this.now / 60)
+      return Math.floor(this.seconds / 60)
     },
     secondsLeft () {
-      return this.now % 60
+      return this.seconds % 60
     }
   },
 
   ready () {
     window.setInterval(() => {
-      if (this.now > 0) {
-        this.now -= 1
+      if (this.seconds > 0) {
+        this.seconds -= 1
       }
     }, 1000)
   }
