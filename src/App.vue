@@ -8,11 +8,13 @@
 
 <script>
 import Draft from './components/Draft'
+import store from '../vuex/store'
 
 export default {
   components: {
     Draft
-  }
+  },
+  store
 }
 </script>
 

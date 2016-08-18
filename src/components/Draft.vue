@@ -20,17 +20,30 @@
     <span class="current-pick">Current pick: {{ teams[current.teamIndex] }}</span>
     <input class="typeahead" v-model="newPick" type="text" v-on:keyup.enter="addPick">
   </div>
+
+<button @click='addKoserVuex'>Increment +1</button>
+Kosers: {{ koserValue }}
 </template>
 
 <script>
 var $ = require('jquery')
 require('typeahead.js')
-
 import Countdown from './Countdown'
+import { addKoser } from '../../vuex/actions'
+import { getKosers } from '../../vuex/getters'
 
 export default {
   components: {
     Countdown
+  },
+
+  vuex: {
+    actions: {
+      addKoserVuex: addKoser
+    },
+    getters: {
+      koserValue: getKosers
+    }
   },
 
   data () {

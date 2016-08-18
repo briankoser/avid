@@ -35,11 +35,11 @@ White: #fafafa
 
 ## Nice
 - [x] Enter picks with keyboard only
+- [ ] Autofill picks
 - [ ] Save draft results
 - [ ] Pre-draft ranking view
 - [ ] Roster view
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
-- [ ] Autofill picks
 - [ ] Transitions
 - [ ] Bye-week view, so you can see when each of your players has a bye week
 - [ ] Mark target players
