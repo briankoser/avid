@@ -1,5 +1,5 @@
 <template>
-  <div class="timer">
+  <div class="countdown">
       <span class="digit">{{ minutesLeft | two_digits }}</span>:<span class="digit">{{ secondsLeft | two_digits }}</span>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.timer {
+.countdown {
   font-family: 'Consolas', monospace;
   font-size: 2em;
 }

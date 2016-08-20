@@ -1,10 +1,12 @@
 <template>
-  <div class="pick">
-    <span class="current-pick">Current pick: {{ teams[current.teamIndex] }}</span>
-    <input class="typeahead" v-model="player" type="text" v-on:keyup.enter="addPick">
-  </div>
+  <div class="picker">
+    <div class="pick">
+      <span class="current-pick">Current pick: {{ currentTeam }}</span>
+      <input class="typeahead" v-model="player" type="text" v-on:keyup.enter="addPick">
+    </div>
 
-  <button @click='addKoserVuex'>Increment +1</button>
+    <button @click='addKoserVuex'>Increment +1</button>
+  </div>
 </template>
 
 <script>
@@ -14,25 +16,24 @@ var $ = require('jquery')
 require('typeahead.js')
 
 export default {
+  props: {
+    currentTeam: {
+      type: String
+    }
+  },
+
+  data () {
+    return {
+      player: ''
+    }
+  },
+
   vuex: {
     actions: {
       addKoserVuex: addKoser
     },
     getters: {
       teams: getTeams
-    }
-  },
-
-  data () {
-    return {
-      current: {
-        pickNumberOverall: 1,
-        pickNumberRound: 1,
-        pickSecondsLeft: 0,
-        round: 1,
-        teamIndex: 0
-      },
-      player: ''
     }
   },
 
@@ -93,6 +94,8 @@ $(document).ready(function () {
 
   pick.bind('typeahead:select', function (ev, suggestion) {
     // addPick()
+    console.log(ev)
+    console.log(suggestion)
   })
 })
 </script>

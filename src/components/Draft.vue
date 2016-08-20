@@ -1,24 +1,26 @@
 <template>
-  <countdown :seconds.sync="current.pickSecondsLeft" ></countdown>
+  <div class="draft">
+    <countdown :seconds.sync="current.pickSecondsLeft" ></countdown>
 
-  <button v-on:click="resetPickSecondsLeft">Start draft!</button>
+    <button v-on:click="resetPickSecondsLeft">Start draft!</button>
 
-  <article class="draft">
-    <section>
-        <template v-for="round in rounds"> 
-        <h1>Round {{ round.number }}</h1>
-        <ol>
-            <li v-for="pick in round.picks">
-              {{ pick.team }} picked {{ pick.player }}
-            </li>
-        </ol>
-        </template>
-    </section>
-  </article>
+    <article class="draft">
+      <section>
+          <template v-for="round in rounds"> 
+          <h1>Round {{ round.number }}</h1>
+          <ol>
+              <li v-for="pick in round.picks">
+                {{ pick.team }} picked {{ pick.player }}
+              </li>
+          </ol>
+          </template>
+      </section>
+    </article>
 
-  <picker></picker>
-  Kosers: {{ koserValue }}
-  Teams: {{ teams }}
+    <picker :current-team="currentTeam"></picker>
+    Kosers: {{ koserValue }}
+    Teams: {{ teams }}
+  </div>
 </template>
 
 <script>
@@ -62,6 +64,9 @@ export default {
   },
 
   computed: {
+    currentTeam: function () {
+      return this.teams[this.current.teamIndex]
+    },
     rounds: function () {
       let rounds = []
 
