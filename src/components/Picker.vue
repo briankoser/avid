@@ -2,7 +2,7 @@
   <div class="picker">
     <div class="pick">
       <span class="current-pick">Current pick: {{ currentTeam }}</span>
-      <input class="typeahead" v-model="player" type="text" v-on:keyup.enter="addPick">
+      <input class="typeahead" type="text" v-model="player"> <!-- v-on:keyup.enter="addPick">-->
     </div>
 
     <button @click='addKoserVuex'>Increment +1</button>
@@ -16,6 +16,10 @@ var $ = require('jquery')
 require('typeahead.js')
 
 export default {
+  created: function () {
+    window.vuePicker = this
+  },
+
   props: {
     currentTeam: {
       type: String
@@ -38,11 +42,9 @@ export default {
   },
 
   methods: {
-    addPick: function () {
-      if (this.player.trim()) {
-        this.$dispatch('add-pick', this.player)
-        this.player = ''
-      }
+    addPick: function (player) {
+      this.$dispatch('add-pick', player)
+      this.player = ''
     }
   }
 }
@@ -83,6 +85,7 @@ var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
 $(document).ready(function () {
   let pick = $('.pick .typeahead')
   pick.typeahead({
+    autoselect: true,
     hint: true,
     highlight: true,
     minLength: 1
@@ -93,9 +96,7 @@ $(document).ready(function () {
     })
 
   pick.bind('typeahead:select', function (ev, suggestion) {
-    // addPick()
-    console.log(ev)
-    console.log(suggestion)
+    window.vuePicker.addPick(suggestion)
   })
 })
 </script>
