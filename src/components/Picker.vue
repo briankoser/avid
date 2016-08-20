@@ -1,7 +1,7 @@
 <template>
   <div class="pick">
     <span class="current-pick">Current pick: {{ teams[current.teamIndex] }}</span>
-    <input class="typeahead" v-model="newPick" type="text" v-on:keyup.enter="addPick">
+    <input class="typeahead" v-model="player" type="text" v-on:keyup.enter="addPick">
   </div>
 
   <button @click='addKoserVuex'>Increment +1</button>
@@ -9,6 +9,7 @@
 
 <script>
 import { addKoser } from '../../vuex/actions'
+import { getTeams } from '../../vuex/getters'
 var $ = require('jquery')
 require('typeahead.js')
 
@@ -16,6 +17,9 @@ export default {
   vuex: {
     actions: {
       addKoserVuex: addKoser
+    },
+    getters: {
+      teams: getTeams
     }
   },
 
@@ -28,7 +32,16 @@ export default {
         round: 1,
         teamIndex: 0
       },
-      newPick: ''
+      player: ''
+    }
+  },
+
+  methods: {
+    addPick: function () {
+      if (this.player.trim()) {
+        this.$dispatch('add-pick', this.player)
+        this.player = ''
+      }
     }
   }
 }

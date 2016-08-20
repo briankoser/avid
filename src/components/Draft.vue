@@ -18,12 +18,13 @@
 
   <picker></picker>
   Kosers: {{ koserValue }}
+  Teams: {{ teams }}
 </template>
 
 <script>
 import Countdown from './Countdown'
 import Picker from './Picker'
-import { getKosers } from '../../vuex/getters'
+import { getKosers, getPicks, getTeams } from '../../vuex/getters'
 
 export default {
   components: {
@@ -33,7 +34,9 @@ export default {
 
   vuex: {
     getters: {
-      koserValue: getKosers
+      koserValue: getKosers,
+      picks: getPicks,
+      teams: getTeams
     }
   },
 
@@ -46,26 +49,15 @@ export default {
         round: 1,
         teamIndex: 0
       },
-      newPick: '',
       order: 'ser',
       orderTypes: {
         'random': 'ran',
         'sequential': 'seq',
         'serpentine': 'ser'
       },
-      picks: [
-        // { team: 'From Wentz it Came', player: 'Dawkins' }
-      ],
       settings: {
         secondsPerPick: 60
-      },
-      teams: [
-        'Team A',
-        'Team B',
-        'Team C',
-        'Team D',
-        'Team E'
-      ]
+      }
     }
   },
 
@@ -88,27 +80,20 @@ export default {
   },
 
   methods: {
-    addPick: function () {
-      if (this.newPick.trim() === '') {
-        return
-      }
-
+    addPick: function (player) {
       this.resetPickSecondsLeft()
 
       const pick = {
         numberOverall: this.current.pickNumberOverall,
         numberRound: this.current.pickNumberRound,
-        player: this.newPick,
+        player,
         round: this.current.round,
         team: this.teams[this.current.teamIndex]
       }
 
       this.updateCurrentState()
-
-      if (pick) {
-        this.picks.push(pick)
-        this.newPick = ''
-      }
+      this.picks.push(pick)
+      this.newPick = ''
     },
     resetPickSecondsLeft: function () {
       this.current.pickSecondsLeft = this.settings.secondsPerPick
@@ -149,6 +134,12 @@ export default {
         const isEvenRound = this.current.round % 2
         this.current.teamIndex = isEvenRound ? this.current.teamIndex + 1 : this.current.teamIndex - 1
       }
+    }
+  },
+
+  events: {
+    'add-pick': function (player) {
+      this.addPick(player)
     }
   }
 }
