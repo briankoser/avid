@@ -85,7 +85,7 @@ var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
 $(document).ready(function () {
   let pick = $('.pick .typeahead')
   pick.typeahead({
-    autoselect: true,
+    autoSelect: true,
     hint: true,
     highlight: true,
     minLength: 1
