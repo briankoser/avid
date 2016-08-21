@@ -23,6 +23,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## Public draft Requirements
 - [ ] Autofill picks
+- [ ] Display player name, position in autofill
 - [ ] Remove already drafted player from autofill
 - [ ] Save draft results
 
@@ -42,10 +43,10 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## Enhancements
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Select first option by default on autopick
-- [ ] SASS
 - [ ] Work offline
 - [ ] Load player list from online
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
+- [ ] SASS
 
 ## Colors
 [FlatUI](https://material.google.com/style/color.html#color-color-palette) colors: 

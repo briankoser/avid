@@ -1,16 +1,15 @@
 <template>
   <div class="picker">
-    <div class="pick">
-      <span class="current-pick">Current pick: {{ currentTeam }}</span>
-      <input class="typeahead" type="text" v-model="player"> <!-- v-on:keyup.enter="addPick">-->
-    </div>
+    <span class="current-pick">Current pick: {{ currentTeam }}</span>
+    <input class="typeahead" type="text" placeholder="Player name" v-model="player">
   </div>
 </template>
 
 <script>
 import { getTeams } from '../../vuex/getters'
-var $ = require('jquery')
+let $ = require('jquery')
 require('typeahead.js')
+let Bloodhound = require('typeahead.js/dist/bloodhound.js')
 
 export default {
   created: function () {
@@ -43,51 +42,56 @@ export default {
   }
 }
 
-var substringMatcher = function (strs) {
-  return function findMatches (q, cb) {
-    var matches, substrRegex
+// var substringMatcher = function (strs) {
+//   return function findMatches (q, cb) {
+//     var matches, substrRegex
 
-    // an array that will be populated with substring matches
-    matches = []
+//     // an array that will be populated with substring matches
+//     matches = []
 
-    // regex used to determine if a string contains the substring `q`
-    substrRegex = new RegExp(q, 'i')
+//     // regex used to determine if a string contains the substring `q`
+//     substrRegex = new RegExp(q, 'i')
 
-    // iterate through the pool of strings and for any string that
-    // contains the substring `q`, add it to the `matches` array
-    $.each(strs, function (i, str) {
-      if (substrRegex.test(str)) {
-        matches.push(str)
-      }
-    })
+//     // iterate through the pool of strings and for any string that
+//     // contains the substring `q`, add it to the `matches` array
+//     $.each(strs, function (i, str) {
+//       if (substrRegex.test(str)) {
+//         matches.push(str)
+//       }
+//     })
 
-    cb(matches)
-  }
+//     cb(matches)
+//   }
+// }
+
+let playersTokenizer = function (datum) {
+  return Bloodhound.tokenizers.whitespace(datum.players.player.name)
 }
 
-var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-]
+let playersIdentifier = function (datum) {
+  return datum.players.player.id
+}
+
+let engine = new Bloodhound({
+  datumTokenizer: playersTokenizer,
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  identify: playersIdentifier,
+  prefetch: '../static/players.json'
+})
 
 $(document).ready(function () {
-  let pick = $('.pick .typeahead')
-  pick.typeahead({
+  let pick = $('.picker .typeahead')
+  let options = {
     autoSelect: true,
     hint: true,
     highlight: true,
     minLength: 1
-  },
-    {
-      name: 'states',
-      source: substringMatcher(states)
-    })
+  }
+
+  pick.typeahead(options, {
+    name: 'players',
+    source: engine
+  })
 
   pick.bind('typeahead:select', function (ev, suggestion) {
     window.vuePicker.addPick(suggestion)
