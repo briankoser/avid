@@ -4,10 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  kosers: 0,
-  picks: [
-    // { team: 'From Wentz it Came', player: 'Dawkins' }
-  ],
+  picks: [],
   teams: [
     'Team A',
     'Team B',
@@ -18,9 +15,6 @@ const state = {
 }
 
 const mutations = {
-  ADDKOSER (state, amount) {
-    state.kosers += amount
-  },
   ADDPICK (state, pick) {
     state.picks.push(pick)
   }

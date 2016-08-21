@@ -18,7 +18,6 @@
     </article>
 
     <picker :current-team="currentTeam"></picker>
-    Kosers: {{ koserValue }}
     Teams: {{ teams }}
   </div>
 </template>
@@ -26,7 +25,7 @@
 <script>
 import Countdown from './Countdown'
 import Picker from './Picker'
-import { getKosers, getPicks, getTeams } from '../../vuex/getters'
+import { getPicks, getTeams } from '../../vuex/getters'
 
 export default {
   components: {
@@ -36,7 +35,6 @@ export default {
 
   vuex: {
     getters: {
-      koserValue: getKosers,
       picks: getPicks,
       teams: getTeams
     }
