@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { getPositionsLeague } from '../../vuex/getters'
+import { getPicksIDs, getPositionsLeague } from '../../vuex/getters'
 let $ = require('jquery')
 require('typeahead.js')
 let Bloodhound = require('typeahead.js/dist/bloodhound.js')
@@ -30,6 +30,7 @@ export default {
 
   vuex: {
     getters: {
+      picks: getPicksIDs,
       positions: getPositionsLeague
     }
   },
@@ -46,14 +47,14 @@ let playersTokenizer = function (datum) {
   return Bloodhound.tokenizers.whitespace(datum.name)
 }
 
-// let playersIdentifier = function (datum) {
-//   return datum.id
-// }
+let playersIdentifier = function (datum) {
+  return datum.id
+}
 
 let engine = new Bloodhound({
   datumTokenizer: playersTokenizer,
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  // identify: playersIdentifier,
+  identify: playersIdentifier,
   local: [{
     'position': 'XX',
     'name': 'Unlisted',
@@ -66,6 +67,8 @@ let engine = new Bloodhound({
   }
 })
 
+let filterPicked = (suggestions) => suggestions.filter(x => !window.vuePicker.picks.includes(x.id))
+
 $(document).ready(function () {
   let pick = $('.picker .typeahead')
   let options = {
@@ -76,7 +79,11 @@ $(document).ready(function () {
 
   pick.typeahead(options, {
     name: 'players',
-    source: engine,
+    source: function (query, callback) {
+      engine.search(query, function (suggestions) {
+        callback(filterPicked(suggestions))
+      })
+    },
     display: 'name',
     templates: {
       empty: '<div class="empty-message">No players found</div>',

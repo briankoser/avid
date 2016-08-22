@@ -2,6 +2,10 @@ export function getPicks (state) {
   return state.picks
 }
 
+export function getPicksIDs (state) {
+  return state.picks.map(x => x.player.id)
+}
+
 export function getPositionsAll (state) {
   return state.settings.positions.available
 }
