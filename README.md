@@ -28,7 +28,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Display player name, position in autofill
 - [x] Remove already-drafted players from autofill
 - [x] Set team size and positions, restrict autofill to limits
-- [ ] Save draft results
+- [x] Save draft results
+- [ ] Undo button
+- [ ] Stop drafting when teams are full
 
 ## Private draft Requirements
 - [x] Timer for each pick
@@ -46,10 +48,14 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## Enhancements
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Select first option by default on autopick
+- [ ] Display player team in autofill
 - [ ] Work offline
 - [ ] Load player list from online
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
 - [ ] SASS
+
+## Bugs
+- [ ] Enter one character and select the first player. Enter the same character again: you are able to draft the same player twice.
 
 ## Colors
 [FlatUI](https://material.google.com/style/color.html#color-color-palette) colors: 

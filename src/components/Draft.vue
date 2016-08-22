@@ -20,6 +20,8 @@
     <picker :current-team="currentTeam"></picker>
     Teams: {{ teams }}
   </div>
+
+  <button id="saveDraft">Download</button>
 </template>
 
 <script>
@@ -28,6 +30,10 @@ import Picker from './Picker'
 import { getPicks, getTeams } from '../../vuex/getters'
 
 export default {
+  created: function () {
+    window.vueDraft = this
+  },
+
   components: {
     Countdown,
     Picker
@@ -146,6 +152,18 @@ export default {
     }
   }
 }
+
+let $ = require('jquery')
+$(document).ready(function () {
+  var saveDraft = () => {
+    var a = document.createElement('a')
+    a.setAttribute('href', 'data:text/plain;charset=utf-u,' + encodeURIComponent(JSON.stringify(window.vueDraft.picks)))
+    a.setAttribute('download', `avid-draft-${new Date().toISOString().slice(0, 10)}-${window.vueDraft.current.pickNumberOverall - 1}`)
+    a.click()
+  }
+
+  $('#saveDraft').on('click', saveDraft)
+})
 </script>
 
 <style scoped>
