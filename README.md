@@ -29,7 +29,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Remove already-drafted players from autofill
 - [x] Set team size and positions, restrict autofill to limits
 - [x] Save draft results
-- [ ] Undo button
+- [x] Undo button
+- [ ] Use addPick action
 - [ ] Stop drafting when teams are full
 
 ## Private draft Requirements

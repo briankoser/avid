@@ -21,13 +21,15 @@
     Teams: {{ teams }}
   </div>
 
+  <button v-on:click="removePick">Undo</button>
   <button id="saveDraft">Download</button>
 </template>
 
 <script>
 import Countdown from './Countdown'
 import Picker from './Picker'
-import { getPicks, getTeams } from '../../vuex/getters'
+import { addStateEntry, undoLastPick, undoStateEntry } from '../../vuex/actions'
+import { getLastStateEntry, getPicks, getTeams } from '../../vuex/getters'
 
 export default {
   created: function () {
@@ -41,8 +43,14 @@ export default {
 
   vuex: {
     getters: {
+      lastStateEntry: getLastStateEntry,
       picks: getPicks,
       teams: getTeams
+    },
+    actions: {
+      addStateEntry,
+      undoLastPick,
+      undoStateEntry
     }
   },
 
@@ -90,6 +98,7 @@ export default {
 
   methods: {
     addPick: function (player) {
+      this.addStateEntry(Object.assign({}, this.current))
       this.resetPickSecondsLeft()
 
       const pick = {
@@ -104,8 +113,18 @@ export default {
       this.picks.push(pick)
       this.newPick = ''
     },
+    removePick: function () {
+      this.retreatCurrentState()
+      this.resetPickSecondsLeft()
+      this.undoLastPick()
+      this.newPick = ''
+    },
     resetPickSecondsLeft: function () {
       this.current.pickSecondsLeft = this.settings.secondsPerPick
+    },
+    retreatCurrentState: function () {
+      this.current = this.lastStateEntry
+      this.undoStateEntry()
     },
     updateCurrentState: function () {
       if (this.order === this.orderTypes.sequential) {

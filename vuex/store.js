@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+  history: [],
   picks: [],
   settings: {
     positions: {
@@ -63,6 +64,15 @@ const state = {
 const mutations = {
   ADDPICK (state, pick) {
     state.picks.push(pick)
+  },
+  ADDSTATEENTRY (state, entry) {
+    state.history.push(entry)
+  },
+  UNDOLASTPICK (state) {
+    state.picks.pop()
+  },
+  UNDOSTATEENTRY (state) {
+    state.history.pop()
   }
 }
 

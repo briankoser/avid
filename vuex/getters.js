@@ -1,3 +1,7 @@
+export function getLastStateEntry (state) {
+  return state.history.slice(-1)[0]
+}
+
 export function getPicks (state) {
   return state.picks
 }
