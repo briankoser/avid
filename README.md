@@ -22,19 +22,20 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Private draft, multiple inputs
 
 ## Public draft Requirements
-- [ ] Autofill picks
+- [x] Autofill picks
+- [ ] Restrict autofill by position
 - [ ] Display player name, position in autofill
 - [ ] Remove already drafted player from autofill
 - [ ] Save draft results
 
 ## Private draft Requirements
+- [x] Timer for each pick
+- [x] Enter picks with keyboard only
 - [ ] Pre-draft ranking view
 - [ ] Roster view
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
 - [ ] Bye-week view, so you can see when each of your players has a bye week
 - [ ] Mark target players
-- [x] Timer for each pick
-- [x] Enter picks with keyboard only
 
 ## Multiple-user draft Requirements
 - [ ] SignalR

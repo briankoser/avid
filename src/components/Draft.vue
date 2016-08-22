@@ -10,7 +10,7 @@
           <h1>Round {{ round.number }}</h1>
           <ol>
               <li v-for="pick in round.picks">
-                {{ pick.team }} picked {{ pick.player }}
+                {{ pick.team }} picked {{ pick.player.name }} ({{ pick.player.position }})
               </li>
           </ol>
           </template>

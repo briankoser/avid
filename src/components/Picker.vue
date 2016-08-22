@@ -42,41 +42,22 @@ export default {
   }
 }
 
-// var substringMatcher = function (strs) {
-//   return function findMatches (q, cb) {
-//     var matches, substrRegex
-
-//     // an array that will be populated with substring matches
-//     matches = []
-
-//     // regex used to determine if a string contains the substring `q`
-//     substrRegex = new RegExp(q, 'i')
-
-//     // iterate through the pool of strings and for any string that
-//     // contains the substring `q`, add it to the `matches` array
-//     $.each(strs, function (i, str) {
-//       if (substrRegex.test(str)) {
-//         matches.push(str)
-//       }
-//     })
-
-//     cb(matches)
-//   }
-// }
-
 let playersTokenizer = function (datum) {
-  return Bloodhound.tokenizers.whitespace(datum.players.player.name)
+  return Bloodhound.tokenizers.whitespace(datum.name)
 }
 
-let playersIdentifier = function (datum) {
-  return datum.players.player.id
-}
+// let playersIdentifier = function (datum) {
+//   return datum.id
+// }
 
 let engine = new Bloodhound({
   datumTokenizer: playersTokenizer,
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  identify: playersIdentifier,
-  prefetch: '../static/players.json'
+  // identify: playersIdentifier,
+  prefetch: {
+    url: '../static/players.json',
+    transform: (response) => response.players.player
+  }
 })
 
 $(document).ready(function () {
@@ -90,7 +71,11 @@ $(document).ready(function () {
 
   pick.typeahead(options, {
     name: 'players',
-    source: engine
+    source: engine,
+    display: 'name',
+    templates: {
+      empty: '<div class="empty-message">No players found</div>'
+    }
   })
 
   pick.bind('typeahead:select', function (ev, suggestion) {
@@ -165,12 +150,10 @@ $(document).ready(function () {
 /* example specific styles */
 /* ----------------------- */
 
-#custom-templates .empty-message {
+.empty-message {
   padding: 5px 10px;
   text-align: center;
 }
-
-
 
 #scrollable-dropdown-menu .tt-menu {
   max-height: 150px;
