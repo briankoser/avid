@@ -54,6 +54,12 @@ let engine = new Bloodhound({
   datumTokenizer: playersTokenizer,
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   // identify: playersIdentifier,
+  local: [{
+    'position': 'XX',
+    'name': 'Unlisted',
+    'id': '1',
+    'team': 'FA'
+  }],
   prefetch: {
     url: '../static/players.json',
     transform: (response) => response.players.player
