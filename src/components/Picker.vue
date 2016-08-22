@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { getPicksIDs, getPositionsLeague } from '../../vuex/getters'
+import { getPicksIDs, getPositionsLeague, getPositionsTeamRemaining } from '../../vuex/getters'
 let $ = require('jquery')
 require('typeahead.js')
 let Bloodhound = require('typeahead.js/dist/bloodhound.js')
@@ -31,7 +31,8 @@ export default {
   vuex: {
     getters: {
       picks: getPicksIDs,
-      positions: getPositionsLeague
+      positions: getPositionsLeague,
+      positionLimits: getPositionsTeamRemaining
     }
   },
 
@@ -67,6 +68,9 @@ let engine = new Bloodhound({
   }
 })
 
+let teamPositionsRemaining = (id) => window.vuePicker.positionLimits(id)
+let filterLimits = (suggestions) => suggestions.filter(x => teamPositionsRemaining(window.vuePicker.currentTeam).includes(x.position))
+
 let filterPicked = (suggestions) => suggestions.filter(x => !window.vuePicker.picks.includes(x.id))
 
 $(document).ready(function () {
@@ -81,7 +85,7 @@ $(document).ready(function () {
     name: 'players',
     source: function (query, callback) {
       engine.search(query, function (suggestions) {
-        callback(filterPicked(suggestions))
+        callback(filterLimits(filterPicked(suggestions)))
       })
     },
     display: 'name',

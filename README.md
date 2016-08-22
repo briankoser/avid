@@ -26,8 +26,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Allow unlisted pick
 - [x] Restrict autofill by position
 - [x] Display player name, position in autofill
-- [x] Remove already drafted player from autofill
-- [ ] Set team size and positions, restrict autofill to limits
+- [x] Remove already-drafted players from autofill
+- [x] Set team size and positions, restrict autofill to limits
 - [ ] Save draft results
 
 ## Private draft Requirements
