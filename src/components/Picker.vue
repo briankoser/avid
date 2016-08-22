@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { getTeams } from '../../vuex/getters'
+import { getPositionsLeague } from '../../vuex/getters'
 let $ = require('jquery')
 require('typeahead.js')
 let Bloodhound = require('typeahead.js/dist/bloodhound.js')
@@ -30,7 +30,7 @@ export default {
 
   vuex: {
     getters: {
-      teams: getTeams
+      positions: getPositionsLeague
     }
   },
 
@@ -62,7 +62,7 @@ let engine = new Bloodhound({
   }],
   prefetch: {
     url: '../static/players.json',
-    transform: (response) => response.players.player
+    transform: (response) => response.players.player.filter(x => window.vuePicker.positions.includes(x.position))
   }
 })
 
@@ -71,7 +71,6 @@ $(document).ready(function () {
   let options = {
     autoSelect: true,
     hint: true,
-    highlight: true,
     minLength: 1
   }
 
@@ -80,7 +79,10 @@ $(document).ready(function () {
     source: engine,
     display: 'name',
     templates: {
-      empty: '<div class="empty-message">No players found</div>'
+      empty: '<div class="empty-message">No players found</div>',
+      suggestion: function (data) {
+        return `<p>${data.name} (${data.position}) </p>`
+      }
     }
   })
 

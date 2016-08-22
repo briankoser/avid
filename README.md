@@ -24,8 +24,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## Public draft Requirements
 - [x] Autofill picks
 - [x] Allow unlisted pick
-- [ ] Restrict autofill by position
-- [ ] Display player name, position in autofill
+- [x] Restrict autofill by position
+- [x] Display player name, position in autofill
 - [ ] Remove already drafted player from autofill
 - [ ] Set team size and positions, restrict autofill to limits
 - [ ] Save draft results
