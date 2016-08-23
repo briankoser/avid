@@ -1,5 +1,5 @@
 # avid
-Fantasy Football draft helper
+Fantasy Football draft helper. Vue.js under the hood.
 
 ## Build Setup
 
@@ -30,14 +30,14 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Set team size and positions, restrict autofill to limits
 - [x] Save draft results
 - [x] Undo button
-- [ ] Use addPick action
+- [x] Use addPick action
 - [ ] Stop drafting when teams are full
+- [ ] Roster view
 
 ## Private draft Requirements
 - [x] Timer for each pick
 - [x] Enter picks with keyboard only
 - [ ] Pre-draft ranking view
-- [ ] Roster view
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
 - [ ] Bye-week view, so you can see when each of your players has a bye week
 - [ ] Mark target players
@@ -57,6 +57,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## Bugs
 - [ ] Enter one character and select the first player. Enter the same character again: you are able to draft the same player twice.
+- [ ] Undo a pick. That pick now stays in the picker textbox until manually removed, even if further undos are made. 
 
 ## Colors
 [FlatUI](https://material.google.com/style/color.html#color-color-palette) colors: 

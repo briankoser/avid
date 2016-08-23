@@ -28,7 +28,7 @@
 <script>
 import Countdown from './Countdown'
 import Picker from './Picker'
-import { addStateEntry, undoLastPick, undoStateEntry } from '../../vuex/actions'
+import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../../vuex/actions'
 import { getLastStateEntry, getPicks, getTeams } from '../../vuex/getters'
 
 export default {
@@ -48,6 +48,7 @@ export default {
       teams: getTeams
     },
     actions: {
+      addPickToState: addPick,
       addStateEntry,
       undoLastPick,
       undoStateEntry
@@ -110,14 +111,12 @@ export default {
       }
 
       this.updateCurrentState()
-      this.picks.push(pick)
-      this.newPick = ''
+      this.addPickToState(pick)
     },
     removePick: function () {
+      this.undoLastPick()
       this.retreatCurrentState()
       this.resetPickSecondsLeft()
-      this.undoLastPick()
-      this.newPick = ''
     },
     resetPickSecondsLeft: function () {
       this.current.pickSecondsLeft = this.settings.secondsPerPick
