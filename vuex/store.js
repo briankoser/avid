@@ -44,7 +44,7 @@ const state = {
         { key: 'Def', min: 1, max: 1 }
       ]
     },
-    rostersize: 7,
+    rosterSize: 7,
     teams: [
       'Papa Peyton’s',
       'Mark’s Team',
