@@ -91,7 +91,7 @@ $(document).ready(function () {
     templates: {
       empty: '<div class="empty-message">No players found</div>',
       suggestion: function (data) {
-        return `<p>${data.name} (${data.position}) </p>`
+        return `<p>${data.name} (${data.position.toUpperCase()}) </p>`
       }
     }
   })

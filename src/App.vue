@@ -49,6 +49,14 @@ a {
   text-align: center;
 }
 
+.milli {
+  font-size: 0.8em;
+}
+
+.tight li {
+  margin-bottom: 0.5rem;
+}
+
 .site-title {
   background-color: #4caf50;
   color: #fafafa;

@@ -7,10 +7,11 @@
     <article class="draft-rounds">
       <section>
           <template v-for="round in rounds"> 
-          <h1>Round {{ round.number }}</h1>
-          <ol>
+          <h1 class="epsilon">Round {{ round.number }}</h1>
+          <ol class="tight">
               <li v-for="pick in round.picks">
-                {{ pick.team }} picked {{ pick.player.name }} ({{ pick.player.position }})
+                {{ pick.team }} → <strong>{{ pick.player.name }}</strong> 
+                <span class="position milli">{{ pick.player.position }}</span>
               </li>
           </ol>
           </template>
@@ -216,5 +217,10 @@ $(document).ready(function () {
 
 .pickInfo .team {
   margin-top: -0.3em;
+}
+
+.pickInfo .position {
+  font-family: Consolas, monospace;
+  text-transform: uppercase;
 }
 </style>
