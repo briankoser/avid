@@ -1,13 +1,10 @@
 <template>
   <div class="draft">
-    <countdown :seconds.sync="current.pickSecondsLeft" ></countdown>
-    <span>Picks remaining: {{ pickCountRemaining }}</span>
+    <div class="center">
+      <button v-on:click="resetPickSecondsLeft" class="button-primary">Start draft!</button>
+    </div>
 
-    <button v-on:click="resetPickSecondsLeft">Start draft!</button>
-
-    Teams: {{ teams }}
-
-    <article class="draft">
+    <article class="draft-rounds">
       <section>
           <template v-for="round in rounds"> 
           <h1>Round {{ round.number }}</h1>
@@ -19,13 +16,28 @@
           </template>
       </section>
     </article>
+    Teams: {{ teams }}
 
-    <div v-if="pickCountRemaining > 0" class="pickControls">
-      <picker :current-team="currentTeam"></picker>
-      <button v-on:click="removePick">Undo</button>
+    <div class="grid-1-right">
+      <button id="saveDraft">Download</button>
     </div>
 
-    <button id="saveDraft">Download</button>
+    <div class="center">
+      <countdown :seconds.sync="current.pickSecondsLeft" ></countdown>
+    </div>
+
+    <div v-if="pickCountRemaining > 0" class="pickControls grid-center">
+      <div class="pickInfo col-4">
+        <div class="zeta">Pick {{ pickCountRemaining }}</div> 
+        <div class="team epsilon">{{ currentTeam }}</div>
+      </div>
+      <div class="col-6">
+        <picker :current-team="currentTeam"></picker>
+      </div>
+      <div class="col-1">
+        <button v-on:click="removePick">Undo</button>
+      </div>
+    </div>
   </div>
 
   <div v-if="pickCountRemaining === 0" class="postDraft">
@@ -194,7 +206,15 @@ $(document).ready(function () {
 </script>
 
 <style scoped>
-h1 {
-  color: #333;
+.pickInfo {
+  line-height: 1em;
+}
+
+.pickInfo div {
+  margin: 0;
+}
+
+.pickInfo .team {
+  margin-top: -0.3em;
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="picker">
-    <span class="current-pick">Current pick: {{ currentTeam }}</span>
-    <input class="typeahead" type="text" placeholder="Player name" v-model="player">
+    <input class="typeahead alpha" type="text" placeholder="Player" v-model="player">
   </div>
 </template>
 
@@ -104,9 +103,9 @@ $(document).ready(function () {
 </script>
 
 <style>
-.typeahead,
-.tt-query,
-.tt-hint {
+.picker .typeahead,
+.picker .tt-query,
+.picker .tt-hint {
   width: 396px;
   height: 30px;
   padding: 8px 12px;
@@ -117,23 +116,26 @@ $(document).ready(function () {
   outline: none;
 }
 
-.typeahead {
+.picker .typeahead {
   background-color: #fff;
+  font-size: 2em;
+  height: 1.6em;
+  width: 100%;
 }
 
-.typeahead:focus {
+.picker .typeahead:focus {
   border: 2px solid #0097cf;
 }
 
-.tt-query {
+.picker .tt-query {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
-.tt-hint {
+.picker .tt-hint {
   color: #999
 }
 
-.tt-menu {
+.picker .tt-menu {
   width: 422px;
   margin: 12px 0;
   padding: 8px 0;
@@ -144,25 +146,24 @@ $(document).ready(function () {
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
-.tt-suggestion {
+.picker .tt-suggestion {
   padding: 3px 20px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.tt-suggestion:hover {
+.picker .tt-suggestion:hover {
   cursor: pointer;
   color: #fff;
   background-color: #0097cf;
 }
 
-.tt-suggestion.tt-cursor {
+.picker .tt-suggestion.tt-cursor {
   color: #fff;
   background-color: #0097cf;
-
 }
 
-.tt-suggestion p {
+.picker .tt-suggestion p {
   margin: 0;
 }
 

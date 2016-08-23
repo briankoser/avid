@@ -1,8 +1,13 @@
 <template>
-  <div id="app">
-    <h1 class="site-title">avid</h1>
+  <div id="app" class="grid-spaceAround">
+    <div class="col-7">
+      <draft></draft>
+    </div>
 
-    <draft></draft>
+    <div class="col-4">
+      <h1>avid</h1>
+      Rosters
+    </div>
   </div>
 </template>
 
@@ -19,26 +24,29 @@ export default {
 </script>
 
 <style>
-html {
-  height: 100%;
+*, 
+*:before, 
+*:after { 
+  box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  background-color: #fafafa;
+  color: #333;
+  margin: 10px;
 }
 
 #app {
-  color: #2c3e50;
-  max-width: 600px;
-  font-family: Rubik, 'Source Sans Pro', Helvetica, sans-serif;
+  font: 26px/1.4 'PT Sans', Helvetica, sans-serif;
 }
 
-#app a {
+a {
   color: #42b983;
   text-decoration: none;
+}
+
+.center {
+  text-align: center;
 }
 
 .site-title {
@@ -48,4 +56,6 @@ body {
   border-left: 30px solid #bdbdbd;
   border-right: 30px solid #bdbdbd;
 }
+
+
 </style>

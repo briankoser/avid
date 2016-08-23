@@ -1,5 +1,5 @@
 <template>
-  <div class="countdown">
+  <div class="countdown alpha">
       <span class="digit">{{ minutesLeft | two_digits }}</span>:<span class="digit">{{ secondsLeft | two_digits }}</span>
   </div>
 </template>
@@ -35,6 +35,5 @@ export default {
 <style scoped>
 .countdown {
   font-family: 'Consolas', monospace;
-  font-size: 2em;
 }
 </style>

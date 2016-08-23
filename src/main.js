@@ -1,4 +1,5 @@
 import 'normalize.css'
+import 'gridlex/docs/gridlex.css'
 import 'assets/css/skeleton.css'
 import Vue from 'vue'
 import App from './App'
