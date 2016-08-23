@@ -2,6 +2,10 @@ export function getLastStateEntry (state) {
   return state.history.slice(-1)[0]
 }
 
+export function getPickCountRemaining (state) {
+  return state.settings.teams.length * state.settings.rosterSize - state.picks.length
+}
+
 export function getPicks (state) {
   return state.picks
 }

@@ -31,8 +31,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Save draft results
 - [x] Undo button
 - [x] Use addPick action
-- [ ] Stop drafting when teams are full
-- [ ] Roster view
+- [x] Stop drafting when teams are full
+- [ ] Team view (shows all teams in draft order, current team highlighted)
+- [ ] Roster view (shows roster of current picking team)
 
 ## Private draft Requirements
 - [x] Timer for each pick

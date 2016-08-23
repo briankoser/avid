@@ -1,8 +1,11 @@
 <template>
   <div class="draft">
     <countdown :seconds.sync="current.pickSecondsLeft" ></countdown>
+    <span>Picks remaining: {{ pickCountRemaining }}</span>
 
     <button v-on:click="resetPickSecondsLeft">Start draft!</button>
+
+    Teams: {{ teams }}
 
     <article class="draft">
       <section>
@@ -17,19 +20,24 @@
       </section>
     </article>
 
-    <picker :current-team="currentTeam"></picker>
-    Teams: {{ teams }}
+    <div v-if="pickCountRemaining > 0" class="pickControls">
+      <picker :current-team="currentTeam"></picker>
+      <button v-on:click="removePick">Undo</button>
+    </div>
+
+    <button id="saveDraft">Download</button>
   </div>
 
-  <button v-on:click="removePick">Undo</button>
-  <button id="saveDraft">Download</button>
+  <div v-if="pickCountRemaining === 0" class="postDraft">
+    Draft over!
+  </div>
 </template>
 
 <script>
 import Countdown from './Countdown'
 import Picker from './Picker'
 import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../../vuex/actions'
-import { getLastStateEntry, getPicks, getTeams } from '../../vuex/getters'
+import { getLastStateEntry, getPickCountRemaining, getPicks, getTeams } from '../../vuex/getters'
 
 export default {
   created: function () {
@@ -44,6 +52,7 @@ export default {
   vuex: {
     getters: {
       lastStateEntry: getLastStateEntry,
+      pickCountRemaining: getPickCountRemaining,
       picks: getPicks,
       teams: getTeams
     },
