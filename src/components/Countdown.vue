@@ -1,5 +1,5 @@
 <template>
-  <div class="countdown alpha">
+  <div class="countdown kilo">
       <span class="digit">{{ minutesLeft | two_digits }}</span>:<span class="digit">{{ secondsLeft | two_digits }}</span>
   </div>
 </template>

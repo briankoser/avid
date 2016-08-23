@@ -24,6 +24,9 @@ export default {
 </script>
 
 <style>
+/*
+  LAYOUT
+*/
 *, 
 *:before, 
 *:after { 
@@ -40,19 +43,83 @@ body {
   font: 26px/1.4 'PT Sans', Helvetica, sans-serif;
 }
 
+
+/*
+  ELEMENTS
+*/
 a {
   color: #42b983;
   text-decoration: none;
 }
 
-.center {
-  text-align: center;
+
+/*
+  FONT SIZING
+*/
+.kilo {
+  font-size: 6rem;
+}
+
+.mega {
+  font-size: 7rem;
+}
+
+.giga {
+  font-size: 8rem;
 }
 
 .milli {
   font-size: 0.8em;
 }
 
+
+/*
+  COLORS
+*/
+.primary {
+  color: #4caf50;
+}
+
+.primary-bg {
+  background-color: #4caf50;
+}
+
+.black {
+  color: #212121;
+}
+
+.black-bg {
+  background-color: #212121;
+}
+
+.grey {
+  color: #bdbdbd;
+}
+
+.grey-bg {
+  background-color: #bdbdbd;
+}
+
+.white {
+  color: #fafafa;
+}
+
+.white-bg {
+  background-color: #fafafa;
+}
+
+
+/*
+  HELPER CLASSES
+*/
+.center {
+  text-align: center;
+}
+
+
+/*
+  OTHER STYLES
+*/
 .tight li {
   margin-bottom: 0.5rem;
 }
@@ -64,6 +131,4 @@ a {
   border-left: 30px solid #bdbdbd;
   border-right: 30px solid #bdbdbd;
 }
-
-
 </style>

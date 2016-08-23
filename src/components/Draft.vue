@@ -4,20 +4,31 @@
       <button v-on:click="resetPickSecondsLeft" class="button-primary">Start draft!</button>
     </div>
 
-    <article class="draft-rounds">
-      <section>
-          <template v-for="round in rounds"> 
-          <h1 class="epsilon">Round {{ round.number }}</h1>
-          <ol class="tight">
-              <li v-for="pick in round.picks">
-                {{ pick.team }} → <strong>{{ pick.player.name }}</strong> 
-                <span class="position milli">{{ pick.player.position }}</span>
-              </li>
-          </ol>
-          </template>
-      </section>
-    </article>
-    Teams: {{ teams }}
+    <div class="grid">
+      <div class="col-8">
+        <template v-for="round in rounds"> 
+        <h1 class="epsilon">Round {{ round.number }}</h1>
+        <ol class="tight">
+            <li v-for="pick in round.picks">
+              {{ pick.team }} → <strong>{{ pick.player.name }}</strong> 
+              <span class="position milli">{{ pick.player.position }}</span>
+            </li>
+        </ol>
+        </template>
+      </div>
+      <div class="draft-order milli col-3">
+        <ol class="tight">
+          <li v-for="team in teams">
+            <span v-if="team === currentTeam">
+              <b class="primary">{{ team }}</b>
+            </span>
+            <span v-else>
+              {{ team }}
+            </span>
+          </li>
+        </ol>
+      </div>
+    </div>
 
     <div class="grid-1-right">
       <button id="saveDraft">Download</button>
@@ -207,6 +218,10 @@ $(document).ready(function () {
 </script>
 
 <style scoped>
+.draft-order ol {
+  list-style-type: none;
+}
+
 .pickInfo {
   line-height: 1em;
 }

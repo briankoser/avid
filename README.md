@@ -32,7 +32,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Undo button
 - [x] Use addPick action
 - [x] Stop drafting when teams are full
-- [ ] Team view (shows all teams in draft order, current team highlighted)
+- [x] Team view (shows all teams in draft order, current team highlighted)
 - [ ] Roster view (shows roster of current picking team)
 
 ## Private draft Requirements
@@ -48,6 +48,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] When timer runs out: auto-pick highest ranked player, skip pick, pause until pick entered
 
 ## Enhancements
+- [ ] Restrict rounds to top of screen
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Select first option by default on autopick
 - [ ] Display player team in autofill
@@ -58,11 +59,4 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## Bugs
 - [ ] Enter one character and select the first player. Enter the same character again: you are able to draft the same player twice.
-- [ ] Undo a pick. That pick now stays in the picker textbox until manually removed, even if further undos are made. 
-
-## Colors
-[FlatUI](https://material.google.com/style/color.html#color-color-palette) colors: 
-Green: #4caf50
-Black: #212121
-Grey: #bdbdbd
-White: #fafafa
+- [ ] Undo a pick. That pick now stays in the picker textbox until manually removed, even if further undos are made.
