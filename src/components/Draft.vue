@@ -15,8 +15,11 @@
             </li>
         </ol>
         </template>
+        
+        <button id="saveDraft">Download</button>
       </div>
       <div class="draft-order milli col-3">
+        <h1 class="primary-bg white zeta">DRAFT ORDER</h1>
         <ol class="tight">
           <li v-for="team in teams">
             <span v-if="team === currentTeam">
@@ -28,10 +31,6 @@
           </li>
         </ol>
       </div>
-    </div>
-
-    <div class="grid-1-right">
-      <button id="saveDraft">Download</button>
     </div>
 
     <div class="center">
@@ -218,8 +217,17 @@ $(document).ready(function () {
 </script>
 
 <style scoped>
+.draft-order > * {
+  padding-left: 5px;
+}
+
+.draft-order h1 {
+  
+}
+
 .draft-order ol {
   list-style-type: none;
+  border: 5px solid #4caf50;
 }
 
 .pickInfo {
