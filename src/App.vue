@@ -1,10 +1,10 @@
 <template>
-  <div id="app" class="grid-spaceAround">
-    <div class="col-7">
+  <div id="app" class="grid">
+    <div class="col-8">
       <draft></draft>
     </div>
 
-    <div class="col-4">
+    <div class="col-4 dark-grey-bg white">
       <h1>avid</h1>
       Rosters
     </div>
@@ -36,11 +36,15 @@ export default {
 body {
   background-color: #fafafa;
   color: #333;
-  margin: 10px;
 }
 
 #app {
   font: 26px/1.4 'PT Sans', Helvetica, sans-serif;
+  margin: 0;
+}
+
+#app > div {
+  padding: 20px;
 }
 
 
@@ -92,11 +96,19 @@ a {
   background-color: #212121;
 }
 
-.grey {
+.dark-grey {
+  color: #424242;
+}
+
+.dark-grey-bg {
+  background-color: #424242;
+}
+
+.light-grey {
   color: #bdbdbd;
 }
 
-.grey-bg {
+.light-grey-bg {
   background-color: #bdbdbd;
 }
 
