@@ -35,10 +35,13 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Team view (shows all teams in draft order, current team highlighted)
 - [ ] Reverse draft order during reverse snake order rounds
 - [ ] Roster view (shows roster of current picking team)
+- [ ] Move start button to sidebar
+
 
 ## Private draft Requirements
 - [x] Timer for each pick
 - [x] Enter picks with keyboard only
+- [ ] Option to switch between public and private at start
 - [ ] Pre-draft ranking view
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
 - [ ] Bye-week view, so you can see when each of your players has a bye week

@@ -6,18 +6,20 @@
 
     <div class="col-4 dark-grey-bg white">
       <h1>avid</h1>
-      Rosters
+      <roster></roster>
     </div>
   </div>
 </template>
 
 <script>
 import Draft from './components/Draft'
+import Roster from './components/Roster'
 import store from '../vuex/store'
 
 export default {
   components: {
-    Draft
+    Draft,
+    Roster
   },
   store
 }
