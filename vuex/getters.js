@@ -1,9 +1,17 @@
+export function getDraftOrderTypes (state) {
+  return state.settings.app.draftOrderTypes
+}
+
+export function getDraftOrderTypeLeague (state) {
+  return state.settings.league.draftOrderType
+}
+
 export function getLastStateEntry (state) {
   return state.history.slice(-1)[0]
 }
 
 export function getPickCountRemaining (state) {
-  return state.settings.teams.length * state.settings.rosterSize - state.picks.length
+  return state.settings.league.teams.length * state.settings.league.rosterSize - state.picks.length
 }
 
 export function getPicks (state) {
@@ -15,30 +23,34 @@ export function getPicksIDs (state) {
 }
 
 export function getPositionsAll (state) {
-  return state.settings.positions.available
+  return state.settings.app.positions
 }
 
 export function getPositionsLeague (state) {
-  return state.settings.positions.use.map(x => x.key)
+  return state.settings.league.positions.map(x => x.key)
 }
 
 export function getPositionsTeamRemaining (state) {
   return (teamName) => {
-    let positionsPicked = state.picks.filter(x => x.team === teamName).map(x => x.player.position)
+    let positionsPicked = state.picks.filter(x => x.team.name === teamName).map(x => x.player.position)
     let positionsPickedCounts = new Map([...new Set(positionsPicked)].map(
       x => [x, positionsPicked.filter(y => y === x).length]
     ))
 
-    return state.settings.positions.use.filter(league => (positionsPickedCounts.get(league.key) || 0) < league.max).map(x => x.key)
+    return state.settings.league.positions.filter(league => (positionsPickedCounts.get(league.key) || 0) < league.max).map(x => x.key)
   }
 }
 
 export function getRoster (state) {
   return (teamName) => {
-    return state.picks.filter(x => x.team === teamName)
+    return state.picks.filter(x => x.team.name === teamName)
   }
 }
 
+export function getSecondsPerPick (state) {
+  return state.settings.league.secondsPerPick
+}
+
 export function getTeams (state) {
-  return state.settings.teams
+  return state.settings.league.teams
 }

@@ -10,7 +10,7 @@
         <h1 class="epsilon">Round {{ round.number }}</h1>
         <ol class="tight">
             <li v-for="pick in round.picks">
-              {{ pick.team }} → <strong>{{ pick.player.name }}</strong> 
+              {{ pick.team.name }} → <strong>{{ pick.player.name }}</strong> 
               <span class="position milli">{{ pick.player.position }}</span>
             </li>
         </ol>
@@ -22,11 +22,11 @@
         <h1 class="primary-bg white keno">DRAFT ORDER</h1>
         <ol class="subtle-grey-bg tight">
           <li v-for="team in teams">
-            <span v-if="team === currentTeam">
-              <b class="primary">{{ team }}</b>
+            <span v-if="team.name === currentTeam">
+              <b class="primary">{{ team.name }}</b>
             </span>
             <span v-else>
-              {{ team }}
+              {{ team.name }}
             </span>
           </li>
         </ol>
@@ -60,7 +60,7 @@
 import Countdown from './Countdown'
 import Picker from './Picker'
 import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../../vuex/actions'
-import { getLastStateEntry, getPickCountRemaining, getPicks, getTeams } from '../../vuex/getters'
+import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getSecondsPerPick, getTeams } from '../../vuex/getters'
 
 export default {
   created: function () {
@@ -74,9 +74,12 @@ export default {
 
   vuex: {
     getters: {
+      draftOrderTypes: getDraftOrderTypes,
+      draftOrderType: getDraftOrderTypeLeague,
       lastStateEntry: getLastStateEntry,
       pickCountRemaining: getPickCountRemaining,
       picks: getPicks,
+      secondsPerPick: getSecondsPerPick,
       teams: getTeams
     },
     actions: {
@@ -95,22 +98,13 @@ export default {
         pickSecondsLeft: 0,
         round: 1,
         teamIndex: 0
-      },
-      order: 'ser',
-      orderTypes: {
-        'random': 'ran',
-        'sequential': 'seq',
-        'serpentine': 'ser'
-      },
-      settings: {
-        secondsPerPick: 60
       }
     }
   },
 
   computed: {
     currentTeam: function () {
-      return this.teams[this.current.teamIndex]
+      return this.teams[this.current.teamIndex].name
     },
     rounds: function () {
       let rounds = []
@@ -151,19 +145,19 @@ export default {
       this.resetPickSecondsLeft()
     },
     resetPickSecondsLeft: function () {
-      this.current.pickSecondsLeft = this.settings.secondsPerPick
+      this.current.pickSecondsLeft = this.secondsPerPick
     },
     retreatCurrentState: function () {
       this.current = this.lastStateEntry
       this.undoStateEntry()
     },
     updateCurrentState: function () {
-      if (this.order === this.orderTypes.sequential) {
+      if (this.draftOrderType === this.draftOrderTypes.sequential) {
         this.updateCurrentStateSequential()
-      } else if (this.order === this.orderTypes.serpentine) {
+      } else if (this.draftOrderType === this.draftOrderTypes.serpentine) {
         this.updateCurrentStateSerpentine()
       } else {
-        throw new this.UserException(this.order + ' order type not implemented')
+        throw new this.UserException(this.draftOrderType + ' order type not implemented')
       }
     },
     updateCurrentStateSequential: function () {
