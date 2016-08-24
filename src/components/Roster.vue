@@ -4,49 +4,22 @@
       <option v-for="team in teamsAlpha">{{ team.name }}</option>
     </select>
 
-    <table>
+    <!-- { numberOverall, numberRound, player, round, team } -->
+    <table v-for="section in rosters(teamSelected)">
       <tr>
-          <th>Position</th>
-          <th>Player</th>
-          <th>Pick</th>
+        <th>{{ section.position }}</th>
+        <th>Round</th>
+        <th>Pick</th>
+        <th>Rank</th>
+        <th>Bye</th>
       </tr>
-      <tr v-for="pick in rosters(teamSelected)"> <!-- { numberOverall, numberRound, player, round, team } -->
-        <td>{{ pick.player.position }}</td>
+      <tr v-for="pick in section.picks">
         <td>{{ pick.player.name }}</td>
+        <td>{{ pick.round }}</td>
         <td>{{ pick.numberOverall }}</td>
+        <td></td>
+        <td></td>
       </tr>
-    </table>
-
-    <table>
-      <tr>
-        <th>QB</th>
-        <th>Bye</th>
-        <th>Rank</th>
-        <th>Round</th>
-      </tr>
-      <tr>
-        <td>Player1</td>
-        <td>7</td>
-        <td>1</td>
-        <td>1</td>
-      </tr>
-      <tr></tr><!-- available slot -->
-    </table>
-
-    <table>
-      <tr>
-        <th>RB</th>
-        <th>Bye</th>
-        <th>Rank</th>
-        <th>Round</th>
-      </tr>
-      <tr>
-        <td>Player3</td>
-        <td>8</td>
-        <td>3</td>
-        <td>3</td>
-      </tr>
-      <tr></tr><!-- available slot -->
     </table>
   </aside>
 </template>

@@ -33,7 +33,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Use addPick action
 - [x] Stop drafting when teams are full
 - [x] Team view (shows all teams in draft order, current team highlighted)
-- [ ] Roster view (sidebar)
+- [x] Roster view (sidebar)
+- [ ] Display empty roster spots
 
 ## Private draft Requirements
 - [x] Timer for each pick
