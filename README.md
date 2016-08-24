@@ -34,9 +34,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Stop drafting when teams are full
 - [x] Team view (shows all teams in draft order, current team highlighted)
 - [ ] Roster view (sidebar)
-- [ ] Automatically switch to roster of currently picking team
-- [ ] Reverse draft order during reverse snake order rounds
-- [ ] Move start button to sidebar
 
 ## Private draft Requirements
 - [x] Timer for each pick
@@ -52,6 +49,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] When timer runs out: auto-pick highest ranked player, skip pick, pause until pick entered
 
 ## Enhancements
+- [ ] Move start button to sidebar
+- [ ] Reverse draft order during reverse snake order rounds
+- [ ] Automatically switch to roster of currently picking team
 - [ ] Restrict rounds to top of screen
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Select first option by default on autopick
