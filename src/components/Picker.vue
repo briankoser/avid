@@ -104,31 +104,28 @@ $(document).ready(function () {
 
 <style>
 .picker .typeahead,
-.picker .tt-query,
 .picker .tt-hint {
-  width: 396px;
-  height: 30px;
-  padding: 8px 12px;
-  font-size: 24px;
-  line-height: 30px;
   border: 2px solid #ccc;
-          border-radius: 8px;
+  border-radius: 8px;
+  line-height: 30px;
   outline: none;
+  padding: 8px 12px;
+}
+
+.picker .twitter-typeahead,
+.picker .typeahead,
+.picker .tt-menu {
+  width: 100%;
 }
 
 .picker .typeahead {
   background-color: #fff;
   font-size: 2em;
   height: 1.6em;
-  width: 100%;
 }
 
 .picker .typeahead:focus {
-  border: 2px solid #0097cf;
-}
-
-.picker .tt-query {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  border: 2px solid #4caf50;
 }
 
 .picker .tt-hint {
@@ -136,47 +133,43 @@ $(document).ready(function () {
 }
 
 .picker .tt-menu {
-  width: 422px;
-  margin: 12px 0;
-  padding: 8px 0;
   background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  border-radius: 0 0 8px 8px;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  margin-top: 5px;
+}
+
+.picker .tt-suggestion,
+.picker .empty-message {
+  font-size: 1.25em;
 }
 
 .picker .tt-suggestion {
-  padding: 3px 20px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.25em;
+  line-height: 50px;
+  padding: 0 20px;
+  margin: 0;
 }
 
 .picker .tt-suggestion:hover {
   cursor: pointer;
   color: #fff;
-  background-color: #0097cf;
+  background-color: #4caf50;
 }
 
 .picker .tt-suggestion.tt-cursor {
   color: #fff;
-  background-color: #0097cf;
+  background-color: #4caf50;
 }
 
 .picker .tt-suggestion p {
   margin: 0;
 }
 
-/* example specific styles */
-/* ----------------------- */
-
-.empty-message {
+.picker .empty-message {
   padding: 5px 10px;
   text-align: center;
-}
-
-#scrollable-dropdown-menu .tt-menu {
-  max-height: 150px;
-  overflow-y: auto;
 }
 </style>
