@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const state = {
   history: [],
-  picks: [], // { numberOverall, numberRound, player, round, team }
+  picks: [], // pick: { numberOverall, numberRound, player, round, team }, player: { position, name, id, team }
   settings: {
     app: {
       draftOrderTypes: {

@@ -34,7 +34,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Stop drafting when teams are full
 - [x] Team view (shows all teams in draft order, current team highlighted)
 - [x] Roster view (sidebar)
-- [ ] Display empty roster spots
+- [x] Display empty roster spots
 
 ## Private draft Requirements
 - [x] Timer for each pick
@@ -55,6 +55,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Automatically switch to roster of currently picking team
 - [ ] Restrict rounds to top of screen
 - [ ] Input settings: team names, positions, league size, draft type, etc.
+- [ ] Injury information
+- [ ] Style empty flex roster spots
 - [ ] Select first option by default on autopick
 - [ ] Display player team in autofill
 - [ ] Work offline

@@ -49,8 +49,14 @@ export function getRoster (state) {
     }
 
     let positions = getPositionsLeague(state)
+    let roster = positions.map(x => { return { position: x, picks: picks.filter(y => y.player.position === x) } })
 
-    return positions.map(x => { return { position: x, picks: picks.filter(y => y.player.position === x) } })
+    return roster.map(x => {
+      while (x.picks.length < state.settings.league.positions.filter(y => y.key === x.position)[0].max) {
+        x.picks.push({})
+      }
+      return x
+    })
   }
 }
 
