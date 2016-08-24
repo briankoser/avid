@@ -112,6 +112,14 @@ a {
   background-color: #bdbdbd;
 }
 
+.subtle-grey {
+  color: #ececec;
+}
+
+.subtle-grey-bg {
+  background-color: #ececec;
+}
+
 .white {
   color: #fafafa;
 }

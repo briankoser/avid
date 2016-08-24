@@ -20,7 +20,7 @@
       </div>
       <div class="draft-order milli col-3">
         <h1 class="primary-bg white keno">DRAFT ORDER</h1>
-        <ol class="tight">
+        <ol class="subtle-grey-bg tight">
           <li v-for="team in teams">
             <span v-if="team === currentTeam">
               <b class="primary">{{ team }}</b>
@@ -217,17 +217,17 @@ $(document).ready(function () {
 </script>
 
 <style scoped>
+.draft-order,
+.draft-order h1 {
+  border-radius: 4px 4px 0 0;
+}
+
 .draft-order > * {
   padding-left: 5px;
 }
 
-.draft-order h1 {
-  
-}
-
 .draft-order ol {
   list-style-type: none;
-  border: 5px solid #4caf50;
 }
 
 .pickInfo {
