@@ -116,6 +116,10 @@ a {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 .small-caps {
   font-variant-caps: small-caps;
 }
