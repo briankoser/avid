@@ -211,13 +211,17 @@ $(document).ready(function () {
 </script>
 
 <style scoped>
+.draft-order > * {
+  padding-left: 5px;
+}
+
 .draft-order,
 .draft-order h1 {
   border-radius: 4px 4px 0 0;
 }
 
-.draft-order > * {
-  padding-left: 5px;
+.draft-order h1 {
+  padding: 10px 0 5px 5px;
 }
 
 .draft-order ol {

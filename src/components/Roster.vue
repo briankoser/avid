@@ -48,3 +48,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  aside {
+    padding: 20px;
+  }
+</style>

@@ -44,10 +44,6 @@ export function getPositionsTeamRemaining (state) {
 export function getRoster (state) {
   return (teamName) => {
     let picks = state.picks.filter(x => x.team.name === teamName)
-    if (picks.length === 0) {
-      return []
-    }
-
     let positions = getPositionsLeague(state)
     let roster = positions.map(x => { return { position: x, picks: picks.filter(y => y.player.position === x) } })
 

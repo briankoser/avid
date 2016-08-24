@@ -1,11 +1,11 @@
 <template>
   <div id="app" class="grid">
-    <div class="col-8">
+    <div class="main-container col-8">
       <draft></draft>
     </div>
 
-    <div class="col-4 dark-grey-bg white">
-      <h1>avid</h1>
+    <div class="side-container col-4 dark-grey-bg white">
+      <h1 class="site-header primary-bg">avid</h1>
       <roster></roster>
     </div>
   </div>
@@ -45,8 +45,17 @@ body {
   margin: 0;
 }
 
-#app > div {
+.main-container {
   padding: 20px;
+}
+
+.side-container {
+  padding: 0;
+}
+
+.site-header {
+  font-weight: 700;
+  padding-left: 20px;
 }
 
 
