@@ -148,7 +148,7 @@ $(document).ready(function () {
 
 .picker .tt-suggestion {
   font-size: 1.25em;
-  line-height: 50px;
+  line-height: 56px;
   padding: 0 20px;
   margin: 0;
 }
