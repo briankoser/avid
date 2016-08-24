@@ -33,10 +33,10 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Use addPick action
 - [x] Stop drafting when teams are full
 - [x] Team view (shows all teams in draft order, current team highlighted)
+- [ ] Roster view (sidebar)
+- [ ] Automatically switch to roster of currently picking team
 - [ ] Reverse draft order during reverse snake order rounds
-- [ ] Roster view (shows roster of current picking team)
 - [ ] Move start button to sidebar
-
 
 ## Private draft Requirements
 - [x] Timer for each pick

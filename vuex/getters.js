@@ -33,6 +33,12 @@ export function getPositionsTeamRemaining (state) {
   }
 }
 
+export function getRoster (state) {
+  return (teamName) => {
+    return state.picks.filter(x => x.team === teamName)
+  }
+}
+
 export function getTeams (state) {
   return state.settings.teams
 }

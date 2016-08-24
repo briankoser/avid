@@ -1,8 +1,21 @@
 <template>
   <aside>
-    <select>
+    <select v-model="teamSelected">
       <option v-for="team in teamsAlpha">{{ team }}</option>
     </select>
+
+    <table>
+      <tr>
+          <th>Position</th>
+          <th>Player</th>
+          <th>Pick</th>
+      </tr>
+      <tr v-for="pick in rosters(teamSelected)"> <!-- { numberOverall, numberRound, player, round, team } -->
+        <td>{{ pick.player.position }}</td>
+        <td>{{ pick.player.name }}</td>
+        <td>{{ pick.numberOverall }}</td>
+      </tr>
+    </table>
 
     <table>
       <tr>
@@ -39,11 +52,12 @@
 </template>
 
 <script>
-import { getTeams } from '../../vuex/getters'
+import { getRoster, getTeams } from '../../vuex/getters'
 
 export default {
   data () {
     return {
+      teamSelected: ''
     }
   },
 
@@ -55,6 +69,7 @@ export default {
 
   vuex: {
     getters: {
+      rosters: getRoster,
       teams: getTeams
     }
   }
