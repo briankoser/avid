@@ -66,6 +66,10 @@ td:first-child {
   width: 100%;
 }
 
+td:not(:first-child) {
+  text-align: right;
+}
+
 .empty-row {
   background-color: #bdbdbd;
   border-top: solid #424242 10px;
