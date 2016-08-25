@@ -40,8 +40,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Timer for each pick
 - [x] Enter picks with keyboard only
 - [x] Use ideal team size for optional roster spots
-- [ ] Option to switch between public and private at start
-- [ ] Pre-draft ranking view
+- [ ] Rankings view
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
 - [ ] Bye-week view, so you can see when each of your players has a bye week
 - [ ] Mark target players
@@ -52,6 +51,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## Enhancements
 - [x] Style empty optional roster spots
+- [x] Style user team in draft order
 - [ ] Conditionally show/hide elements before and after draft
 - [ ] Move start button to sidebar
 - [ ] Restrict rounds to top of screen
@@ -62,6 +62,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Display position max
 - [ ] Select first option by default on autopick
 - [ ] Display player team in autofill
+- [ ] Option to switch between public and private at start
+- [ ] Pre-draft ranking
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Injury information
 - [ ] Work offline

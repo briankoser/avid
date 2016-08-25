@@ -26,7 +26,7 @@
               <b class="primary">{{ team.name }}</b>
             </span>
             <span v-else>
-              {{ team.name }}
+              <span class="{{ team.user ? 'user-team' : '' }}">{{ team.name }}</span>
             </span>
           </li>
         </ol>
@@ -212,7 +212,7 @@ $(document).ready(function () {
 
 <style scoped>
 .draft-order > * {
-  padding-left: 5px;
+  padding: 5px 10px;
 }
 
 .draft-order,
@@ -221,7 +221,7 @@ $(document).ready(function () {
 }
 
 .draft-order h1 {
-  padding: 10px 0 5px 5px;
+  padding: 10px 0 5px 10px;
 }
 
 .draft-order ol {

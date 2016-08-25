@@ -90,7 +90,7 @@ const state = {
       teams: [
         { name: 'The Commish', draftOrder: 12 }, // 1
         { name: '’Aints -', draftOrder: 11 }, // 2
-        { name: 'Play It Again Sam', draftOrder: 10 }, // 3
+        { name: 'Play It Again Sam', draftOrder: 10, user: true }, // 3
         { name: 'O. J.', draftOrder: 9 }, // 4
         { name: 'Buck stops here', draftOrder: 8 }, // 5
         { name: 'The Shortarmed Bandit', draftOrder: 7 }, // 6
