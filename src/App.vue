@@ -3,6 +3,7 @@
     <div class="main-container col-8">
       <draft></draft>
       <rankings></rankings>
+      {{ initialRankings[0].id }}
     </div>
 
     <div class="side-container col-4 dark-grey-bg white">
@@ -23,6 +24,9 @@ export default {
     Draft,
     Rankings,
     Roster
+  },
+  props: {
+    initialRankings: Array
   },
   store
 }
