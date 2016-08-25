@@ -57,6 +57,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Restrict rounds to top of screen
 - [ ] Keepers
 - [ ] Reverse draft order during reverse snake order rounds
+- [ ] Default to user's roster
 - [ ] Option to automatically switch to roster of currently picking team
 - [ ] Style empty required roster spots
 - [ ] Display position max
@@ -68,10 +69,14 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Injury information
 - [ ] Work offline
-- [ ] Load player list from online
+- [ ] Load player list from online (vue-resource)
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
-- [ ] SASS
 - [ ] About link to sidebar
+
+## Technical Debt
+- [ ] Split Draft.vue into smaller modules
+- [ ] Use Vuex modules (https://vuex.vuejs.org/en/structure.html)
+- [ ] SASS for variables
 
 ## Bugs
 - [ ] Enter one character and select the first player. Enter the same character again: you are able to draft the same player twice.

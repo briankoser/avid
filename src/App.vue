@@ -2,6 +2,7 @@
   <div id="app" class="grid">
     <div class="main-container col-8">
       <draft></draft>
+      <rankings></rankings>
     </div>
 
     <div class="side-container col-4 dark-grey-bg white">
@@ -13,12 +14,14 @@
 
 <script>
 import Draft from './components/Draft'
+import Rankings from './components/Rankings'
 import Roster from './components/Roster'
 import store from '../vuex/store'
 
 export default {
   components: {
     Draft,
+    Rankings,
     Roster
   },
   store
