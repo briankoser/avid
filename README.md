@@ -51,14 +51,14 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## Enhancements
 - [ ] Move start button to sidebar
-- [ ] Reverse draft order during reverse snake order rounds
-- [ ] Automatically switch to roster of currently picking team
 - [ ] Restrict rounds to top of screen
+- [ ] Reverse draft order during reverse snake order rounds
+- [ ] Option to automatically switch to roster of currently picking team
+- [ ] Select first option by default on autopick
+- [ ] Display player team in autofill
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Injury information
 - [ ] Style empty flex roster spots
-- [ ] Select first option by default on autopick
-- [ ] Display player team in autofill
 - [ ] Work offline
 - [ ] Load player list from online
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
