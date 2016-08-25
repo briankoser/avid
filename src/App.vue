@@ -3,7 +3,6 @@
     <div class="main-container col-8">
       <draft></draft>
       <rankings></rankings>
-      {{ initialRankings[0].id }}
     </div>
 
     <div class="side-container col-4 dark-grey-bg white">
@@ -25,8 +24,21 @@ export default {
     Rankings,
     Roster
   },
+  computed: {
+    players: function () {
+      return this.initialPlayers.map(x => {
+        let player = Object.assign({}, x)
+        player.ranking = this.rankings.filter(y => y.id === player.id)[0] === undefined ? '' : player.ranking
+        return player
+      }).filter(x => x.ranking !== '')
+    },
+    rankings: function () {
+      return this.initialRankings.map((item, index) => { return { id: item.id, ranking: index + 1 } })
+    }
+  },
   props: {
-    initialRankings: Array
+    initialRankings: Array,
+    initialPlayers: Array
   },
   store
 }

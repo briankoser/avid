@@ -22,13 +22,20 @@ new Vue({
     }
   },
   data: {
-    initialRankings: {}
+    initialRankings: [],
+    initialPlayers: []
   },
   ready () {
     this.$http.get('/static/adpRankings.json').then((response) => {
       this.$set('initialRankings', response.json().adp.player)
     }, (response) => {
       console.log('Rankings could not be loaded')
+    })
+
+    this.$http.get('/static/players.json').then((response) => {
+      this.$set('initialPlayers', response.json().players.player)
+    }, (response) => {
+      console.log('Players could not be loaded')
     })
   }
 })
