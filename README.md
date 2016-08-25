@@ -39,6 +39,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## Private draft Requirements
 - [x] Timer for each pick
 - [x] Enter picks with keyboard only
+- [x] Use ideal team size for optional roster spots
 - [ ] Option to switch between public and private at start
 - [ ] Pre-draft ranking view
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
@@ -50,15 +51,19 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] When timer runs out: auto-pick highest ranked player, skip pick, pause until pick entered
 
 ## Enhancements
+- [ ] Conditionally show/hide elements before and after draft
+- [ ] Style empty optional roster spots
 - [ ] Move start button to sidebar
 - [ ] Restrict rounds to top of screen
+- [ ] Keepers
 - [ ] Reverse draft order during reverse snake order rounds
 - [ ] Option to automatically switch to roster of currently picking team
+- [ ] Style empty required roster spots
+- [ ] Display position max
 - [ ] Select first option by default on autopick
 - [ ] Display player team in autofill
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Injury information
-- [ ] Style empty flex roster spots
 - [ ] Work offline
 - [ ] Load player list from online
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))

@@ -103,7 +103,7 @@ const state = {
       ]
     },
     team: {
-      idealTeamSize: [
+      idealSize: [
         { key: 'QB', count: 2 },
         { key: 'RB', count: 4 },
         { key: 'WR', count: 5 },
