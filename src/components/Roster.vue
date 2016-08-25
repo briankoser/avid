@@ -13,7 +13,7 @@
         <th>Rank</th>
         <th>Bye</th>
       </tr>
-      <tr v-for="pick in section.picks" track-by="$index">
+      <tr v-for="pick in section.picks" track-by="$index" class="{{ pick.player ? '' : 'empty-row' }}">
         <td>{{ pick.player ? pick.player.name : '' }}</td>
         <td>{{ pick.round }}</td>
         <td>{{ pick.numberOverall }}</td>
@@ -50,7 +50,26 @@ export default {
 </script>
 
 <style scoped>
-  aside {
-    padding: 20px;
-  }
+aside {
+  padding: 20px;
+}
+
+th:first-child {
+  font-size: 1.25em;
+}
+
+th:not(:first-child) {
+  font-size: 0.75em;
+}
+
+td:first-child {
+  width: 100%;
+}
+
+.empty-row {
+  background-color: #bdbdbd;
+  border-top: solid #424242 10px;
+  opacity: 0.6;
+  height: 1.4em;
+}
 </style>

@@ -40,6 +40,10 @@ body {
   color: #333;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 #app {
   font: 26px/1.4 'PT Sans', Helvetica, sans-serif;
   margin: 0;

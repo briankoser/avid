@@ -51,8 +51,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] When timer runs out: auto-pick highest ranked player, skip pick, pause until pick entered
 
 ## Enhancements
+- [x] Style empty optional roster spots
 - [ ] Conditionally show/hide elements before and after draft
-- [ ] Style empty optional roster spots
 - [ ] Move start button to sidebar
 - [ ] Restrict rounds to top of screen
 - [ ] Keepers
@@ -68,6 +68,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Load player list from online
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
 - [ ] SASS
+- [ ] About link to sidebar
 
 ## Bugs
 - [ ] Enter one character and select the first player. Enter the same character again: you are able to draft the same player twice.
