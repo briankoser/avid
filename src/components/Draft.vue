@@ -39,7 +39,7 @@
 
     <div v-if="pickCountRemaining > 0" class="pickControls grid">
       <div class="pickInfo col-4">
-        <div class="zeta">Pick {{ pickCountRemaining }}</div> 
+        <div class="zeta">Pick {{ current.pickNumberOverall }}</div> 
         <div class="team epsilon">{{ currentTeam }}</div>
       </div>
       <div class="col-8">
@@ -221,6 +221,7 @@ $(document).ready(function () {
 }
 
 .draft-order h1 {
+  font-weight: bold;
   padding: 10px 0 5px 10px;
 }
 

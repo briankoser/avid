@@ -62,6 +62,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Display position max
 - [ ] Select first option by default on autopick
 - [ ] Display player team in autofill
+- [ ] Display remaining pick count
 - [ ] Option to switch between public and private at start
 - [ ] Pre-draft ranking
 - [ ] Input settings: team names, positions, league size, draft type, etc.
