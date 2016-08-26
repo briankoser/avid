@@ -77,7 +77,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] About link to sidebar
 
 ## Technical Debt
-- [ ] Split Draft.vue into smaller modules
+- [ ] Split Draft.vue into smaller components
 - [ ] Use Vuex modules (https://vuex.vuejs.org/en/structure.html)
 - [ ] SASS for variables
 
