@@ -64,7 +64,7 @@ const state = {
     //     { name: '[BANDWAGON TEAM]', draftOrder: 4 },
     //     { name: 'tim’s Bold Team', draftOrder: 5 },
     //     { name: 'Luke’s Legit Team', draftOrder: 6 },
-    //     { name: 'One and the Sam', draftOrder: 7 },
+    //     { name: 'One and the Sam', draftOrder: 7, user: true },
     //     { name: 'Christian’s Team', draftOrder: 8 },
     //     { name: 'My Team Sucks!', draftOrder: 9 },
     //     { name: 'Alderaan Explosions', draftOrder: 10 },
@@ -123,6 +123,9 @@ const mutations = {
   },
   ADDSTATEENTRY (state, entry) {
     state.history.push(entry)
+  },
+  INITIALIZERANKINGS (state, rankings) {
+    state.rankings = rankings
   },
   UNDOLASTPICK (state) {
     state.picks.pop()

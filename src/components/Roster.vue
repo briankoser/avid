@@ -13,7 +13,7 @@
         <th>Rank</th>
         <th>Bye</th>
       </tr>
-      <tr v-for="pick in section.picks" track-by="$index" class="{{ pick.player ? '' : 'empty-row' }}">
+      <tr v-for="pick in section.picks" track-by="$index" :class="{ 'empty-row': !pick.player }">
         <td>{{ pick.player ? pick.player.name : '' }}</td>
         <td>{{ pick.round }}</td>
         <td>{{ pick.numberOverall }}</td>

@@ -22,11 +22,11 @@
         <h1 class="primary-bg white keno">DRAFT ORDER</h1>
         <ol class="subtle-grey-bg tight">
           <li v-for="team in teams">
-            <span v-if="team.name === currentTeam">
+            <span v-show="team.name === currentTeam">
               <b class="primary">{{ team.name }}</b>
             </span>
             <span v-else>
-              <span class="{{ team.user ? 'user-team' : '' }}">{{ team.name }}</span>
+              <span :class="{ 'user-team': team.user }">{{ team.name }}</span>
             </span>
           </li>
         </ol>
@@ -246,5 +246,9 @@ $(document).ready(function () {
 .pickInfo .position {
   font-family: Consolas, monospace;
   text-transform: uppercase;
+}
+
+.user-team {
+  font-weight: bold;
 }
 </style>

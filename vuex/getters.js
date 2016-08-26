@@ -41,6 +41,10 @@ export function getPositionsTeamRemaining (state) {
   }
 }
 
+export function getRankings (state) {
+  return state.rankings
+}
+
 export function getRoster (state) {
   return (teamName) => {
     let picks = state.picks.filter(x => x.team.name === teamName)
