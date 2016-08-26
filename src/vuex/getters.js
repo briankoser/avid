@@ -37,7 +37,9 @@ export function getPositionsTeamRemaining (state) {
       x => [x, positionsPicked.filter(y => y === x).length]
     ))
 
-    return state.settings.league.positions.filter(league => (positionsPickedCounts.get(league.key) || 0) < league.max).map(x => x.key)
+    return state.settings.league.positions
+      .filter(league => (positionsPickedCounts.get(league.key) || 0) < league.max)
+      .map(x => x.key)
   }
 }
 

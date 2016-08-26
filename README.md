@@ -40,7 +40,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Timer for each pick
 - [x] Enter picks with keyboard only
 - [x] Use ideal team size for optional roster spots
-- [ ] Rankings view
+- [x] Rankings view
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
 - [ ] Bye-week view, so you can see when each of your players has a bye week
 - [ ] Mark target players

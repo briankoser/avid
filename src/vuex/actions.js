@@ -13,6 +13,7 @@ export const fetchRankings = ({ dispatch, state }) => {
       let player = Object.assign({}, x)
       let ranking = rankings.filter(y => y.id === player.id)[0]
       player.ranking = ranking === undefined ? '' : ranking.rank
+      player.available = true
       return player
     })
     .filter(z => z.ranking !== '')
