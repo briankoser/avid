@@ -9,7 +9,7 @@
     </div>
     <div class="col-6" data-push-left="off-1">
       <table>
-        <template v-for="player in rankedPlayers" track-by="id">
+        <template v-for="player in players" track-by="id">
         <tr :class="{ 'unavailable': !player.available }">
           <td>{{ player.ranking }}</td>
           <td>{{ player.position }}</td>
@@ -21,28 +21,13 @@
 </template>
 
 <script>
-import { initializeRankings } from '../../vuex/actions'
-import { getPicks, getPositionsLeague, getRankings } from '../../vuex/getters'
+import { fetchRankings } from '../vuex/actions'
+import { getPicks, getPositionsLeague, getRankings } from '../vuex/getters'
 
 export default {
-  created: function () {
-    this.initializeRankings(this.players)
-  },
-
-  props: {
-    players: {
-      type: Array
-    }
-  },
-
-  vuex: {
-    getters: {
-      picks: getPicks,
-      positions: getPositionsLeague,
-      rankings: getRankings
-    },
-    actions: {
-      initializeRankings
+  created () {
+    if (this.players.length === 0) {
+      this.fetchRankings()
     }
   },
 
@@ -52,12 +37,14 @@ export default {
     }
   },
 
-  computed: {
-    rankedPlayers: function () {
-      return this.rankings.map(player => {
-        player.available = this.picks.findIndex(pick => pick.player.id === player.id) === -1
-        return player
-      })
+  vuex: {
+    actions: {
+      fetchRankings
+    },
+    getters: {
+      picks: getPicks,
+      positions: getPositionsLeague,
+      players: getRankings
     }
   }
 }

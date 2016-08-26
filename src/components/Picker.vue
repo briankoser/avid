@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { getPicksIDs, getPositionsLeague, getPositionsTeamRemaining } from '../../vuex/getters'
+import { getPicksIDs, getPositionsLeague, getPositionsTeamRemaining } from '../vuex/getters'
 let $ = require('jquery')
 require('typeahead.js')
 let Bloodhound = require('typeahead.js/dist/bloodhound.js')

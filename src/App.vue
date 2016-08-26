@@ -2,7 +2,7 @@
   <div id="app" class="grid">
     <div class="main-container col-8">
       <draft></draft>
-      <rankings :players="players"></rankings>
+      <rankings></rankings>
     </div>
 
     <div class="side-container col-4 dark-grey-bg white">
@@ -23,25 +23,6 @@ export default {
     Draft,
     Rankings,
     Roster
-  },
-  computed: {
-    players: function () {
-      return this.initialPlayers.map(x => {
-        let player = Object.assign({}, x)
-        let ranking = this.rankings.filter(y => y.id === player.id)[0]
-        player.ranking = ranking === undefined ? '' : ranking.rank
-        return player
-      })
-      .filter(z => z.ranking !== '')
-      .sort((a, b) => a.ranking - b.ranking)
-    },
-    rankings: function () {
-      return this.initialRankings.map((item, index) => { return { id: item.id, rank: index + 1 } })
-    }
-  },
-  props: {
-    initialRankings: Array,
-    initialPlayers: Array
   },
   store
 }

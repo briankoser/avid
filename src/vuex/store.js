@@ -124,7 +124,7 @@ const mutations = {
   ADDSTATEENTRY (state, entry) {
     state.history.push(entry)
   },
-  INITIALIZERANKINGS (state, rankings) {
+  SETRANKINGS (state, rankings) {
     state.rankings = rankings
   },
   UNDOLASTPICK (state) {

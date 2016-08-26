@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { getRoster, getTeams } from '../../vuex/getters'
+import { getRoster, getTeams } from '../vuex/getters'
 
 export default {
   data () {

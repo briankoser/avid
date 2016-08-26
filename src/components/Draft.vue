@@ -61,8 +61,8 @@
 <script>
 import Countdown from './Countdown'
 import Picker from './Picker'
-import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../../vuex/actions'
-import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getSecondsPerPick, getTeams } from '../../vuex/getters'
+import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../vuex/actions'
+import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getSecondsPerPick, getTeams } from '../vuex/getters'
 
 export default {
   created: function () {
