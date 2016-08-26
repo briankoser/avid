@@ -17,8 +17,8 @@ npm run build
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 ## Milestones
-- [ ] Public draft, one input
-- [ ] Private draft, one input
+- [x] Public draft, one input
+- [x] Private draft, one input
 - [ ] Private draft, multiple inputs
 
 ## Public draft Requirements
@@ -41,9 +41,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Enter picks with keyboard only
 - [x] Use ideal team size for optional roster spots
 - [x] Rankings view
-- [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
-- [ ] Bye-week view, so you can see when each of your players has a bye week
-- [ ] Mark target players
 
 ## Multiple-user draft Requirements
 - [ ] SignalR
@@ -52,13 +49,19 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## Enhancements
 - [x] Style empty optional roster spots
 - [x] Style user team in draft order
+
 - [ ] Conditionally show/hide elements before and after draft
 - [ ] Move start button to sidebar
-- [ ] Restrict rounds to top of screen
 - [ ] Keepers
 - [ ] Reverse draft order during reverse snake order rounds
 - [ ] Default to user's roster
 - [ ] Option to automatically switch to roster of currently picking team
+
+- [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
+- [ ] Bye-week view, so you can see when each of your players has a bye week
+- [ ] Mark target players
+
+- [ ] Restrict rounds to top of screen
 - [ ] Style empty required roster spots
 - [ ] Display position max
 - [ ] Select first option by default on autopick
