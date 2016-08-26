@@ -72,7 +72,7 @@ table {
 }
 
 .main-container {
-  padding: 20px;
+  padding: 20px 40px;
 }
 
 .side-container {
@@ -82,6 +82,10 @@ table {
 .site-header {
   font-weight: 700;
   padding-left: 20px;
+}
+
+.rankings {
+  margin-top: 1em;
 }
 
 

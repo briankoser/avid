@@ -18,7 +18,7 @@
         
         <button id="saveDraft">Download</button>
       </div>
-      <div class="draft-order milli col-3">
+      <div class="draft-order milli col-4">
         <h1 class="primary-bg white keno">DRAFT ORDER</h1>
         <ol class="subtle-grey-bg tight">
           <li v-for="team in teams">
@@ -33,20 +33,22 @@
       </div>
     </div>
 
-    <div class="center">
-      <countdown :seconds.sync="current.pickSecondsLeft" ></countdown>
-    </div>
+    <div v-if="pickCountRemaining > 0" class="pickerArea"> <!--subtle-grey-bg-->
+      <div class="center">
+        <countdown :seconds.sync="current.pickSecondsLeft" ></countdown>
+      </div>
 
-    <div v-if="pickCountRemaining > 0" class="pickControls grid">
-      <div class="pickInfo col-4">
-        <div class="zeta">Pick {{ current.pickNumberOverall }}</div> 
-        <div class="team epsilon">{{ currentTeam }}</div>
-      </div>
-      <div class="col-8">
-        <picker :current-team="currentTeam"></picker>
-      </div>
-      <div class="col-12 right">
-        <button v-on:click="removePick">Undo</button>
+      <div class="pickControls grid">
+        <div class="pickInfo col-4">
+          <div class="zeta">Pick {{ current.pickNumberOverall }}</div> 
+          <div class="team epsilon">{{ currentTeam }}</div>
+        </div>
+        <div class="col-8">
+          <picker :current-team="currentTeam"></picker>
+        </div>
+        <div class="col-12 right">
+          <button v-on:click="removePick">Undo</button>
+        </div>
       </div>
     </div>
   </div>
