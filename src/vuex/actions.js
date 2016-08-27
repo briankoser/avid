@@ -6,15 +6,15 @@ export const addStateEntry = ({ dispatch, state }, entry) => dispatch('ADDSTATEE
 
 export const fetchRankings = ({ dispatch, state }) => {
   return fetchJson.fetchRankings(values => {
-    console.log('test')
     let rankings = values[0].json().adp.player.map((item, index) => { return { id: item.id, rank: index + 1 } })
     let players = values[1].json().players.player
+    let byes = values[2].json()
     let rankedPlayers = players.map(x => {
       let player = Object.assign({}, x)
       let ranking = rankings.filter(y => y.id === player.id)[0]
       player.ranking = ranking === undefined ? '' : ranking.rank
+      player.bye = byes.filter(y => y.team === x.team)[0].bye
       player.pick = {}
-      player.target = false
       return player
     })
     .filter(z => z.ranking !== '')

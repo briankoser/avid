@@ -14,6 +14,7 @@
           <td>{{ player.ranking }}</td>
           <td>{{ player.position }}</td>
           <td>{{ player.name }}</td>
+          <td class="milli">{{ player.bye }}
         </tr>
         </template>
       </table>
@@ -74,7 +75,8 @@ td {
   padding-left: 20px;
 }
 
-td:first-child {
+td:first-child,
+td:last-child {
   text-align: right;
 }
 

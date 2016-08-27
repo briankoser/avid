@@ -50,12 +50,12 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Style empty optional roster spots
 - [x] Style user team in draft order
 - [x] Highlight user-drafted players in rankings
+- [x] Bye weeks
 - [ ] Conditionally show/hide elements before and after draft
 - [ ] Move start button to sidebar 
 - [ ] Default to user's roster
 - [ ] Option to automatically switch to roster of currently picking team
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
-- [ ] Bye-week view, so you can see when each of your players has a bye week
 
 - [ ] Mark target players
 - [ ] Keepers

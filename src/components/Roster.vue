@@ -17,8 +17,8 @@
         <td>{{ pick.player ? pick.player.name : '' }}</td>
         <td>{{ pick.round }}</td>
         <td>{{ pick.numberOverall }}</td>
-        <td></td>
-        <td></td>
+        <td>{{ pick.ranking }}</td>
+        <td>{{ pick.bye }}</td>
       </tr>
     </table>
   </aside>

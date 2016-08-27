@@ -52,9 +52,22 @@ export function getRankings (state) {
 
 export function getRoster (state) {
   return (teamName) => {
-    let picks = state.picks.filter(x => x.team.name === teamName)
+    let picks = state.picks.filter(x => x.team.name === teamName).map(x => {
+      let ranking = state.rankings.find(ranking => ranking.id === x.player.id)
+      return Object.assign(x, {
+        pick: x,
+        ranking: ranking.ranking,
+        bye: ranking.bye
+      })
+    })
+
     let positions = getPositionsLeague(state)
-    let roster = positions.map(x => { return { position: x, picks: picks.filter(y => y.player.position === x) } })
+    let roster = positions.map(x => {
+      return {
+        position: x,
+        picks: picks.filter(y => y.player.position === x)
+      }
+    })
 
     return roster.map(x => {
       while (x.picks.length < state.settings.team.idealSize.filter(y => y.key === x.position)[0].count) {
