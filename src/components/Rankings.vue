@@ -10,7 +10,7 @@
     <div class="col-6" data-push-left="off-1">
       <table>
         <template v-for="player in playersByPosition(positionSelected)">
-        <tr :class="{ 'unavailable': !player.available }">
+        <tr :class="{ 'unavailable': !!player.pick, 'userDrafted': ((player.pick || {}).team || {}).user }">
           <td>{{ player.ranking }}</td>
           <td>{{ player.position }}</td>
           <td>{{ player.name }}</td>
@@ -81,5 +81,11 @@ td:first-child {
 .unavailable {
   font-style: italic;
   opacity: .3;
+}
+
+.unavailable.userDrafted {
+  color: #4caf50;
+  font-style: normal;
+  opacity: 1;
 }
 </style>

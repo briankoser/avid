@@ -49,19 +49,17 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## Enhancements
 - [x] Style empty optional roster spots
 - [x] Style user team in draft order
-
-- [ ] Highlight user-drafted players in rankings
+- [x] Highlight user-drafted players in rankings
 - [ ] Conditionally show/hide elements before and after draft
-- [ ] Move start button to sidebar
-- [ ] Keepers
-- [ ] Reverse draft order during reverse snake order rounds
+- [ ] Move start button to sidebar 
 - [ ] Default to user's roster
 - [ ] Option to automatically switch to roster of currently picking team
-
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
 - [ ] Bye-week view, so you can see when each of your players has a bye week
-- [ ] Mark target players
 
+- [ ] Mark target players
+- [ ] Keepers
+- [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
 - [ ] Restrict rounds to top of screen
 - [ ] Style empty required roster spots
 - [ ] Display position max

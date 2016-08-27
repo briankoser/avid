@@ -45,7 +45,7 @@ export function getPositionsTeamRemaining (state) {
 
 export function getRankings (state) {
   return state.rankings.map(player => {
-    player.available = state.picks.findIndex(pick => pick.player.id === player.id) === -1
+    player.pick = state.picks.find(pick => pick.player.id === player.id)
     return player
   })
 }
