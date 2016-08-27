@@ -51,8 +51,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Style user team in draft order
 - [x] Highlight user-drafted players in rankings
 - [x] Bye weeks
-- [ ] Conditionally show/hide elements before and after draft
-- [ ] Move start button to sidebar 
+- [ ] Conditionally show/hide elements before and after draft 
 - [ ] Default to user's roster
 - [ ] Option to automatically switch to roster of currently picking team
 - [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
@@ -68,6 +67,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Display remaining pick count
 - [ ] Option to switch between public and private at start
 - [ ] Pre-draft ranking
+- [ ] Start draft button
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Injury information
 - [ ] Work offline

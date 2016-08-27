@@ -1,9 +1,5 @@
 <template>
   <div class="draft">
-    <div class="center">
-      <button v-on:click="resetPickSecondsLeft" class="button-primary">Start draft!</button>
-    </div>
-
     <div class="grid">
       <div class="col-8">
         <template v-for="round in rounds"> 

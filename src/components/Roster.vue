@@ -3,8 +3,8 @@
     <select v-model="teamSelected">
       <option v-for="team in teamsAlpha">{{ team.name }}</option>
     </select>
+    <!--<button v-on:click="" class="button-primary">Start draft!</button>-->
 
-    <!-- { numberOverall, numberRound, player, round, team } -->
     <table v-for="section in rosters(teamSelected)">
       <tr>
         <th>{{ section.position }}</th>
