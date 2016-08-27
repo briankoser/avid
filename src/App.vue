@@ -16,7 +16,7 @@
 import Draft from './components/Draft'
 import Rankings from './components/Rankings'
 import Roster from './components/Roster'
-import store from '../vuex/store'
+import store from './vuex/store'
 
 export default {
   components: {

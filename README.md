@@ -50,6 +50,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Style empty optional roster spots
 - [x] Style user team in draft order
 
+- [ ] Highlight user-drafted players in rankings
 - [ ] Conditionally show/hide elements before and after draft
 - [ ] Move start button to sidebar
 - [ ] Keepers
