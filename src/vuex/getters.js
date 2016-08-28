@@ -14,6 +14,35 @@ export function getPickCountRemaining (state) {
   return state.settings.league.teams.length * state.settings.league.rosterSize - state.picks.length
 }
 
+export function getPickGridData (state) {
+  let pickGrids = getPositionsLeague(state)
+    .filter(x => x !== 'Coach')
+    .map(x => {
+      return {
+        position: x,
+        pickGrid: []
+      }
+    })
+
+  getRankings(state).forEach(ranking => {
+    let status
+    if (ranking.pick === undefined) {
+      status = 'a' // available
+    } else if (ranking.pick.team.user) {
+      status = 'u' // user drafted
+    } else {
+      status = 'd' // drafted, not by user
+    }
+
+    let positionIndex = pickGrids.findIndex(x => x.position === ranking.position)
+    if (positionIndex > -1) {
+      pickGrids[positionIndex].pickGrid.push(status)
+    }
+  })
+
+  return pickGrids
+}
+
 export function getPicks (state) {
   return state.picks
 }

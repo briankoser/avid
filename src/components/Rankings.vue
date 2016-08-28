@@ -1,11 +1,22 @@
 <template>
   <div class="rankings grid">
-    <h2 class="delta col-3">Rankings</h2>
-    <div class="col-2">
-      <select v-model="positionSelected">
-        <option>All</option>
-        <option v-for="position in positions">{{ position }}</option>
-      </select>
+    <div class="col-5 grid rankings-sidebar">
+      <h2 class="col-8 delta">Rankings</h2>
+      <div class="col-4">
+        <select v-model="positionSelected">
+          <option>All</option>
+          <option v-for="position in positions">{{ position }}</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <div v-for="row in pickGridData" class="pickGrid">
+          <span class="position milli">{{ row.position }}</span>
+          <span v-for="pick in row.pickGrid" track-by="$index" 
+            :class="{ pick: true, available: pick === 'a', drafted: pick === 'd', userDrafted: pick === 'u' }">
+            &nbsp;  
+          </span>
+        </div>
+      </div>
     </div>
     <div class="col-6" data-push-left="off-1">
       <table>
@@ -23,7 +34,7 @@
 
 <script>
 import { fetchRankings } from '../vuex/actions'
-import { getPicks, getPositionsLeague, getRankings } from '../vuex/getters'
+import { getPickGridData, getPicks, getPositionsLeague, getRankings } from '../vuex/getters'
 
 export default {
   created () {
@@ -49,6 +60,7 @@ export default {
       fetchRankings
     },
     getters: {
+      pickGridData: getPickGridData,
       picks: getPicks,
       positions: getPositionsLeague,
       players: getRankings
@@ -78,6 +90,38 @@ td {
 td:first-child,
 td:last-child {
   text-align: right;
+}
+
+.pickGrid {
+  line-height: 2em;
+  padding: 5px 0;
+  width: 500px;
+}
+
+.pickGrid .position {
+  display: inline-block;
+  width: 1.5em;
+}
+
+.pickGrid .pick {
+  display: inline-block;
+  width: 4px;
+}
+
+.pickGrid .pick.available {
+  background-color: #76ff03;
+}
+
+.pickGrid .pick.drafted {
+  background-color: #ff1744;
+}
+
+.pickGrid .pick.userDrafted {
+  background-color: #2979ff;
+}
+
+.rankings-sidebar {
+  height: 100px;
 }
 
 .unavailable {

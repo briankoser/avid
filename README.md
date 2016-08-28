@@ -50,12 +50,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Style empty optional roster spots
 - [x] Style user team in draft order
 - [x] Highlight user-drafted players in rankings
-- [x] Bye weeks
-- [ ] Conditionally show/hide elements before and after draft 
-- [ ] Default to user's roster
-- [ ] Option to automatically switch to roster of currently picking team
-- [ ] Zoomed-out position view: see at a glance which positions have high-rated players left
-
+- [x] Bye weeks 
+- [x] Zoomed-out position view: see at a glance which positions have high-rated players left
 - [ ] Mark target players
 - [ ] Keepers
 - [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
@@ -68,6 +64,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Option to switch between public and private at start
 - [ ] Pre-draft ranking
 - [ ] Start draft button
+- [ ] Conditionally show/hide elements before and after draft
+- [ ] Default to user's roster
+- [ ] Option to automatically switch to roster of currently picking team
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Injury information
 - [ ] Work offline
