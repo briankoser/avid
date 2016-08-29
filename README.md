@@ -52,8 +52,10 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Highlight user-drafted players in rankings
 - [x] Bye weeks 
 - [x] Zoomed-out position view: see at a glance which positions have high-rated players left
-- [ ] Mark target players
 - [ ] Keepers
+
+- [ ] Mark target players
+- [ ] Position tiers
 - [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
 - [ ] Restrict rounds to top of screen
 - [ ] Style empty required roster spots
