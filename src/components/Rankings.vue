@@ -25,7 +25,10 @@
           <td>{{ player.ranking }}</td>
           <td>{{ player.position }}</td>
           <td>{{ player.name }}</td>
-          <td class="milli">{{ player.team }} ({{ player.bye }})</td>
+          <td class="bye">
+            {{ player.bye }}
+            <img v-bind:src="logoPath(player.team)" alt="{{ player.team }}" class="team-logo" />
+          </td>
         </tr>
         </template>
       </table>
@@ -50,6 +53,9 @@ export default {
   },
 
   methods: {
+    logoPath (team) {
+      return require(`assets/img/team-logos/${team.toLowerCase()}.png`)
+    },
     playersByPosition: function (position) {
       return this.players.filter(x => position === 'All' || x.position === position)
     }
@@ -96,6 +102,10 @@ td:last-child {
   text-align: right;
 }
 
+.bye {
+  font-size: 0.6em;
+}
+
 .pickGrid {
   line-height: 2em;
   padding: 5px 0;
@@ -126,6 +136,12 @@ td:last-child {
 
 .rankings-sidebar {
   height: 100px;
+}
+
+.team-logo {
+  height: 20px;
+  width: 30px;
+  vertical-align: middle;
 }
 
 .unavailable {

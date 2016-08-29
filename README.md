@@ -54,6 +54,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Zoomed-out position view: see at a glance which positions have high-rated players left
 - [x] Rankings players teams
 - [x] Restrict rounds to top of screen
+- [x] Rankings players team logos
 
 - [ ] Mark target players
 - [ ] Position tiers
@@ -71,7 +72,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Option to automatically switch to roster of currently picking team
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Keepers
-- [ ] Rankings players team logos
 - [ ] Injury information
 - [ ] Work offline
 - [ ] Load player list from online (vue-resource)
