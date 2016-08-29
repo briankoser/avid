@@ -58,6 +58,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 - [ ] Mark target players
 - [ ] Position tiers
+- [ ] Keep draft rounds scrolled to bottom (https://stackoverflow.com/questions/18614301/keep-overflow-div-scrolled-to-bottom-unless-user-scrolls-up)
 - [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
 - [ ] Style empty required roster spots
 - [ ] Display position max
