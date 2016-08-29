@@ -25,7 +25,7 @@
           <td>{{ player.ranking }}</td>
           <td>{{ player.position }}</td>
           <td>{{ player.name }}</td>
-          <td class="milli">{{ player.bye }}
+          <td class="milli">{{ player.team }} ({{ player.bye }})</td>
         </tr>
         </template>
       </table>

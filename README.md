@@ -52,6 +52,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Highlight user-drafted players in rankings
 - [x] Bye weeks 
 - [x] Zoomed-out position view: see at a glance which positions have high-rated players left
+- [x] Rankings players teams
 - [ ] Keepers
 
 - [ ] Mark target players
@@ -70,6 +71,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Default to user's roster
 - [ ] Option to automatically switch to roster of currently picking team
 - [ ] Input settings: team names, positions, league size, draft type, etc.
+- [ ] Rankings players team logos
 - [ ] Injury information
 - [ ] Work offline
 - [ ] Load player list from online (vue-resource)
