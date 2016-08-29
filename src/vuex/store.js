@@ -95,7 +95,7 @@ const state = {
         { name: 'O. J.', draftOrder: 9 }, // 4
         { name: 'Buck stops here', draftOrder: 8 }, // 5
         { name: 'The Shortarmed Bandit', draftOrder: 7 }, // 6
-        { name: 'I B Beading', draftOrder: 6 }, // 7
+        { name: 'Fluoride Bandits', draftOrder: 6 }, // 7
         { name: 'Brown Mikes DeadBeat Team', draftOrder: 5 }, // 8
         { name: 'Alabama Yard rats', draftOrder: 4 }, // 9
         { name: 'HoldMy Cardigan', draftOrder: 3 }, // 10
