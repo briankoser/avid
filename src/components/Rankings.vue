@@ -83,6 +83,10 @@ tr:nth-child(2n + 1) {
   background-color: #ececec;
 }
 
+tr:nth-child(12n) {
+  border-bottom: solid black 3px;
+}
+
 td {
   padding-left: 20px;
 }
