@@ -2,17 +2,18 @@
   <div class="draft">
     <div class="grid">
       <div class="col-8">
-        <template v-for="round in rounds"> 
-        <h1 class="epsilon">Round {{ round.number }}</h1>
-        <ol class="tight">
-            <li v-for="pick in round.picks">
-              {{ pick.team.name }} → <strong>{{ pick.player.name }}</strong> 
-              <span class="position milli">{{ pick.player.position }}</span>
-            </li>
-        </ol>
-        </template>
-        
-        <button id="saveDraft">Download</button>
+        <div class="draft-picks">
+          <template v-for="round in rounds"> 
+          <h1 class="epsilon">Round {{ round.number }}</h1>
+          <ol class="tight">
+              <li v-for="pick in round.picks">
+                {{ pick.team.name }} → <strong>{{ pick.player.name }}</strong> 
+                <span class="position milli">{{ pick.player.position }}</span>
+              </li>
+          </ol>
+          </template>
+        </div>
+        <button id="saveDraft" class="save-draft">Download</button>
       </div>
       <div class="draft-order milli col-4">
         <h1 class="primary-bg white keno">DRAFT ORDER</h1>
@@ -227,6 +228,11 @@ $(document).ready(function () {
   list-style-type: none;
 }
 
+.draft-picks {
+  max-height: 22em;
+  overflow: auto;
+}
+
 .pickInfo {
   line-height: 1em;
 }
@@ -242,6 +248,10 @@ $(document).ready(function () {
 .pickInfo .position {
   font-family: Consolas, monospace;
   text-transform: uppercase;
+}
+
+.save-draft {
+  margin: 2rem 0 0 0;
 }
 
 .user-team {
