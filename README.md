@@ -55,22 +55,25 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Rankings players teams
 - [x] Restrict rounds to top of screen
 - [x] Rankings players team logos
-- [ ] Option to hide already drafted players from rankings
 - [ ] Roster column: number of position selected in draft (eg 3rd RB overall)
 - [ ] Instead of displaying all draft rounds, display only the current round
 - [ ] Add dropdown to choose draft round
-- [ ] Player tags: target, avoid, coming off injury 
+- [ ] Display position max
+- [ ] Display player team in autofill
+- [ ] Default to user's roster
+- [ ] Use flex to extend width of pick grids
+
+- [ ] Option to hide already drafted players from rankings
 - [ ] Position tiers
 - [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
 - [ ] Style empty required roster spots
-- [ ] Display position max
-- [ ] Display player team in autofill
 - [ ] Display remaining pick count
 - [ ] Option to switch between public and private at start
+- [ ] Export rankings
 - [ ] Pre-draft ranking
+- [ ] Player tags: target, avoid, coming off injury
 - [ ] Start draft button
 - [ ] Conditionally show/hide elements before and after draft
-- [ ] Default to user's roster
 - [ ] Option to automatically switch to roster of currently picking team
 - [ ] Input settings: team names, positions, league size, draft type, etc.
 - [ ] Keepers
@@ -79,6 +82,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Load player list from online (vue-resource)
 - [ ] Load player list from different sources (ESPN, Yahoo, MyFantasyLeague)
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
+- [ ] Switch user, at least for post-draft reports
 - [ ] About link in sidebar
 
 ## Technical Debt
