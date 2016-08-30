@@ -82,10 +82,10 @@ export function getRankings (state) {
 export function getRoster (state) {
   return (teamName) => {
     let picks = state.picks.filter(x => x.team.name === teamName).map(x => {
-      let ranking = state.rankings.find(ranking => ranking.id === x.player.id)
+      let ranking = (state.rankings.find(ranking => ranking.id === x.player.id) || {})
       return Object.assign(x, {
         pick: x,
-        ranking: ranking.ranking,
+        rankingOverall: ranking.ranking,
         bye: ranking.bye
       })
     })
