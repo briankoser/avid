@@ -45,64 +45,64 @@ const state = {
     /*
       CTS settings
     */
-    // league: {
-    //   draftOrderType: 'ser',
-    //   positions: [
-    //     { key: 'QB', min: 1, max: 2 },
-    //     { key: 'RB', min: 1, max: 2 },
-    //     { key: 'WR', min: 1, max: 2 },
-    //     { key: 'TE', min: 1, max: 2 },
-    //     { key: 'PK', min: 1, max: 1 },
-    //     { key: 'Def', min: 1, max: 1 }
-    //   ],
-    //   rosterSize: 7,
-    //   secondsPerPick: 60,
-    //   teams: [
-    //     { name: 'Papa Peyton’s', draftOrder: 1 },
-    //     { name: 'Mark’s Team', draftOrder: 2 },
-    //     { name: 'London Sillinannies', draftOrder: 3 },
-    //     { name: '[BANDWAGON TEAM]', draftOrder: 4 },
-    //     { name: 'tim’s Bold Team', draftOrder: 5 },
-    //     { name: 'Luke’s Legit Team', draftOrder: 6 },
-    //     { name: 'One and the Sam', draftOrder: 7, user: true },
-    //     { name: 'Christian’s Team', draftOrder: 8 },
-    //     { name: 'My Team Sucks!', draftOrder: 9 },
-    //     { name: 'Alderaan Explosions', draftOrder: 10 },
-    //     { name: 'Scott H’s Swell Team', draftOrder: 11 }
-    //   ]
-    // },
+    league: {
+      draftOrderType: 'ser',
+      positions: [
+        { key: 'QB', min: 1, max: 2 },
+        { key: 'RB', min: 1, max: 2 },
+        { key: 'WR', min: 1, max: 2 },
+        { key: 'TE', min: 1, max: 2 },
+        { key: 'PK', min: 1, max: 1 },
+        { key: 'Def', min: 1, max: 1 }
+      ],
+      rosterSize: 7,
+      secondsPerPick: 60,
+      teams: [
+        { name: 'Papa Peyton’s', owner: 'James Hostick', draftOrder: 1 },
+        { name: 'Mark’s Team', owner: 'Mark', draftOrder: 2 },
+        { name: 'London Sillinannies', owner: 'Zach Brown', draftOrder: 3 },
+        { name: '[BANDWAGON TEAM]', owner: 'Ellis Hicks', draftOrder: 4 },
+        { name: 'tim’s Bold Team', owner: 'Tim', draftOrder: 5 },
+        { name: 'Luke’s Legit Team', owner: 'Luke', draftOrder: 6 },
+        { name: 'Play It Again Sam', owner: 'Brian Koser', draftOrder: 7, user: true },
+        { name: 'Christian’s Team', owner: 'Christian Boyer', draftOrder: 8 },
+        { name: 'My Team Sucks!', owner: 'Steven', draftOrder: 9 },
+        { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 10 },
+        { name: 'Scott H’s Swell Team', owner: 'Scott H', draftOrder: 11 }
+      ]
+    },
 
     /*
       Crossroads settings
     */
-    league: {
-      draftOrderType: 'ser',
-      positions: [
-        { key: 'QB', min: 1, max: 4 },
-        { key: 'RB', min: 1, max: 8 },
-        { key: 'WR', min: 2, max: 8 },
-        { key: 'TE', min: 1, max: 3 },
-        { key: 'PK', min: 1, max: 3 },
-        { key: 'Def', min: 1, max: 3 },
-        { key: 'Coach', min: 1, max: 10 }
-      ],
-      rosterSize: 17,
-      secondsPerPick: 60,
-      teams: [
-        { name: 'The Commish', draftOrder: 12 }, // 1
-        { name: '’Aints -', draftOrder: 11 }, // 2
-        { name: 'Play It Again Sam', draftOrder: 10, user: true }, // 3
-        { name: 'O. J.', draftOrder: 9 }, // 4
-        { name: 'Buck stops here', draftOrder: 8 }, // 5
-        { name: 'The Shortarmed Bandit', draftOrder: 7 }, // 6
-        { name: 'Fluoride Bandits', draftOrder: 6 }, // 7
-        { name: 'Brown Mikes DeadBeat Team', draftOrder: 5 }, // 8
-        { name: 'Alabama Yard rats', draftOrder: 4 }, // 9
-        { name: 'HoldMy Cardigan', draftOrder: 3 }, // 10
-        { name: 'Amen Corner', draftOrder: 2 }, // 11
-        { name: 'Crossroads Snake petters', draftOrder: 1 } // 12
-      ]
-    },
+    // league: {
+    //   draftOrderType: 'ser',
+    //   positions: [
+    //     { key: 'QB', min: 1, max: 4 },
+    //     { key: 'RB', min: 1, max: 8 },
+    //     { key: 'WR', min: 2, max: 8 },
+    //     { key: 'TE', min: 1, max: 3 },
+    //     { key: 'PK', min: 1, max: 3 },
+    //     { key: 'Def', min: 1, max: 3 },
+    //     { key: 'Coach', min: 1, max: 10 }
+    //   ],
+    //   rosterSize: 17,
+    //   secondsPerPick: 60,
+    //   teams: [
+    //     { name: 'The Commish', owner: 'Aaron Smith', draftOrder: 12 },
+    //     { name: '’Aints -', owner: 'Matt McLean' draftOrder: 11 },
+    //     { name: 'Play It Again Sam', owner: 'Brian Koser', draftOrder: 10, user: true },
+    //     { name: 'O. J.', owner: 'Tuck Chastain', draftOrder: 9 },
+    //     { name: 'Buck stops here', owner: 'Terry Buckner', draftOrder: 8 },
+    //     { name: 'Small Arms Dealer', owner: 'Scott Hopkins', draftOrder: 7 },
+    //     { name: 'Fluoride Bandits', owner: 'Shane Herrington', draftOrder: 6 },
+    //     { name: 'Brown Mikes DeadBeat Bums', owner: 'Brown Mike',  draftOrder: 5 },
+    //     { name: 'Alabama Yard rats', owner: 'Philip Quinney', draftOrder: 4 },
+    //     { name: 'Cam Burglar', owner: 'Justin Tolbert', draftOrder: 3 },
+    //     { name: 'Amen Corner', owner: 'Ben Harris', draftOrder: 2 },
+    //     { name: 'Crossroads Zealots', owner: 'Joe Chastain', draftOrder: 1 }
+    //   ]
+    // },
     team: {
       idealSize: [
         { key: 'QB', count: 2 },

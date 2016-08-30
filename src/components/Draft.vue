@@ -20,10 +20,10 @@
         <ol class="subtle-grey-bg tight">
           <li v-for="team in teams">
             <span v-show="team.name === currentTeam">
-              <b class="primary">{{ team.name }}</b>
+              <b class="primary" title="{{ team.owner }}">{{ team.name }}</b>
             </span>
             <span v-else>
-              <span :class="{ 'user-team': team.user }">{{ team.name }}</span>
+              <span :class="{ 'user-team': team.user }" title="{{ team.owner }}">{{ team.name }}</span>
             </span>
           </li>
         </ol>
