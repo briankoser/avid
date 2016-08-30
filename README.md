@@ -55,14 +55,15 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Rankings players teams
 - [x] Restrict rounds to top of screen
 - [x] Rankings players team logos
-
-- [ ] Mark target players
+- [ ] Option to hide already drafted players from rankings
+- [ ] Roster column: number of position selected in draft (eg 3rd RB overall)
+- [ ] Instead of displaying all draft rounds, display only the current round
+- [ ] Add dropdown to choose draft round
+- [ ] Player tags: target, avoid, coming off injury 
 - [ ] Position tiers
-- [ ] Keep draft rounds scrolled to bottom (https://stackoverflow.com/questions/18614301/keep-overflow-div-scrolled-to-bottom-unless-user-scrolls-up)
 - [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
 - [ ] Style empty required roster spots
 - [ ] Display position max
-- [ ] Select first option by default on autopick
 - [ ] Display player team in autofill
 - [ ] Display remaining pick count
 - [ ] Option to switch between public and private at start
@@ -76,8 +77,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Injury information
 - [ ] Work offline
 - [ ] Load player list from online (vue-resource)
+- [ ] Load player list from different sources (ESPN, Yahoo, MyFantasyLeague)
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
-- [ ] About link to sidebar
+- [ ] About link in sidebar
 
 ## Technical Debt
 - [ ] Split Draft.vue into smaller components
