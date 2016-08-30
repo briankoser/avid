@@ -71,6 +71,16 @@ const state = {
         { name: 'Scott H’s Swell Team', owner: 'Scott H', draftOrder: 11 }
       ]
     },
+    team: {
+      idealSize: [
+        { key: 'QB', count: 1 },
+        { key: 'RB', count: 1 },
+        { key: 'WR', count: 1 },
+        { key: 'TE', count: 1 },
+        { key: 'PK', count: 1 },
+        { key: 'Def', count: 1 }
+      ]
+    }
 
     /*
       Crossroads settings
@@ -103,17 +113,17 @@ const state = {
     //     { name: 'Crossroads Zealots', owner: 'Joe Chastain', draftOrder: 1 }
     //   ]
     // },
-    team: {
-      idealSize: [
-        { key: 'QB', count: 2 },
-        { key: 'RB', count: 4 },
-        { key: 'WR', count: 5 },
-        { key: 'TE', count: 2 },
-        { key: 'PK', count: 1 },
-        { key: 'Def', count: 2 },
-        { key: 'Coach', count: 1 }
-      ]
-    }
+    // team: {
+    //   idealSize: [
+    //     { key: 'QB', count: 2 },
+    //     { key: 'RB', count: 4 },
+    //     { key: 'WR', count: 5 },
+    //     { key: 'TE', count: 2 },
+    //     { key: 'PK', count: 1 },
+    //     { key: 'Def', count: 2 },
+    //     { key: 'Coach', count: 1 }
+    //   ]
+    // }
   }
 }
 
