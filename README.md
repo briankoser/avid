@@ -58,8 +58,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Roster column: number of position selected in draft (eg 3rd RB overall)
 - [x] Keep draft rounds scrolled to bottom as picks are made
 - [x] Option to hide already drafted players from rankings
+- [x] Use flex to extend width of pick grids
 - [ ] Display player team in autofill
-- [ ] Use flex to extend width of pick grids
 - [ ] Default to user's roster
 
 - [ ] Position tiers

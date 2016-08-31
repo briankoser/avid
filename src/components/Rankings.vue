@@ -11,7 +11,7 @@
           <input type="checkbox" v-model="onlyDisplayAvailable">Undrafted
         </label>
       </div>
-      <div class="col-12">
+      <div class="col-12 pickGridContainer">
         <div v-for="row in pickGridData" class="pickGrid">
           <span class="position milli">{{ row.positionKey }}</span>
           <span v-for="pick in row.pickGrid" track-by="$index" 
@@ -120,7 +120,12 @@ td:last-child {
   font-size: 0.6em;
 }
 
+.pickGridContainer {
+  padding: 0;
+}
+
 .pickGrid {
+  display: flex;
   line-height: 2em;
   padding: 5px 0;
   width: 500px;
@@ -128,11 +133,14 @@ td:last-child {
 
 .pickGrid .position {
   display: inline-block;
-  width: 1.5em;
+  padding-right: 0.4em;
+  text-align: right;
+  width: 2em;
 }
 
 .pickGrid .pick {
   display: inline-block;
+  flex-grow: 1;
   width: 4px;
 }
 
