@@ -7,6 +7,9 @@
           <option>All</option>
           <option v-for="positionKey in positionKeys">{{ positionKey }}</option>
         </select>
+        <label>
+          <input type="checkbox" v-model="onlyDisplayAvailable">Undrafted
+        </label>
       </div>
       <div class="col-12">
         <div v-for="row in pickGridData" class="pickGrid">
@@ -19,7 +22,7 @@
       </div>
     </div>
     <div class="col-6" data-push-left="off-1">
-      <table>
+      <table :class="{ 'onlyDisplayAvailable': onlyDisplayAvailable }">
         <template v-for="player in playersByPosition(positionSelected)">
         <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u' }">
           <td>{{ player.ranking.overall }}</td>
@@ -49,6 +52,7 @@ export default {
 
   data () {
     return {
+      onlyDisplayAvailable: false,
       positionSelected: 'All'
     }
   },
@@ -77,6 +81,10 @@ export default {
 </script>
 
 <style scoped>
+input[type=checkbox] {
+  margin-right: 0.4em;
+}
+
 select,
 table {
   margin-top: 10px;
@@ -148,6 +156,10 @@ td:last-child {
   height: 20px;
   width: 30px;
   vertical-align: middle;
+}
+
+.onlyDisplayAvailable .unavailable {
+  display: none;
 }
 
 .unavailable {

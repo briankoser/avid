@@ -57,11 +57,10 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Rankings players team logos
 - [x] Roster column: number of position selected in draft (eg 3rd RB overall)
 - [x] Keep draft rounds scrolled to bottom as picks are made
-- [ ] Display position max
+- [x] Option to hide already drafted players from rankings
 - [ ] Display player team in autofill
-- [ ] Default to user's roster
 - [ ] Use flex to extend width of pick grids
-- [ ] Option to hide already drafted players from rankings
+- [ ] Default to user's roster
 
 - [ ] Position tiers
 - [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
@@ -75,6 +74,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Conditionally show/hide elements before and after draft
 - [ ] Option to automatically switch to roster of currently picking team
 - [ ] Input settings: team names, positions, league size, draft type, etc.
+- [ ] Display position max
 - [ ] Keepers
 - [ ] Injury information
 - [ ] Work offline
