@@ -1,8 +1,7 @@
-module.exports.Position = Position
-
-var Position = function (key, name, category, displayOrder) {
+function Position (key, name, category, displayOrder) {
   this.key = key
   this.name = name
   this.category = category
   this.displayOrder = displayOrder
 }
+export default Position

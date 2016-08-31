@@ -5,12 +5,12 @@
       <div class="col-4">
         <select v-model="positionSelected">
           <option>All</option>
-          <option v-for="position in positions">{{ position }}</option>
+          <option v-for="positionKey in positionKeys">{{ positionKey }}</option>
         </select>
       </div>
       <div class="col-12">
         <div v-for="row in pickGridData" class="pickGrid">
-          <span class="position milli">{{ row.position }}</span>
+          <span class="position milli">{{ row.positionKey }}</span>
           <span v-for="pick in row.pickGrid" track-by="$index" 
             :class="{ pick: true, available: pick === 'a', drafted: pick === 'd', userDrafted: pick === 'u' }">
             &nbsp;  
@@ -21,13 +21,14 @@
     <div class="col-6" data-push-left="off-1">
       <table>
         <template v-for="player in playersByPosition(positionSelected)">
-        <tr :class="{ 'unavailable': !!player.pick, 'userDrafted': ((player.pick || {}).team || {}).user }">
-          <td>{{ player.ranking }}</td>
-          <td>{{ player.position }}</td>
+        <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u' }">
+          <td>{{ player.ranking.overall }}</td>
+          <!--<td class="milli">σ{{ player.ranking.stdDev | round }}</td>-->
+          <td>{{ player.positionKey }}</td>
           <td>{{ player.name }}</td>
           <td class="bye">
-            {{ player.bye }}
-            <img v-bind:src="logoPath(player.team)" alt="{{ player.team }}" class="team-logo" />
+            {{ player.nflTeam.bye }}
+            <img v-bind:src="logoPath(player.nflTeam.name)" alt="{{ player.nflTeam.name }}" class="team-logo" />
           </td>
         </tr>
         </template>
@@ -36,13 +37,13 @@
 </template>
 
 <script>
-import { fetchRankings } from '../vuex/actions'
-import { getPickGridData, getPicks, getPositionsLeague, getRankings } from '../vuex/getters'
+import { fetchPlayers } from '../vuex/actions'
+import { getPickGridData, getPicks, getPlayers, getPositionKeysLeague } from '../vuex/getters'
 
 export default {
   created () {
     if (this.players.length === 0) {
-      this.fetchRankings()
+      this.fetchPlayers()
     }
   },
 
@@ -57,19 +58,19 @@ export default {
       return require(`assets/img/team-logos/${team.toLowerCase()}.png`)
     },
     playersByPosition: function (position) {
-      return this.players.filter(x => position === 'All' || x.position === position)
+      return this.players.filter(player => position === 'All' || player.positionKey === position)
     }
   },
 
   vuex: {
     actions: {
-      fetchRankings
+      fetchPlayers
     },
     getters: {
       pickGridData: getPickGridData,
       picks: getPicks,
-      positions: getPositionsLeague,
-      players: getRankings
+      positionKeys: getPositionKeysLeague,
+      players: getPlayers
     }
   }
 }
@@ -79,9 +80,6 @@ export default {
 select,
 table {
   margin-top: 10px;
-}
-
-select {
   width: 100%;
 }
 
@@ -100,6 +98,14 @@ td {
 td:first-child,
 td:last-child {
   text-align: right;
+}
+
+td:first-child {
+  padding-left: 10px;
+}
+
+td:last-child {
+  padding-right: 10px;
 }
 
 .bye {

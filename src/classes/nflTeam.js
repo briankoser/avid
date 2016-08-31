@@ -1,6 +1,5 @@
-module.exports.NflTeam = NflTeam
-
-var NflTeam = function (name, bye) {
+function NflTeam (name, bye) {
   this.name = name
   this.bye = bye
 }
+export default NflTeam

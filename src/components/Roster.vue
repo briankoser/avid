@@ -7,7 +7,7 @@
 
     <table v-for="section in rosters(teamSelected)">
       <tr>
-        <th rowspan="2" class="position">{{ section.position }}</th>
+        <th rowspan="2" class="position">{{ section.positionKey }}</th>
         <th rowspan="2">Round</th>
         <th colspan="2">Overall</th>
         <th colspan="2">Position</th>
@@ -20,13 +20,24 @@
         <th>Pick</th>
       </tr>
       <tr v-for="pick in section.picks" track-by="$index" :class="{ 'empty-row': !pick.player }">
-        <td class="player">{{ pick.player ? pick.player.name : '' }}</td>
-        <td class="round">{{ pick.round }}</td>
-        <td class="rank">{{ pick.rankingOverall }}</td>
-        <td class="pick">{{ pick.numberOverall }}</td>
-        <td class="rank"></td>
-        <td class="pick"></td>
-        <td class="bye">{{ pick.bye }}</td>
+        <template v-if="pick.player">
+          <td class="player">{{ (pick.player || {}).name }}</td>
+          <td class="round">{{ pick.round }}</td>
+          <td class="rank">{{ pick.player.ranking.overall }}</td>
+          <td class="pick">{{ pick.pickNumber.overall }}</td>
+          <td class="rank">{{ pick.player.ranking.position }}</td>
+          <td class="pick">{{ pick.pickNumber.position }}</td>
+          <td class="bye">{{ pick.player.nflTeam.bye }}</td>
+        </template>
+        <template v-else>
+          <td class="player"></td>
+          <td class="round"></td>
+          <td class="rank"></td>
+          <td class="pick"></td>
+          <td class="rank"></td>
+          <td class="pick"></td>
+          <td class="bye"></td>
+        </template>
       </tr>
     </table>
   </aside>

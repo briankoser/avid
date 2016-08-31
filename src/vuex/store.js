@@ -6,7 +6,7 @@ Vue.use(Vuex)
 const state = {
   history: [],
   picks: [],
-  rankings: [],
+  players: [],
   settings: {
     app: {
       draftOrderTypes: {
@@ -64,7 +64,7 @@ const state = {
         { name: '[BANDWAGON TEAM]', owner: 'Ellis Hicks', draftOrder: 4 },
         { name: 'tim’s Bold Team', owner: 'Tim', draftOrder: 5 },
         { name: 'Luke’s Legit Team', owner: 'Luke', draftOrder: 6 },
-        { name: 'Play It Again Sam', owner: 'Brian Koser', draftOrder: 7, user: true },
+        { name: 'Play It Again Sam', owner: 'Brian Koser', draftOrder: 7, isUser: true },
         { name: 'Christian’s Team', owner: 'Christian Boyer', draftOrder: 8 },
         { name: 'My Team Sucks!', owner: 'Steven', draftOrder: 9 },
         { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 10 },
@@ -73,12 +73,12 @@ const state = {
     },
     team: {
       idealSize: [
-        { key: 'QB', count: 1 },
-        { key: 'RB', count: 1 },
-        { key: 'WR', count: 1 },
-        { key: 'TE', count: 1 },
-        { key: 'PK', count: 1 },
-        { key: 'Def', count: 1 }
+        { positionKey: 'QB', count: 1 },
+        { positionKey: 'RB', count: 1 },
+        { positionKey: 'WR', count: 1 },
+        { positionKey: 'TE', count: 1 },
+        { positionKey: 'PK', count: 1 },
+        { positionKey: 'Def', count: 1 }
       ]
     }
 
@@ -101,7 +101,7 @@ const state = {
     //   teams: [
     //     { name: 'The Commish', owner: 'Aaron Smith', draftOrder: 12 },
     //     { name: '’Aints -', owner: 'Matt McLean' draftOrder: 11 },
-    //     { name: 'Play It Again Sam', owner: 'Brian Koser', draftOrder: 10, user: true },
+    //     { name: 'Play It Again Sam', owner: 'Brian Koser', draftOrder: 10, isUser: true },
     //     { name: 'O. J.', owner: 'Tuck Chastain', draftOrder: 9 },
     //     { name: 'Buck stops here', owner: 'Terry Buckner', draftOrder: 8 },
     //     { name: 'Small Arms Dealer', owner: 'Scott Hopkins', draftOrder: 7 },
@@ -115,13 +115,13 @@ const state = {
     // },
     // team: {
     //   idealSize: [
-    //     { key: 'QB', count: 2 },
-    //     { key: 'RB', count: 4 },
-    //     { key: 'WR', count: 5 },
-    //     { key: 'TE', count: 2 },
-    //     { key: 'PK', count: 1 },
-    //     { key: 'Def', count: 2 },
-    //     { key: 'Coach', count: 1 }
+    //     { positionKey: 'QB', count: 2 },
+    //     { positionKey: 'RB', count: 4 },
+    //     { positionKey: 'WR', count: 5 },
+    //     { positionKey: 'TE', count: 2 },
+    //     { positionKey: 'PK', count: 1 },
+    //     { positionKey: 'Def', count: 2 },
+    //     { positionKey: 'Coach', count: 1 }
     //   ]
     // }
   }
@@ -134,8 +134,8 @@ const mutations = {
   ADDSTATEENTRY (state, entry) {
     state.history.push(entry)
   },
-  SETRANKINGS (state, rankings) {
-    state.rankings = rankings
+  SETPLAYERS (state, players) {
+    state.players = players
   },
   UNDOLASTPICK (state) {
     state.picks.pop()

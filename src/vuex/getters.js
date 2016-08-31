@@ -15,28 +15,19 @@ export function getPickCountRemaining (state) {
 }
 
 export function getPickGridData (state) {
-  let pickGrids = getPositionsLeague(state)
-    .filter(x => x !== 'Coach')
-    .map(x => {
+  let pickGrids = getPositionKeysLeague(state)
+    .filter(positionKey => positionKey !== 'Coach')
+    .map(positionKey => {
       return {
-        position: x,
+        positionKey: positionKey,
         pickGrid: []
       }
     })
 
-  getRankings(state).forEach(ranking => {
-    let status
-    if (ranking.pick === undefined) {
-      status = 'a' // available
-    } else if (ranking.pick.team.user) {
-      status = 'u' // user drafted
-    } else {
-      status = 'd' // drafted, not by user
-    }
-
-    let positionIndex = pickGrids.findIndex(x => x.position === ranking.position)
+  getPlayers(state).forEach(player => {
+    let positionIndex = pickGrids.findIndex(x => x.positionKey === player.positionKey)
     if (positionIndex > -1) {
-      pickGrids[positionIndex].pickGrid.push(status)
+      pickGrids[positionIndex].pickGrid.push(player.pickStatus)
     }
   })
 
@@ -55,7 +46,7 @@ export function getPositionsAll (state) {
   return state.settings.app.positions
 }
 
-export function getPositionsLeague (state) {
+export function getPositionKeysLeague (state) {
   return state.settings.league.positions.map(x => x.key)
 }
 
@@ -72,34 +63,40 @@ export function getPositionsTeamRemaining (state) {
   }
 }
 
-export function getRankings (state) {
-  return state.rankings.map(player => {
-    player.pick = state.picks.find(pick => pick.player.id === player.id)
+export function getPlayer (state) {
+  return (playerID) => {
+    return state.players.find(x => x.id === playerID)
+  }
+}
+
+export function getPlayers (state) {
+  return state.players.map(player => {
+    let pick = state.picks.find(pick => pick.player.id === player.id)
+    if (pick === undefined) {
+      player.pickStatus = 'a' // available
+    } else if (pick.team.isUser) {
+      player.pickStatus = 'u' // user drafted
+    } else {
+      player.pickStatus = 'd' // drafted, not by user
+    }
+
     return player
   })
+  .filter(player => getPositionKeysLeague(state).includes(player.positionKey))
 }
 
 export function getRoster (state) {
   return (teamName) => {
-    let picks = state.picks.filter(x => x.team.name === teamName).map(x => {
-      let ranking = (state.rankings.find(ranking => ranking.id === x.player.id) || {})
-      return Object.assign(x, {
-        pick: x,
-        rankingOverall: ranking.ranking,
-        bye: ranking.bye
-      })
-    })
-
-    let positions = getPositionsLeague(state)
-    let roster = positions.map(x => {
+    let positionKeys = getPositionKeysLeague(state)
+    let roster = positionKeys.map(positionKey => {
       return {
-        position: x,
-        picks: picks.filter(y => y.player.position === x)
+        positionKey: positionKey,
+        picks: state.picks.filter(y => y.player.positionKey === positionKey)
       }
     })
 
     return roster.map(x => {
-      while (x.picks.length < state.settings.team.idealSize.filter(y => y.key === x.position)[0].count) {
+      while (x.picks.length < state.settings.team.idealSize.find(y => y.positionKey === x.positionKey).count) {
         x.picks.push({})
       }
       return x

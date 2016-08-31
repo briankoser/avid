@@ -23,7 +23,7 @@
               <b class="primary" title="{{ team.owner }}">{{ team.name }}</b>
             </span>
             <span v-else>
-              <span :class="{ 'user-team': team.user }" title="{{ team.owner }}">{{ team.name }}</span>
+              <span :class="{ 'user-team': team.isUser }" title="{{ team.owner }}">{{ team.name }}</span>
             </span>
           </li>
         </ol>
@@ -37,7 +37,7 @@
 
       <div class="pickControls grid">
         <div class="pickInfo col-4">
-          <div class="zeta">Pick {{ current.pickNumberOverall }}</div> 
+          <div class="zeta">Pick {{ current.pickNumber.overall }}</div> 
           <div class="team epsilon">{{ currentTeam }}</div>
         </div>
         <div class="col-8">
@@ -56,10 +56,12 @@
 </template>
 
 <script>
+import Pick from '../classes/pick'
+import PickNumber from '../classes/pickNumber'
 import Countdown from './Countdown'
 import Picker from './Picker'
 import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../vuex/actions'
-import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getSecondsPerPick, getTeams } from '../vuex/getters'
+import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getPlayer, getSecondsPerPick, getTeams } from '../vuex/getters'
 
 export default {
   created: function () {
@@ -75,6 +77,7 @@ export default {
     getters: {
       draftOrderTypes: getDraftOrderTypes,
       draftOrderType: getDraftOrderTypeLeague,
+      getPlayer: getPlayer,
       lastStateEntry: getLastStateEntry,
       pickCountRemaining: getPickCountRemaining,
       picks: getPicks,
@@ -92,8 +95,10 @@ export default {
   data () {
     return {
       current: {
-        pickNumberOverall: 1,
-        pickNumberRound: 1,
+        pickNumber: {
+          overall: 1,
+          round: 1
+        },
         pickSecondsLeft: 0,
         round: 1,
         teamIndex: 0
@@ -123,17 +128,16 @@ export default {
   },
 
   methods: {
-    addPick: function (player) {
+    addPick: function (newPlayer) {
       this.addStateEntry(Object.assign({}, this.current))
       this.resetPickSecondsLeft()
 
-      const pick = {
-        numberOverall: this.current.pickNumberOverall,
-        numberRound: this.current.pickNumberRound,
-        player,
-        round: this.current.round,
-        team: this.teams[this.current.teamIndex]
-      }
+      let player = this.getPlayer(newPlayer.id)
+      console.log(newPlayer)
+      console.log(player)
+      let pickNumberPosition = this.picks.filter(pick => pick.player.positionKey === player.positionKey).length + 1
+      let pickNumber = new PickNumber(this.current.pickNumber.overall, pickNumberPosition, this.current.pickNumber.round)
+      let pick = new Pick(pickNumber, player, this.current.round, this.teams[this.current.teamIndex])
 
       this.updateCurrentState()
       this.addPickToState(pick)
@@ -162,25 +166,25 @@ export default {
     updateCurrentStateSequential: function () {
       if (this.current.teamIndex === this.teams.length - 1) {
         this.current.round += 1
-        this.current.pickNumberRound = 1
+        this.current.pickNumber.round = 1
         this.current.teamIndex = 0
       } else {
-        this.current.pickNumberOverall += 1
-        this.current.pickNumberRound += 1
+        this.current.pickNumber.overall += 1
+        this.current.pickNumber.round += 1
         this.current.teamIndex += 1
       }
     },
     updateCurrentStateSerpentine: function () {
-      this.current.pickNumberOverall += 1
+      this.current.pickNumber.overall += 1
 
-      if (this.current.pickNumberOverall % (this.teams.length) === 1) {
+      if (this.current.pickNumber.overall % (this.teams.length) === 1) {
         this.current.round += 1
-        this.current.pickNumberRound = 1
+        this.current.pickNumber.round = 1
       } else {
-        this.current.pickNumberRound += 1
+        this.current.pickNumber.round += 1
       }
 
-      if (this.current.pickNumberRound === 1) {
+      if (this.current.pickNumber.round === 1) {
         return
       } else {
         const isEvenRound = this.current.round % 2
@@ -190,8 +194,8 @@ export default {
   },
 
   events: {
-    'add-pick': function (player) {
-      this.addPick(player)
+    'add-pick': function (playerID) {
+      this.addPick(playerID)
     }
   }
 }
@@ -201,7 +205,7 @@ $(document).ready(function () {
   var saveDraft = () => {
     var a = document.createElement('a')
     a.setAttribute('href', 'data:text/plain;charset=utf-u,' + encodeURIComponent(JSON.stringify(window.vueDraft.picks)))
-    a.setAttribute('download', `avid-draft-${new Date().toISOString().slice(0, 10)}-${window.vueDraft.current.pickNumberOverall - 1}`)
+    a.setAttribute('download', `avid-draft-${new Date().toISOString().slice(0, 10)}-${window.vueDraft.current.pickNumber.overall - 1}`)
     a.click()
   }
 

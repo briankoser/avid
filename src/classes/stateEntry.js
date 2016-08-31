@@ -1,9 +1,7 @@
-module.exports.StateEntry = StateEntry
-
-var StateEntry = function (pickNumberOverall, pickNumberRound, pickSecondsLeft, round, teamIndex) {
-  this.pickNumberOverall = pickNumberOverall
-  this.pickNumberRound = pickNumberRound
+function StateEntry (pickNumber, pickSecondsLeft, round, teamIndex) {
+  this.pickNumber = pickNumber
   this.pickSecondsLeft = pickSecondsLeft
   this.round = round
   this.teamIndex = teamIndex
 }
+export default StateEntry

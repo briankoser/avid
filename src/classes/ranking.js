@@ -1,6 +1,6 @@
-module.exports.Ranking = Ranking
-
-var Ranking = function (overall, position) {
+function Ranking (overall, stdDev, position) {
   this.overall = overall
+  this.stdDev = stdDev
   this.position = position
 }
+export default Ranking

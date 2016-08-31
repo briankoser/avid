@@ -62,8 +62,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Display player team in autofill
 - [ ] Default to user's roster
 - [ ] Use flex to extend width of pick grids
-
 - [ ] Option to hide already drafted players from rankings
+
 - [ ] Position tiers
 - [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
 - [ ] Style empty required roster spots
@@ -84,9 +84,11 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
 - [ ] Switch user, at least for post-draft reports
 - [ ] About link in sidebar
+- [ ] Use standard deviation to color the overall ranking background to show confidence in ranking
 
-## Technical Debt
+## Refactor
 - [ ] Split Draft.vue into smaller components
+- [ ] Better structure objects (players, rankings, etc.)
 - [ ] Use Vuex modules (https://vuex.vuejs.org/en/structure.html)
 - [ ] SASS for variables
 

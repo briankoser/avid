@@ -7,6 +7,10 @@ import App from './App'
 
 Vue.use(VueResource)
 
+Vue.filter('round', function (n) {
+  return Math.round(n)
+})
+
 Vue.filter('two_digits', function (n) {
   return ('0' + n).slice(-2)
 })
