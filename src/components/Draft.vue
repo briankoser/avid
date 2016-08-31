@@ -200,6 +200,7 @@ export default {
   events: {
     'add-pick': function (playerID) {
       this.addPick(playerID)
+      $('.draft-picks').trigger('pickAdd')
     }
   }
 }
@@ -214,6 +215,14 @@ $(document).ready(function () {
   }
 
   $('#saveDraft').on('click', saveDraft)
+
+  var scrollDown = (self) => {
+    self.scrollTop = self.scrollHeight - self.clientHeight
+  }
+
+  $('.draft-picks').on('pickAdd', function (event) {
+    setTimeout(scrollDown, 50, this) // give Vue time to re-render
+  })
 })
 </script>
 

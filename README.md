@@ -56,8 +56,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Restrict rounds to top of screen
 - [x] Rankings players team logos
 - [x] Roster column: number of position selected in draft (eg 3rd RB overall)
-- [ ] Instead of displaying all draft rounds, display only the current round
-- [ ] Add dropdown to choose draft round
+- [x] Keep draft rounds scrolled to bottom as picks are made
 - [ ] Display position max
 - [ ] Display player team in autofill
 - [ ] Default to user's roster
