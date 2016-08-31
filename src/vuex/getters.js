@@ -87,11 +87,12 @@ export function getPlayers (state) {
 
 export function getRoster (state) {
   return (teamName) => {
+    let picks = state.picks.filter(pick => pick.team.name === teamName)
     let positionKeys = getPositionKeysLeague(state)
     let roster = positionKeys.map(positionKey => {
       return {
         positionKey: positionKey,
-        picks: state.picks.filter(y => y.player.positionKey === positionKey)
+        picks: picks.filter(pick => pick.player.positionKey === positionKey)
       }
     })
 

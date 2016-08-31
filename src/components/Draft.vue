@@ -56,8 +56,10 @@
 </template>
 
 <script>
+import NflTeam from '../classes/nflTeam'
 import Pick from '../classes/pick'
 import PickNumber from '../classes/pickNumber'
+import Player from '../classes/player'
 import Countdown from './Countdown'
 import Picker from './Picker'
 import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../vuex/actions'
@@ -133,8 +135,10 @@ export default {
       this.resetPickSecondsLeft()
 
       let player = this.getPlayer(newPlayer.id)
-      console.log(newPlayer)
-      console.log(player)
+      if (player === undefined) { // unranked player
+        let nflTeam = new NflTeam(newPlayer.team, 0)
+        player = new Player(newPlayer.id, newPlayer.name, newPlayer.position, nflTeam)
+      }
       let pickNumberPosition = this.picks.filter(pick => pick.player.positionKey === player.positionKey).length + 1
       let pickNumber = new PickNumber(this.current.pickNumber.overall, pickNumberPosition, this.current.pickNumber.round)
       let pick = new Pick(pickNumber, player, this.current.round, this.teams[this.current.teamIndex])

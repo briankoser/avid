@@ -55,7 +55,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Rankings players teams
 - [x] Restrict rounds to top of screen
 - [x] Rankings players team logos
-- [ ] Roster column: number of position selected in draft (eg 3rd RB overall)
+- [x] Roster column: number of position selected in draft (eg 3rd RB overall)
 - [ ] Instead of displaying all draft rounds, display only the current round
 - [ ] Add dropdown to choose draft round
 - [ ] Display position max
@@ -87,8 +87,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Use standard deviation to color the overall ranking background to show confidence in ranking
 
 ## Refactor
+- [x] Better structure objects (players, rankings, etc.)
 - [ ] Split Draft.vue into smaller components
-- [ ] Better structure objects (players, rankings, etc.)
 - [ ] Use Vuex modules (https://vuex.vuejs.org/en/structure.html)
 - [ ] SASS for variables
 
