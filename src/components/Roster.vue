@@ -1,7 +1,9 @@
 <template>
   <aside>
     <select v-model="teamSelected">
-      <option v-for="team in teamsAlpha">{{ team.name }}</option>
+      <template v-for="team in teamsAlpha">
+      <option v-bind:selected="team.isUser ? 'selected' : null">{{ team.name }}</option>
+      </template>
     </select>
     <!--<button v-on:click="" class="button-primary">Start draft!</button>-->
 
