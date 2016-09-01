@@ -24,14 +24,10 @@
 <script>
 import PositionHeatMaps from './PositionHeatMaps'
 import Rankings from './Rankings'
-import { fetchPlayers } from '../vuex/actions'
 import { getPicks, getPositionKeysLeague } from '../vuex/getters'
 
 export default {
   vuex: {
-    actions: {
-      fetchPlayers
-    },
     getters: {
       picks: getPicks,
       positionKeys: getPositionKeysLeague
@@ -41,12 +37,6 @@ export default {
   components: {
     'position-heat-maps': PositionHeatMaps,
     Rankings
-  },
-
-  created () {
-    if (this.players.length === 0) {
-      this.fetchPlayers()
-    }
   },
 
   data () {

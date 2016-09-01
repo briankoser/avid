@@ -18,13 +18,12 @@
 <script>
 import { getPlayers } from '../vuex/getters'
 import logoMixin from '../mixins/logo'
+import { fetchPlayers } from '../vuex/actions'
 
 export default {
-  mixins: [logoMixin],
-
-  vuex: {
-    getters: {
-      players: getPlayers
+  created () {
+    if (this.players.length === 0) {
+      this.fetchPlayers()
     }
   },
 
@@ -34,6 +33,17 @@ export default {
     },
     positionSelected: {
       type: String
+    }
+  },
+
+  mixins: [logoMixin],
+
+  vuex: {
+    actions: {
+      fetchPlayers
+    },
+    getters: {
+      players: getPlayers
     }
   },
 

@@ -1,58 +1,27 @@
 <template>
-  <div class="draft">
+<div class="draft">
     <div class="grid">
-      <div class="col-8">
-        <div class="draft-picks">
-          <template v-for="round in rounds"> 
-          <h1 class="epsilon">Round {{ round.number }}</h1>
-          <ol class="tight">
-              <li v-for="pick in round.picks">
-                {{ pick.team.name }} → <strong>{{ pick.player.name }}</strong> 
-                <span class="position milli">{{ pick.player.position }}</span>
-              </li>
-          </ol>
-          </template>
+        <div class="col-8">
+            <draft-picks :rounds="rounds"></draft-picks>
+            <button id="saveDraft" class="save-draft">Download</button>
         </div>
-        <button id="saveDraft" class="save-draft">Download</button>
-      </div>
-      <div class="draft-order milli col-4">
-        <h1 class="primary-bg white keno">DRAFT ORDER</h1>
-        <ol class="subtle-grey-bg tight">
-          <li v-for="team in teams">
-            <span v-show="team.name === currentTeam">
-              <b class="primary" title="{{ team.owner }}">{{ team.name }}</b>
-            </span>
-            <span v-else>
-              <span :class="{ 'user-team': team.isUser }" title="{{ team.owner }}">{{ team.name }}</span>
-            </span>
-          </li>
-        </ol>
-      </div>
+        <div class="col-4">
+            <draft-queue :current-team="currentTeam"></draft-queue>
+        </div>
     </div>
 
     <div v-if="pickCountRemaining > 0" class="pickerArea"> <!--subtle-grey-bg-->
-      <div class="center">
-        <countdown :seconds.sync="current.pickSecondsLeft"></countdown>
-      </div>
+        <div class="center">
+            <countdown :seconds.sync="current.pickSecondsLeft"></countdown>
+        </div>
 
-      <div class="pickControls grid">
-        <div class="pickInfo col-4">
-          <div class="zeta">Pick {{ current.pickNumber.overall }}</div> 
-          <div class="team epsilon">{{ currentTeam }}</div>
-        </div>
-        <div class="col-8">
-          <picker :current-team="currentTeam"></picker>
-        </div>
-        <div class="col-12 right">
-          <button v-on:click="removePick">Undo</button>
-        </div>
-      </div>
+        <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam"></pick-controls>
     </div>
-  </div>
+</div>
 
-  <div v-if="pickCountRemaining === 0" class="postDraft">
-    Draft over!
-  </div>
+<div v-if="pickCountRemaining === 0" class="postDraft">
+  Draft over!
+</div>
 </template>
 
 <script>
@@ -60,8 +29,12 @@ import NflTeam from '../classes/nflTeam'
 import Pick from '../classes/pick'
 import PickNumber from '../classes/pickNumber'
 import Player from '../classes/player'
+
 import Countdown from './Countdown'
-import Picker from './Picker'
+import DraftPicks from './DraftPicks'
+import DraftQueue from './DraftQueue'
+import PickControls from './PickControls'
+
 import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../vuex/actions'
 import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getPlayer, getSecondsPerPick, getTeams } from '../vuex/getters'
 
@@ -72,7 +45,9 @@ export default {
 
   components: {
     Countdown,
-    Picker
+    'draft-queue': DraftQueue,
+    'draft-picks': DraftPicks,
+    'pick-controls': PickControls
   },
 
   vuex: {
@@ -200,7 +175,10 @@ export default {
   events: {
     'add-pick': function (playerID) {
       this.addPick(playerID)
-      $('.draft-picks').trigger('pickAdd')
+      this.$broadcast('pick-added', playerID)
+    },
+    'remove-pick': function () {
+      this.removePick()
     }
   }
 }
@@ -215,58 +193,10 @@ $(document).ready(function () {
   }
 
   $('#saveDraft').on('click', saveDraft)
-
-  var scrollDown = (self) => {
-    self.scrollTop = self.scrollHeight - self.clientHeight
-  }
-
-  $('.draft-picks').on('pickAdd', function (event) {
-    setTimeout(scrollDown, 50, this) // give Vue time to re-render
-  })
 })
 </script>
 
 <style scoped>
-.draft-order > * {
-  padding: 5px 10px;
-}
-
-.draft-order,
-.draft-order h1 {
-  border-radius: 4px 4px 0 0;
-}
-
-.draft-order h1 {
-  font-weight: bold;
-  padding: 10px 0 5px 10px;
-}
-
-.draft-order ol {
-  list-style-type: none;
-}
-
-.draft-picks {
-  max-height: 22em;
-  overflow: auto;
-}
-
-.pickInfo {
-  line-height: 1em;
-}
-
-.pickInfo div {
-  margin: 0;
-}
-
-.pickInfo .team {
-  margin-top: -0.3em;
-}
-
-.pickInfo .position {
-  font-family: Consolas, monospace;
-  text-transform: uppercase;
-}
-
 .save-draft {
   margin: 2rem 0 0 0;
 }
