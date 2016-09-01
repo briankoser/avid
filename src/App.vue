@@ -2,7 +2,7 @@
   <div id="app" class="grid">
     <div class="main-container col-8">
       <draft></draft>
-      <rankings></rankings>
+      <command-center></command-center>
     </div>
 
     <div class="side-container col-4 dark-grey-bg white">
@@ -13,15 +13,15 @@
 </template>
 
 <script>
+import CommandCenter from './components/CommandCenter'
 import Draft from './components/Draft'
-import Rankings from './components/Rankings'
 import Roster from './components/Roster'
 import store from './vuex/store'
 
 export default {
   components: {
+    'command-center': CommandCenter,
     Draft,
-    Rankings,
     Roster
   },
   store

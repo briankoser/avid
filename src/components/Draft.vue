@@ -32,7 +32,7 @@
 
     <div v-if="pickCountRemaining > 0" class="pickerArea"> <!--subtle-grey-bg-->
       <div class="center">
-        <countdown :seconds.sync="current.pickSecondsLeft" ></countdown>
+        <countdown :seconds.sync="current.pickSecondsLeft"></countdown>
       </div>
 
       <div class="pickControls grid">

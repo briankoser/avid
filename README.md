@@ -62,18 +62,16 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Default to user's roster
 - [x] Display player team in autofill
 
-- [ ] Position tiers
-- [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
-- [ ] Style empty required roster spots
-- [ ] Display remaining pick count
-- [ ] Option to switch between public and private at start
-- [ ] Export rankings
+- [ ] Export settings (rankings, league settings)
 - [ ] Pre-draft ranking
 - [ ] Player tags: target, avoid, coming off injury
+- [ ] Position tiers
+- [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
+- [ ] Display remaining pick count
 - [ ] Start draft button
 - [ ] Conditionally show/hide elements before and after draft
 - [ ] Option to automatically switch to roster of currently picking team
-- [ ] Input settings: team names, positions, league size, draft type, etc.
+- [ ] Input settings: team names, positions, league size, draft type, public or private draft, etc.
 - [ ] Display position max
 - [ ] Keepers
 - [ ] Injury information
@@ -84,10 +82,12 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Switch user, at least for post-draft reports
 - [ ] About link in sidebar
 - [ ] Use standard deviation to color the overall ranking background to show confidence in ranking
+- [ ] Style empty required roster spots
 
 ## Refactor
 - [x] Better structure objects (players, rankings, etc.)
-- [ ] Split Draft.vue into smaller components
+- [x] Split Rankings into smaller components: PositionHeatMaps
+- [ ] Split Draft.vue into smaller components: DraftPicks, DraftOrder
 - [ ] Use Vuex modules (https://vuex.vuejs.org/en/structure.html)
 - [ ] SASS for variables
 
