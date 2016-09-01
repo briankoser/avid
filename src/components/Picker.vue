@@ -6,11 +6,23 @@
 
 <script>
 import { getPicksIDs, getPositionKeysLeague, getPositionsTeamRemaining } from '../vuex/getters'
-let $ = require('jquery')
+import logoMixin from '../mixins/logo'
+
 require('typeahead.js')
+let $ = require('jquery')
 let Bloodhound = require('typeahead.js/dist/bloodhound.js')
 
 export default {
+  mixins: [logoMixin],
+
+  vuex: {
+    getters: {
+      picks: getPicksIDs,
+      positionKeys: getPositionKeysLeague,
+      positionLimits: getPositionsTeamRemaining
+    }
+  },
+
   created: function () {
     window.vuePicker = this
   },
@@ -24,14 +36,6 @@ export default {
   data () {
     return {
       player: ''
-    }
-  },
-
-  vuex: {
-    getters: {
-      picks: getPicksIDs,
-      positionKeys: getPositionKeysLeague,
-      positionLimits: getPositionsTeamRemaining
     }
   },
 
@@ -91,7 +95,10 @@ $(document).ready(function () {
     templates: {
       empty: '<div class="empty-message">No players found</div>',
       suggestion: function (data) {
-        return `<p>${data.name} (${data.position.toUpperCase()}) </p>`
+        return `<div>
+            ${data.name} <span class="milli">(${data.position.toUpperCase()})</span>
+            <img src="${window.vuePicker.logoPath(data.team)}" alt="${data.team}" class="team-logo" /> 
+          </div>`
       }
     }
   })
@@ -171,5 +178,11 @@ $(document).ready(function () {
 .picker .empty-message {
   padding: 5px 10px;
   text-align: center;
+}
+
+.team-logo {
+  height: 20px;
+  width: 30px;
+  vertical-align: middle;
 }
 </style>

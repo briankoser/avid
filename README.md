@@ -60,7 +60,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Option to hide already drafted players from rankings
 - [x] Use flex to extend width of pick grids
 - [x] Default to user's roster
-- [ ] Display player team in autofill
+- [x] Display player team in autofill
 
 - [ ] Position tiers
 - [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow

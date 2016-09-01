@@ -42,8 +42,23 @@
 <script>
 import { fetchPlayers } from '../vuex/actions'
 import { getPickGridData, getPicks, getPlayers, getPositionKeysLeague } from '../vuex/getters'
+import logoMixin from '../mixins/logo'
 
 export default {
+  mixins: [logoMixin],
+
+  vuex: {
+    actions: {
+      fetchPlayers
+    },
+    getters: {
+      pickGridData: getPickGridData,
+      picks: getPicks,
+      positionKeys: getPositionKeysLeague,
+      players: getPlayers
+    }
+  },
+
   created () {
     if (this.players.length === 0) {
       this.fetchPlayers()
@@ -58,23 +73,8 @@ export default {
   },
 
   methods: {
-    logoPath (team) {
-      return require(`assets/img/team-logos/${team.toLowerCase()}.png`)
-    },
     playersByPosition: function (position) {
       return this.players.filter(player => position === 'All' || player.positionKey === position)
-    }
-  },
-
-  vuex: {
-    actions: {
-      fetchPlayers
-    },
-    getters: {
-      pickGridData: getPickGridData,
-      picks: getPicks,
-      positionKeys: getPositionKeysLeague,
-      players: getPlayers
     }
   }
 }
