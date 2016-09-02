@@ -79,7 +79,8 @@ const state = {
         { positionKey: 'TE', count: 1 },
         { positionKey: 'PK', count: 1 },
         { positionKey: 'Def', count: 1 }
-      ]
+      ],
+      rankings: []
     }
 
     /*
@@ -136,6 +137,9 @@ const mutations = {
   },
   SETPLAYERS (state, players) {
     state.players = players
+  },
+  SETTEAMRANKINGS (state, rankings) {
+    state.settings.team.rankings = rankings
   },
   UNDOLASTPICK (state) {
     state.picks.pop()

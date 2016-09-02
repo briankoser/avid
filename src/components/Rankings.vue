@@ -49,7 +49,9 @@ export default {
 
   methods: {
     playersByPosition: function (position) {
-      return this.players.filter(player => position === 'All' || player.positionKey === position)
+      return this.players
+        .filter(player => position === 'All' || player.positionKey === position)
+        .sort((a, b) => a.ranking.overall - b.ranking.overall)
     }
   }
 }

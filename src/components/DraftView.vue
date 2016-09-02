@@ -42,6 +42,8 @@ import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../vuex/ac
 import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getPlayer, getSecondsPerPick, getTeams } from '../vuex/getters'
 
 export default {
+  name: 'DraftView',
+
   created: function () {
     window.vueDraft = this
   },

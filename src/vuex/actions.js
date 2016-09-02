@@ -1,4 +1,5 @@
 import fetchJson from '../services/fetchJson'
+import rankingsMixin from '../mixins/rankings'
 import math from 'mathjs'
 import NflTeam from '../classes/nflTeam'
 import Ranking from '../classes/ranking'
@@ -34,12 +35,7 @@ export const fetchPlayers = ({ dispatch, state }) => {
     .filter(player => player.ranking.overall !== undefined)
     .sort((a, b) => a.ranking.overall - b.ranking.overall)
 
-    rankedPlayers = rankedPlayers.map((player, i, arr) => {
-      player.ranking.position = arr
-        .filter(x => x.positionKey === player.positionKey)
-        .findIndex(x => x.id === player.id) + 1
-      return player
-    })
+    rankedPlayers = rankingsMixin.methods.setPositionRankings(rankedPlayers)
 
     dispatch('SETPLAYERS', rankedPlayers)
   }, (response) => {
@@ -47,6 +43,8 @@ export const fetchPlayers = ({ dispatch, state }) => {
     dispatch('SETPLAYERS', [])
   })
 }
+
+export const setTeamRankings = ({ dispatch, state }, rankings) => dispatch('SETTEAMRANKINGS', rankings)
 
 export const undoLastPick = ({ dispatch, state }) => dispatch('UNDOLASTPICK')
 
