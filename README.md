@@ -63,9 +63,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Display player team in autofill
 - [x] Routing: Home, About, Draft, Ranking, Settings
 
+- [ ] Import rankings
 - [ ] Pre-draft ranking
 - [ ] Export rankings
-- [ ] Import rankings
 - [ ] Save rankings in localdb
 - [ ] Player tags: target, avoid, coming off injury
 - [ ] Position tiers
@@ -85,11 +85,12 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Work offline
 - [ ] Load player list from online (vue-resource)
 - [ ] Load player list from different sources (ESPN, Yahoo, MyFantasyLeague)
+- [ ] Compare two sources to find players that are underrated
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
 - [ ] Post-draft report for all teams
 - [ ] Use standard deviation to color the overall ranking background to show confidence in ranking
 - [ ] Style empty required roster spots
-- [ ] REST api to save settings and rankings and settings
+- [ ] REST api to save and fetch settings and rankings
 
 ## Refactor
 - [x] Better structure objects (players, rankings, etc.)
