@@ -62,10 +62,16 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Default to user's roster
 - [x] Display player team in autofill
 
-- [ ] Export settings (rankings, league settings)
 - [ ] Pre-draft ranking
+- [ ] Export rankings
+- [ ] Import rankings
+- [ ] Save rankings in localdb
 - [ ] Player tags: target, avoid, coming off injury
 - [ ] Position tiers
+- [ ] Enter settings
+- [ ] Export settings
+- [ ] Import settings
+- [ ] Save settings in localdb
 - [ ] Instead of static draft order, show next X picks (where X is number of teams) to make snake draft order easier to follow
 - [ ] Display remaining pick count
 - [ ] Start draft button
