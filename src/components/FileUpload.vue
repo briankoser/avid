@@ -18,8 +18,20 @@ export default {
     sendFile: function (file) {
       this.$dispatch('send-file', file)
     }
+  },
+  ready () {
+    var dropzone = document.getElementById('formDropzone')
+
+    if (dropzone) {
+      dropzone.addEventListener('dragenter', dragenter, false)
+      dropzone.addEventListener('dragleave', dragleave, false)
+      dropzone.addEventListener('dragover', dragover, false)
+      dropzone.addEventListener('drop', drop, false)
+    }
   }
 }
+
+let $ = require('jquery')
 
 function dragenter (e) {
   e.stopPropagation()
@@ -54,15 +66,6 @@ function drop (e) {
 
   $(e.target).hide()
 }
-
-let $ = require('jquery')
-$(document).ready(function () {
-  var dropbox = document.getElementById('formDropzone')
-  dropbox.addEventListener('dragenter', dragenter, false)
-  dropbox.addEventListener('dragleave', dragleave, false)
-  dropbox.addEventListener('dragover', dragover, false)
-  dropbox.addEventListener('drop', drop, false)
-})
 </script>
 
 <style scoped>

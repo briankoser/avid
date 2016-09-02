@@ -64,6 +64,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Routing: Home, About, Draft, Ranking, Settings
 - [x] Import rankings
 
+- [ ] Overwrite rankings with team rankings
 - [ ] Pre-draft ranking
 - [ ] Export rankings
 - [ ] Save rankings in localdb
@@ -96,6 +97,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Better structure objects (players, rankings, etc.)
 - [x] Split Rankings into smaller components: PositionHeatMaps, CommandCenter, Rankings
 - [x] Split Draft.vue into smaller components: DraftPicks, DraftQueue, PickControls
+- [ ] Replace $(document).ready with ready ()
 - [ ] Use Vuex modules (https://vuex.vuejs.org/en/structure.html)
 - [ ] SASS for variables
 

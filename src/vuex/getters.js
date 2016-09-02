@@ -1,3 +1,5 @@
+import rankingsMixin from '../mixins/rankings'
+
 export function getDraftOrderTypes (state) {
   return state.settings.app.draftOrderTypes
 }
@@ -70,19 +72,39 @@ export function getPlayer (state) {
 }
 
 export function getPlayers (state) {
-  return state.players.map(player => {
-    let pick = state.picks.find(pick => pick.player.id === player.id)
-    if (pick === undefined) {
-      player.pickStatus = 'a' // available
-    } else if (pick.team.isUser) {
-      player.pickStatus = 'u' // user drafted
-    } else {
-      player.pickStatus = 'd' // drafted, not by user
-    }
+  let players = state.players
+    .filter(player => getPositionKeysLeague(state).includes(player.positionKey))
+    .map(player => {
+      let pick = state.picks.find(pick => pick.player.id === player.id)
+      if (pick === undefined) {
+        player.pickStatus = 'a' // available
+      } else if (pick.team.isUser) {
+        player.pickStatus = 'u' // user drafted
+      } else {
+        player.pickStatus = 'd' // drafted, not by user
+      }
 
-    return player
+      return player
+    })
+
+  state.settings.team.rankings.forEach(newRanking => {
+    let player = players.find(player => player.id === newRanking.id)
+
+    if (player) {
+      // players = players.map(x => {
+      //   if (x.ranking.overall >= newRanking.ranking) {
+      //     x.ranking.overall += 1
+      //   }
+
+      //   return x
+      // })
+      player.ranking.overall = newRanking.ranking
+    }
   })
-  .filter(player => getPositionKeysLeague(state).includes(player.positionKey))
+
+  // players = rankingsMixin.methods.setPositionRankings(players)
+
+  return players
 }
 
 export function getRoster (state) {
