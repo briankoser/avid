@@ -6,6 +6,12 @@
 
     <div class="side-container col-4 dark-grey-bg white">
       <h1 class="site-header primary-bg">avid</h1>
+      <nav class="site-nav secondary-bg">
+        <a v-link="{ path: '/ranking' }">Rank</a> 
+        <a v-link="{ path: '/draft' }">Draft</a>
+        <a v-link="{ path: '/settings' }">Settings</a>
+        <a v-link="{ path: '/about' }">About</a>
+      </nav>
       <roster></roster>
     </div>
   </div>
@@ -55,15 +61,6 @@ table {
   padding: 0;
 }
 
-.site-header {
-  font-weight: 700;
-  padding-left: 20px;
-}
-
-.rankings {
-  margin-top: 1em;
-}
-
 
 /*
   ELEMENTS
@@ -103,6 +100,14 @@ a {
 
 .primary-bg {
   background-color: #4caf50;
+}
+
+.secondary {
+  color: #ff8f00;
+}
+
+.secondary-bg {
+  background-color: #ff8f00;
 }
 
 .black {
@@ -165,8 +170,17 @@ a {
 /*
   OTHER STYLES
 */
-.tight li {
-  margin-bottom: 0.5rem;
+.site-header,
+.site-nav {
+  padding-left: 20px;
+}
+
+.site-header {
+  font-weight: 700;
+}
+
+.site-nav a {
+  color: #fafafa;
 }
 
 .site-title {
@@ -175,5 +189,25 @@ a {
   text-align: center;
   border-left: 30px solid #bdbdbd;
   border-right: 30px solid #bdbdbd;
+}
+
+.site-nav a::before {
+  content: '🏈';
+  display: inline-block;
+  font-size: .75em;
+  padding-right: 10px;
+  vertical-align: text-top;
+}
+
+.site-nav a:not(:first-child)::before {
+  padding-left: 20px;
+}
+
+.rankings {
+  margin-top: 1em;
+}
+
+.tight li {
+  margin-bottom: 0.5rem;
 }
 </style>
