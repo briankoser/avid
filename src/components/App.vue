@@ -9,6 +9,7 @@
       <nav class="site-nav secondary-bg">
         <a v-link="{ path: '/ranking' }">Rank</a> 
         <a v-link="{ path: '/draft' }">Draft</a>
+        <a v-link="{ path: '/report' }">Report</a>
         <a v-link="{ path: '/settings' }">Settings</a>
         <a v-link="{ path: '/about' }">About</a>
       </nav>
