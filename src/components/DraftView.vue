@@ -1,27 +1,29 @@
 <template>
-<div class="draft">
-    <div class="grid">
-        <div class="col-8">
-            <draft-picks :rounds="rounds"></draft-picks>
-            <button id="saveDraft" class="save-draft">Download</button>
+    <div class="draft-view">
+        <div class="grid">
+            <div class="col-8">
+                <draft-picks :rounds="rounds"></draft-picks>
+                <button id="saveDraft" class="save-draft">Download</button>
+            </div>
+            <div class="col-4">
+                <draft-queue :current-team="currentTeam"></draft-queue>
+            </div>
         </div>
-        <div class="col-4">
-            <draft-queue :current-team="currentTeam"></draft-queue>
+
+        <div v-if="pickCountRemaining > 0" class="pickerArea"> <!--subtle-grey-bg-->
+            <div class="center">
+                <countdown :seconds.sync="current.pickSecondsLeft"></countdown>
+            </div>
+
+            <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam"></pick-controls>
         </div>
     </div>
 
-    <div v-if="pickCountRemaining > 0" class="pickerArea"> <!--subtle-grey-bg-->
-        <div class="center">
-            <countdown :seconds.sync="current.pickSecondsLeft"></countdown>
-        </div>
-
-        <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam"></pick-controls>
+    <div v-if="pickCountRemaining === 0" class="postDraft">
+      Draft over!
     </div>
-</div>
 
-<div v-if="pickCountRemaining === 0" class="postDraft">
-  Draft over!
-</div>
+    <command-center></command-center>
 </template>
 
 <script>
@@ -30,6 +32,7 @@ import Pick from '../classes/pick'
 import PickNumber from '../classes/pickNumber'
 import Player from '../classes/player'
 
+import CommandCenter from './CommandCenter'
 import Countdown from './Countdown'
 import DraftPicks from './DraftPicks'
 import DraftQueue from './DraftQueue'
@@ -39,11 +42,14 @@ import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../vuex/ac
 import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getPlayer, getSecondsPerPick, getTeams } from '../vuex/getters'
 
 export default {
+  name: 'DraftView',
+
   created: function () {
     window.vueDraft = this
   },
 
   components: {
+    'command-center': CommandCenter,
     Countdown,
     'draft-queue': DraftQueue,
     'draft-picks': DraftPicks,

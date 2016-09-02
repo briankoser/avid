@@ -1,8 +1,7 @@
 <template>
   <div id="app" class="grid">
     <div class="main-container col-8">
-      <draft></draft>
-      <command-center></command-center>
+      <router-view></router-view>
     </div>
 
     <div class="side-container col-4 dark-grey-bg white">
@@ -13,15 +12,11 @@
 </template>
 
 <script>
-import CommandCenter from './components/CommandCenter'
-import Draft from './components/Draft'
-import Roster from './components/Roster'
-import store from './vuex/store'
+import Roster from './Roster'
+import store from '../vuex/store'
 
 export default {
   components: {
-    'command-center': CommandCenter,
-    Draft,
     Roster
   },
   store

@@ -62,6 +62,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Default to user's roster
 - [x] Display player team in autofill
 
+- [ ] Routing: Home, About, Draft, Ranking, Settings
 - [ ] Pre-draft ranking
 - [ ] Export rankings
 - [ ] Import rankings
@@ -89,6 +90,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] About link in sidebar
 - [ ] Use standard deviation to color the overall ranking background to show confidence in ranking
 - [ ] Style empty required roster spots
+- [ ] REST api to save settings and rankings and set 
 
 ## Refactor
 - [x] Better structure objects (players, rankings, etc.)
