@@ -1,27 +1,29 @@
 <template>
   <div id="app" class="grid">
     <div class="main-container col-8">
-      <draft></draft>
-      <command-center></command-center>
+      <router-view></router-view>
     </div>
 
     <div class="side-container col-4 dark-grey-bg white">
       <h1 class="site-header primary-bg">avid</h1>
+      <nav class="site-nav secondary-bg">
+        <a v-link="{ path: '/ranking' }">Rank</a> 
+        <a v-link="{ path: '/draft' }">Draft</a>
+        <a v-link="{ path: '/report' }">Report</a>
+        <a v-link="{ path: '/settings' }">Settings</a>
+        <a v-link="{ path: '/about' }">About</a>
+      </nav>
       <roster></roster>
     </div>
   </div>
 </template>
 
 <script>
-import CommandCenter from './components/CommandCenter'
-import Draft from './components/Draft'
-import Roster from './components/Roster'
-import store from './vuex/store'
+import Roster from './Roster'
+import store from '../vuex/store'
 
 export default {
   components: {
-    'command-center': CommandCenter,
-    Draft,
     Roster
   },
   store
@@ -58,15 +60,6 @@ table {
 
 .side-container {
   padding: 0;
-}
-
-.site-header {
-  font-weight: 700;
-  padding-left: 20px;
-}
-
-.rankings {
-  margin-top: 1em;
 }
 
 
@@ -108,6 +101,14 @@ a {
 
 .primary-bg {
   background-color: #4caf50;
+}
+
+.secondary {
+  color: #ff8f00;
+}
+
+.secondary-bg {
+  background-color: #ff8f00;
 }
 
 .black {
@@ -170,8 +171,17 @@ a {
 /*
   OTHER STYLES
 */
-.tight li {
-  margin-bottom: 0.5rem;
+.site-header,
+.site-nav {
+  padding-left: 20px;
+}
+
+.site-header {
+  font-weight: 700;
+}
+
+.site-nav a {
+  color: #fafafa;
 }
 
 .site-title {
@@ -180,5 +190,25 @@ a {
   text-align: center;
   border-left: 30px solid #bdbdbd;
   border-right: 30px solid #bdbdbd;
+}
+
+.site-nav a::before {
+  content: '🏈';
+  display: inline-block;
+  font-size: .75em;
+  padding-right: 10px;
+  vertical-align: text-top;
+}
+
+.site-nav a:not(:first-child)::before {
+  padding-left: 20px;
+}
+
+.rankings {
+  margin-top: 1em;
+}
+
+.tight li {
+  margin-bottom: 0.5rem;
 }
 </style>

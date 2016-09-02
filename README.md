@@ -61,6 +61,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Use flex to extend width of pick grids
 - [x] Default to user's roster
 - [x] Display player team in autofill
+- [x] Routing: Home, About, Draft, Ranking, Settings
 
 - [ ] Pre-draft ranking
 - [ ] Export rankings
@@ -85,10 +86,10 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Load player list from online (vue-resource)
 - [ ] Load player list from different sources (ESPN, Yahoo, MyFantasyLeague)
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
-- [ ] Switch user, at least for post-draft reports
-- [ ] About link in sidebar
+- [ ] Post-draft report for all teams
 - [ ] Use standard deviation to color the overall ranking background to show confidence in ranking
 - [ ] Style empty required roster spots
+- [ ] REST api to save settings and rankings and settings
 
 ## Refactor
 - [x] Better structure objects (players, rankings, etc.)
