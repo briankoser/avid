@@ -62,8 +62,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Default to user's roster
 - [x] Display player team in autofill
 - [x] Routing: Home, About, Draft, Ranking, Settings
+- [x] Import rankings
 
-- [ ] Import rankings
 - [ ] Pre-draft ranking
 - [ ] Export rankings
 - [ ] Save rankings in localdb

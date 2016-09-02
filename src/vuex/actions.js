@@ -48,6 +48,8 @@ export const fetchPlayers = ({ dispatch, state }) => {
   })
 }
 
+export const setTeamRankings = ({ dispatch, state }, rankings) => dispatch('SETTEAMRANKINGS', rankings)
+
 export const undoLastPick = ({ dispatch, state }) => dispatch('UNDOLASTPICK')
 
 export const undoStateEntry = ({ dispatch, state }) => dispatch('UNDOSTATEENTRY')
