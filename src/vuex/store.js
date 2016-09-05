@@ -64,7 +64,7 @@ const state = {
         { name: '[BANDWAGON TEAM]', owner: 'Ellis Hicks', draftOrder: 4 },
         { name: 'tim’s Bold Team', owner: 'Tim', draftOrder: 5 },
         { name: 'Luke’s Legit Team', owner: 'Luke', draftOrder: 6 },
-        { name: 'Play It Again Sam', owner: 'Brian Koser', draftOrder: 7, isUser: true },
+        { name: 'From Wentz It Came', owner: 'Brian Koser', draftOrder: 7, isUser: true },
         { name: 'Christian’s Team', owner: 'Christian Boyer', draftOrder: 8 },
         { name: 'My Team Sucks!', owner: 'Steven', draftOrder: 9 },
         { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 10 },
