@@ -27,6 +27,38 @@ export default {
     window.vuePicker = this
   },
 
+  ready () {
+    let pick = $('.picker .typeahead')
+    let options = {
+      autoSelect: true,
+      hint: true,
+      minLength: 1
+    }
+
+    pick.typeahead(options, {
+      name: 'players',
+      source: function (query, callback) {
+        engine.search(query, function (suggestions) {
+          callback(filterLimits(filterPicked(suggestions)))
+        })
+      },
+      display: 'name',
+      templates: {
+        empty: '<div class="empty-message">No players found</div>',
+        suggestion: function (data) {
+          return `<div>
+              ${data.name} <span class="milli">(${data.position.toUpperCase()})</span>
+              <img src="${window.vuePicker.logoPath(data.team)}" alt="${data.team}" class="team-logo" /> 
+            </div>`
+        }
+      }
+    })
+
+    pick.bind('typeahead:select', function (ev, suggestion) {
+      window.vuePicker.addPick(suggestion)
+    })
+  },
+
   props: {
     currentTeam: {
       type: String
@@ -73,40 +105,7 @@ let engine = new Bloodhound({
 
 let teamPositionsRemaining = (id) => window.vuePicker.positionLimits(id)
 let filterLimits = (suggestions) => suggestions.filter(x => teamPositionsRemaining(window.vuePicker.currentTeam).includes(x.position))
-
 let filterPicked = (suggestions) => suggestions.filter(x => !window.vuePicker.picks.includes(x.id))
-
-$(document).ready(function () {
-  let pick = $('.picker .typeahead')
-  let options = {
-    autoSelect: true,
-    hint: true,
-    minLength: 1
-  }
-
-  pick.typeahead(options, {
-    name: 'players',
-    source: function (query, callback) {
-      engine.search(query, function (suggestions) {
-        callback(filterLimits(filterPicked(suggestions)))
-      })
-    },
-    display: 'name',
-    templates: {
-      empty: '<div class="empty-message">No players found</div>',
-      suggestion: function (data) {
-        return `<div>
-            ${data.name} <span class="milli">(${data.position.toUpperCase()})</span>
-            <img src="${window.vuePicker.logoPath(data.team)}" alt="${data.team}" class="team-logo" /> 
-          </div>`
-      }
-    }
-  })
-
-  pick.bind('typeahead:select', function (ev, suggestion) {
-    window.vuePicker.addPick(suggestion)
-  })
-})
 </script>
 
 <style>

@@ -63,8 +63,14 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Display player team in autofill
 - [x] Routing: Home, About, Draft, Ranking, Settings
 - [x] Import rankings
+- [x] Overwrite rankings with team rankings
 
-- [ ] Overwrite rankings with team rankings
+- [ ] Indicate which rankings have been moved, and in what direction
+- [ ] Use standard deviation to color the overall ranking background to show confidence in ranking
+- [ ] Indicate current page in nav
+- [ ] List in roster the number picks available for the team
+- [ ] Move tiers based on teams in league
+
 - [ ] Pre-draft ranking
 - [ ] Export rankings
 - [ ] Save rankings in localdb
@@ -89,7 +95,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Compare two sources to find players that are underrated
 - [ ] Transitions ([vue-animate](https://github.com/haydenbbickerton/vue-animate))
 - [ ] Post-draft report for all teams
-- [ ] Use standard deviation to color the overall ranking background to show confidence in ranking
 - [ ] Style empty required roster spots
 - [ ] REST api to save and fetch settings and rankings
 
@@ -97,7 +102,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Better structure objects (players, rankings, etc.)
 - [x] Split Rankings into smaller components: PositionHeatMaps, CommandCenter, Rankings
 - [x] Split Draft.vue into smaller components: DraftPicks, DraftQueue, PickControls
-- [ ] Replace $(document).ready with ready ()
+- [x] Replace $(document).ready with ready ()
 - [ ] Use Vuex modules (https://vuex.vuejs.org/en/structure.html)
 - [ ] SASS for variables
 

@@ -1,7 +1,7 @@
 <template>
   <aside>
     <select v-model="teamSelected">
-      <template v-for="team in teamsAlpha">
+      <template v-for="team in teams | orderBy teamsByAlpha">
       <option v-bind:selected="team.isUser ? 'selected' : null">{{ team.name }}</option>
       </template>
     </select>
@@ -55,9 +55,9 @@ export default {
     }
   },
 
-  computed: {
-    teamsAlpha: function () {
-      return this.teams.slice(0).sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)
+  methods: {
+    teamsByAlpha: function (a, b) {
+      return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
     }
   },
 

@@ -41,11 +41,24 @@ import PickControls from './PickControls'
 import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../vuex/actions'
 import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getPlayer, getSecondsPerPick, getTeams } from '../vuex/getters'
 
+let $ = require('jquery')
+
 export default {
   name: 'DraftView',
 
   created: function () {
     window.vueDraft = this
+  },
+
+  ready () {
+    let saveDraft = () => {
+      let a = document.createElement('a')
+      a.setAttribute('href', 'data:text/plain;charset=utf-u,' + encodeURIComponent(JSON.stringify(window.vueDraft.picks)))
+      a.setAttribute('download', `avid-draft-${new Date().toISOString().slice(0, 10)}-${window.vueDraft.current.pickNumber.overall - 1}`)
+      a.click()
+    }
+
+    $('#saveDraft').on('click', saveDraft)
   },
 
   components: {
@@ -188,18 +201,6 @@ export default {
     }
   }
 }
-
-let $ = require('jquery')
-$(document).ready(function () {
-  var saveDraft = () => {
-    var a = document.createElement('a')
-    a.setAttribute('href', 'data:text/plain;charset=utf-u,' + encodeURIComponent(JSON.stringify(window.vueDraft.picks)))
-    a.setAttribute('download', `avid-draft-${new Date().toISOString().slice(0, 10)}-${window.vueDraft.current.pickNumber.overall - 1}`)
-    a.click()
-  }
-
-  $('#saveDraft').on('click', saveDraft)
-})
 </script>
 
 <style scoped>
