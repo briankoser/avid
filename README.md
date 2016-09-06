@@ -102,7 +102,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Better structure objects (players, rankings, etc.)
 - [x] Split Rankings into smaller components: PositionHeatMaps, CommandCenter, Rankings
 - [x] Split Draft.vue into smaller components: DraftPicks, DraftQueue, PickControls
-- [ ] Replace $(document).ready with ready ()
+- [x] Replace $(document).ready with ready ()
 - [ ] Use Vuex modules (https://vuex.vuejs.org/en/structure.html)
 - [ ] SASS for variables
 

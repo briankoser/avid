@@ -13,7 +13,19 @@
 </template>
 
 <script>
+let $ = require('jquery')
+
 export default {
+  ready () {
+    let scrollDown = (self) => {
+      self.scrollTop = self.scrollHeight - self.clientHeight
+    }
+
+    $('.draft-picks').on('pickAdd', function (event) {
+      setTimeout(scrollDown, 50, this) // give Vue time to re-render
+    })
+  },
+
   props: {
     rounds: {
       type: Array
@@ -26,17 +38,6 @@ export default {
     }
   }
 }
-
-let $ = require('jquery')
-$(document).ready(function () {
-  var scrollDown = (self) => {
-    self.scrollTop = self.scrollHeight - self.clientHeight
-  }
-
-  $('.draft-picks').on('pickAdd', function (event) {
-    setTimeout(scrollDown, 50, this) // give Vue time to re-render
-  })
-})
 </script>
 
 <style scoped>
