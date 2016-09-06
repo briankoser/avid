@@ -68,7 +68,12 @@ const state = {
         { name: 'Christian’s Team', owner: 'Christian Boyer', draftOrder: 8 },
         { name: 'My Team Sucks!', owner: 'Steven', draftOrder: 9 },
         { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 10 },
-        { name: 'Scott H’s Swell Team', owner: 'Scott H', draftOrder: 11 }
+        { name: 'Scott H’s Swell Team', owner: 'Scott H', draftOrder: 11 },
+        { name: 'Team 12', owner: 'Unknown', draftOrder: 12 },
+        { name: 'Team 13', owner: 'Unknown', draftOrder: 13 },
+        { name: 'Team 14', owner: 'Unknown', draftOrder: 14 },
+        { name: 'Team 15', owner: 'Unknown', draftOrder: 15 },
+        { name: 'Team 16', owner: 'Unknown', draftOrder: 16 }
       ]
     },
     team: {
