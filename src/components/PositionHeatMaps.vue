@@ -1,7 +1,7 @@
 <template>
-    <div v-for="row in pickGridData" class="pickGrid">
-        <span class="position milli">{{ row.positionKey }}</span>
-        <span v-for="pick in row.pickGrid" track-by="$index" 
+    <div v-for="positionHeatMap in positionHeatMaps" class="positionHeatMaps" track-by="positionKey">
+        <span class="position milli">{{ positionHeatMap.positionKey }}</span>
+        <span v-for="pick in positionHeatMap.heatMap" track-by="$index" 
         :class="{ pick: true, available: pick === 'a', drafted: pick === 'd', userDrafted: pick === 'u' }">
             &nbsp;
         </span>
@@ -9,19 +9,19 @@
 </template>
 
 <script>
-import { getPickGridData } from '../vuex/getters'
+import { getPositionHeatMaps } from '../vuex/getters'
 
 export default {
   vuex: {
     getters: {
-      pickGridData: getPickGridData
+      positionHeatMaps: getPositionHeatMaps
     }
   }
 }
 </script>
 
 <style scoped>
-.pickGrid {
+.positionHeatMaps {
   display: flex;
   line-height: 2em;
   padding: 5px 0;

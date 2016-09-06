@@ -2,7 +2,7 @@
 <table :class="{ 'onlyDisplayAvailable': onlyDisplayAvailable }">
     <template v-for="player in playersByPosition(positionSelected)">
         <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u' }">
-            <td>{{ player.ranking.overall }}</td>
+            <td>{{ player.userRanking.overall }}</td>
             <!--<td class="milli">σ{{ player.ranking.stdDev | round }}</td>-->
             <td>{{ player.positionKey }}</td>
             <td>{{ player.name }}</td>
@@ -51,7 +51,6 @@ export default {
     playersByPosition: function (position) {
       return this.players
         .filter(player => position === 'All' || player.positionKey === position)
-        .sort((a, b) => a.ranking.overall - b.ranking.overall)
     }
   }
 }
@@ -67,7 +66,7 @@ tr:nth-child(2n + 1) {
   background-color: #ececec;
 }
 
-tr:nth-child(12n) {
+tr:nth-child(16n) {
   border-bottom: solid black 3px;
 }
 

@@ -16,26 +16,6 @@ export function getPickCountRemaining (state) {
   return state.settings.league.teams.length * state.settings.league.rosterSize - state.picks.length
 }
 
-export function getPickGridData (state) {
-  let pickGrids = getPositionKeysLeague(state)
-    .filter(positionKey => positionKey !== 'Coach')
-    .map(positionKey => {
-      return {
-        positionKey: positionKey,
-        pickGrid: []
-      }
-    })
-
-  getPlayers(state).forEach(player => {
-    let positionIndex = pickGrids.findIndex(x => x.positionKey === player.positionKey)
-    if (positionIndex > -1) {
-      pickGrids[positionIndex].pickGrid.push(player.pickStatus)
-    }
-  })
-
-  return pickGrids
-}
-
 export function getPicks (state) {
   return state.picks
 }
@@ -46,6 +26,26 @@ export function getPicksIDs (state) {
 
 export function getPositionsAll (state) {
   return state.settings.app.positions
+}
+
+export function getPositionHeatMaps (state) {
+  let positionHeatMaps = getPositionKeysLeague(state)
+    .filter(positionKey => positionKey !== 'Coach')
+    .map(positionKey => {
+      return {
+        positionKey: positionKey,
+        heatMap: []
+      }
+    })
+
+  getPlayers(state).forEach(player => {
+    let positionIndex = positionHeatMaps.findIndex(x => x.positionKey === player.positionKey)
+    if (positionIndex > -1) {
+      positionHeatMaps[positionIndex].heatMap.push(player.pickStatus)
+    }
+  })
+
+  return positionHeatMaps
 }
 
 export function getPositionKeysLeague (state) {
@@ -72,37 +72,38 @@ export function getPlayer (state) {
 }
 
 export function getPlayers (state) {
-  let players = state.players
-    .filter(player => getPositionKeysLeague(state).includes(player.positionKey))
-    .map(player => {
-      let pick = state.picks.find(pick => pick.player.id === player.id)
-      if (pick === undefined) {
-        player.pickStatus = 'a' // available
-      } else if (pick.team.isUser) {
-        player.pickStatus = 'u' // user drafted
-      } else {
-        player.pickStatus = 'd' // drafted, not by user
-      }
+  let players = state.players.map(player => {
+    let pick = state.picks.find(pick => pick.player.id === player.id)
+    if (pick === undefined) {
+      player.pickStatus = 'a' // available
+    } else if (pick.team.isUser) {
+      player.pickStatus = 'u' // user drafted
+    } else {
+      player.pickStatus = 'd' // drafted, not by user
+    }
+
+    return player
+  })
+
+  if (state.settings.team.rankings.length > 0) {
+    players = players.map(player => {
+      player.userRanking.overall = (state.settings.team.rankings.find(ranking => ranking.id === player.id) || {}).ranking
 
       return player
     })
 
-  state.settings.team.rankings.forEach(newRanking => {
-    let player = players.find(player => player.id === newRanking.id)
+    players.sort((a, b) => {
+      let compare = (a.userRanking.overall || a.ranking.overall) - (b.userRanking.overall || b.ranking.overall)
 
-    if (player) {
-      // players = players.map(x => {
-      //   if (x.ranking.overall >= newRanking.ranking) {
-      //     x.ranking.overall += 1
-      //   }
+      if (compare) {
+        return compare
+      }
 
-      //   return x
-      // })
-      player.ranking.overall = newRanking.ranking
-    }
-  })
+      return (b.userRanking.overall || 0) - (a.userRanking.overall || 0)
+    })
+  }
 
-  // players = rankingsMixin.methods.setPositionRankings(players)
+  players = rankingsMixin.methods.setUserRankings(players)
 
   return players
 }

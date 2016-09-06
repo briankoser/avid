@@ -1,9 +1,10 @@
-import fetchJson from '../services/fetchJson'
-import rankingsMixin from '../mixins/rankings'
 import math from 'mathjs'
 import NflTeam from '../classes/nflTeam'
 import Ranking from '../classes/ranking'
 import Player from '../classes/player'
+import { getPositionKeysLeague } from './getters'
+import rankingsMixin from '../mixins/rankings'
+import fetchJson from '../services/fetchJson'
 
 export const addPick = ({ dispatch, state }, pick) => dispatch('ADDPICK', pick)
 
@@ -29,9 +30,11 @@ export const fetchPlayers = ({ dispatch, state }) => {
       let nflTeam = new NflTeam(player.team, byes.find(bye => bye.team === player.team).bye)
       let adpRanking = rankings.find(ranking => ranking.playerID === player.id) || {}
       let ranking = new Ranking(adpRanking.overall, adpRanking.stdDev)
+      let userRanking = new Ranking()
 
-      return new Player(id, name, positionKey, nflTeam, ranking)
+      return new Player(id, name, positionKey, nflTeam, ranking, userRanking)
     })
+    .filter(player => getPositionKeysLeague(state).includes(player.positionKey))
     .filter(player => player.ranking.overall !== undefined)
     .sort((a, b) => a.ranking.overall - b.ranking.overall)
 
