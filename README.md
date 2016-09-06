@@ -64,11 +64,11 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x] Routing: Home, About, Draft, Ranking, Settings
 - [x] Import rankings
 - [x] Overwrite rankings with team rankings
+- [x] Indicate which rankings have been moved, and in what direction (↑ ↓)
 
-- [ ] Indicate which rankings have been moved, and in what direction
 - [ ] Use standard deviation to color the overall ranking background to show confidence in ranking
 - [ ] Indicate current page in nav
-- [ ] List in roster the number picks available for the team
+- [ ] List in roster which picks are available for the team
 - [ ] Move tiers based on teams in league
 
 - [ ] Pre-draft ranking

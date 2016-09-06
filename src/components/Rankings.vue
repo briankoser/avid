@@ -2,13 +2,18 @@
 <table :class="{ 'onlyDisplayAvailable': onlyDisplayAvailable }">
     <template v-for="player in playersByPosition(positionSelected)">
         <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u' }">
-            <td>{{ player.userRanking.overall }}</td>
+            <td class="ranking">{{ player.userRanking.overall }}</td>
+            <td :class="{'movement': true, 'up': player.userRanking.overall < player.ranking.overall, 'down': player.userRanking.overall > player.ranking.overall }"
+              title="Prev. Overall {{ player.ranking.overall }}">
+                {{ player.userRanking.overall < player.ranking.overall ? '↑' : '' }}
+                {{ player.userRanking.overall > player.ranking.overall ? '↓' : '' }}
+            </td>
             <!--<td class="milli">σ{{ player.ranking.stdDev | round }}</td>-->
             <td>{{ player.positionKey }}</td>
             <td>{{ player.name }}</td>
             <td class="bye">
-              {{ player.nflTeam.bye }}
-              <img v-bind:src="logoPath(player.nflTeam.name)" alt="{{ player.nflTeam.name }}" class="team-logo" />
+                {{ player.nflTeam.bye }}
+                <img v-bind:src="logoPath(player.nflTeam.name)" alt="{{ player.nflTeam.name }}" class="team-logo" />
             </td>
         </tr>
     </template>
@@ -87,9 +92,6 @@ td:last-child {
   padding-right: 10px;
 }
 
-.bye {
-  font-size: 0.6em;
-}
 
 .team-logo {
   height: 20px;
@@ -110,5 +112,28 @@ td:last-child {
   color: #4caf50;
   font-style: normal;
   opacity: 1;
+}
+
+.ranking {
+  padding-right: 0;
+}
+
+.movement {
+  cursor: help;
+  font-size: 0.85em;
+  padding-left: 0;
+}
+
+.movement.up {
+  color: #4caf50;
+  vertical-align: top;
+}
+
+.movement.down {
+  color: #ff1744;
+}
+
+.bye {
+  font-size: 0.6em;
 }
 </style>
