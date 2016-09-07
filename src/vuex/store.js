@@ -48,39 +48,39 @@ const state = {
     league: {
       draftOrderType: 'ser',
       positions: [
-        { key: 'QB', min: 1, max: 2 },
-        { key: 'RB', min: 1, max: 2 },
-        { key: 'WR', min: 1, max: 2 },
-        { key: 'TE', min: 1, max: 2 },
-        { key: 'PK', min: 1, max: 1 },
-        { key: 'Def', min: 1, max: 1 }
+        { key: 'QB', min: 1, max: 6 },
+        { key: 'RB', min: 1, max: 6 },
+        { key: 'WR', min: 1, max: 6 },
+        { key: 'TE', min: 1, max: 6 },
+        { key: 'PK', min: 1, max: 5 },
+        { key: 'Def', min: 1, max: 5 }
       ],
-      rosterSize: 7,
+      rosterSize: 11,
       secondsPerPick: 60,
       teams: [
-        { name: 'Papa Peyton’s', owner: 'James Hostick', draftOrder: 1 },
-        { name: 'Mark’s Team', owner: 'Mark', draftOrder: 2 },
-        { name: 'London Sillinannies', owner: 'Zach Brown', draftOrder: 3 },
-        { name: '[BANDWAGON TEAM]', owner: 'Ellis Hicks', draftOrder: 4 },
-        { name: 'tim’s Bold Team', owner: 'Tim', draftOrder: 5 },
+        { name: 'Don’t Stop Talibing', owner: 'James Hostick', draftOrder: 1 },
+        { name: 'Timesheet Nazis', owner: 'Scott Hartwell', draftOrder: 2 },
+        { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 3 },
+        { name: 'tim’s Bold Team', owner: 'Tim Godfrey', draftOrder: 4 },
+        { name: '[BANDWAGON TEAM]', owner: 'Ellis Hicks', draftOrder: 5 },
         { name: 'Luke’s Legit Team', owner: 'Luke', draftOrder: 6 },
         { name: 'From Wentz It Came', owner: 'Brian Koser', draftOrder: 7, isUser: true },
         { name: 'Christian’s Team', owner: 'Christian Boyer', draftOrder: 8 },
-        { name: 'My Team Sucks!', owner: 'Steven', draftOrder: 9 },
-        { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 10 },
-        { name: 'Scott H’s Swell Team', owner: 'Scott H', draftOrder: 11 },
-        { name: 'Team 12', owner: 'Unknown', draftOrder: 12 },
+        { name: 'Team 9', owner: 'Unknown', draftOrder: 9 },
+        { name: 'London Sillinannies', owner: 'Zach Brown', draftOrder: 10 },
+        { name: 'Team 11', owner: 'Unknown', draftOrder: 11 },
+        { name: 'Mark’s Team', owner: 'Mark', draftOrder: 12 },
         { name: 'Team 13', owner: 'Unknown', draftOrder: 13 },
         { name: 'Team 14', owner: 'Unknown', draftOrder: 14 },
         { name: 'Team 15', owner: 'Unknown', draftOrder: 15 },
-        { name: 'Team 16', owner: 'Unknown', draftOrder: 16 }
+        { name: 'My Team Sucks!', owner: 'Steven', draftOrder: 16 }
       ]
     },
     team: {
       idealSize: [
-        { positionKey: 'QB', count: 1 },
-        { positionKey: 'RB', count: 1 },
-        { positionKey: 'WR', count: 1 },
+        { positionKey: 'QB', count: 3 },
+        { positionKey: 'RB', count: 2 },
+        { positionKey: 'WR', count: 2 },
         { positionKey: 'TE', count: 1 },
         { positionKey: 'PK', count: 1 },
         { positionKey: 'Def', count: 1 }
