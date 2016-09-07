@@ -16,12 +16,12 @@ export const fetchPlayers = ({ dispatch, state }) => {
       let minPick = item.minPick
       let maxPick = item.maxPick
 
-      if (minPick.inddexOf('.') > -1) {
+      if (minPick.indexOf('.') > -1) {
         let a = minPick.split('.')
         minPick = (a[0] - 1) * state.settings.league.teams.length + a[1]
       }
 
-      if (maxPick.inddexOf('.') > -1) {
+      if (maxPick.indexOf('.') > -1) {
         let a = maxPick.split('.')
         maxPick = (a[0] - 1) * state.settings.league.teams.length + a[1]
       }
