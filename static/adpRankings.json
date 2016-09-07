@@ -36,7 +36,7 @@
 			"id": "8658",
 			"averagePick": "1.07",
 			"minPick": "1.05",
-			"maxPick": "1.1"
+			"maxPick": "1.10"
 		}, {
 			"id": "12171",
 			"averagePick": "1.08",
@@ -49,7 +49,7 @@
 			"maxPick": "1.11"
 		}, {
 			"id": "10695",
-			"averagePick": "1.1",
+			"averagePick": "1.10",
 			"minPick": "1.04",
 			"maxPick": "1.14"
 		}, {
@@ -61,25 +61,25 @@
 			"id": "12625",
 			"averagePick": "1.11",
 			"minPick": "1.05",
-			"maxPick": "2"
+			"maxPick": "2.01"
 		}, {
 			"id": "11232",
 			"averagePick": "1.13",
-			"minPick": "1.1",
-			"maxPick": "2"
+			"minPick": "1.10",
+			"maxPick": "2.01"
 		}, {
 			"id": "10261",
 			"averagePick": "1.15",
-			"minPick": "1.1",
+			"minPick": "1.10",
 			"maxPick": "2.06"
 		}, {
 			"id": "7401",
-			"averagePick": "2",
+			"averagePick": "2.01",
 			"minPick": "1.12",
 			"maxPick": "2.04"
 		}, {
 			"id": "10708",
-			"averagePick": "2.01",
+			"averagePick": "2.02",
 			"minPick": "1.14",
 			"maxPick": "2.07"
 		}, {
@@ -90,7 +90,7 @@
 		}, {
 			"id": "6929",
 			"averagePick": "2.04",
-			"minPick": "2",
+			"minPick": "2.01",
 			"maxPick": "2.06"
 		}, {
 			"id": "11192",
@@ -119,24 +119,24 @@
 			"maxPick": "2.13"
 		}, {
 			"id": "11660",
-			"averagePick": "2.1",
+			"averagePick": "2.10",
 			"minPick": "1.14",
 			"maxPick": "3.03"
 		}, {
 			"id": "7394",
-			"averagePick": "2.1",
-			"minPick": "2",
+			"averagePick": "2.10",
+			"minPick": "2.01",
 			"maxPick": "3.01"
 		}, {
 			"id": "11642",
 			"averagePick": "2.12",
 			"minPick": "2.08",
-			"maxPick": "3"
+			"maxPick": "3.01"
 		}, {
 			"id": "10276",
 			"averagePick": "2.13",
 			"minPick": "2.05",
-			"maxPick": "3"
+			"maxPick": "3.01"
 		}, {
 			"id": "8360",
 			"averagePick": "2.13",
@@ -154,8 +154,8 @@
 			"maxPick": "3.05"
 		}, {
 			"id": "9118",
-			"averagePick": "3",
-			"minPick": "2.1",
+			"averagePick": "3.01",
+			"minPick": "2.10",
 			"maxPick": "3.04"
 		}, {
 			"id": "10722",
@@ -166,7 +166,7 @@
 			"id": "11201",
 			"averagePick": "3.02",
 			"minPick": "2.12",
-			"maxPick": "4"
+			"maxPick": "4.01"
 		}, {
 			"id": "10709",
 			"averagePick": "3.02",
@@ -204,12 +204,12 @@
 			"maxPick": "3.12"
 		}, {
 			"id": "10413",
-			"averagePick": "3.1",
+			"averagePick": "3.10",
 			"minPick": "3.02",
 			"maxPick": "4.02"
 		}, {
 			"id": "12175",
-			"averagePick": "3.1",
+			"averagePick": "3.10",
 			"minPick": "3.04",
 			"maxPick": "4.02"
 		}, {
@@ -231,15 +231,15 @@
 			"id": "9884",
 			"averagePick": "3.14",
 			"minPick": "3.03",
-			"maxPick": "4.1"
+			"maxPick": "4.10"
 		}, {
 			"id": "10729",
 			"averagePick": "3.15",
-			"minPick": "3.1",
+			"minPick": "3.10",
 			"maxPick": "4.07"
 		}, {
 			"id": "12141",
-			"averagePick": "4",
+			"averagePick": "4.01",
 			"minPick": "3.05",
 			"maxPick": "4.12"
 		}, {
@@ -250,7 +250,7 @@
 		}, {
 			"id": "12169",
 			"averagePick": "4.06",
-			"minPick": "3",
+			"minPick": "3.01",
 			"maxPick": "5.05"
 		}, {
 			"id": "11390",
@@ -271,17 +271,17 @@
 			"id": "11248",
 			"averagePick": "4.07",
 			"minPick": "3.05",
-			"maxPick": "7"
+			"maxPick": "7.01"
 		}, {
 			"id": "10308",
-			"averagePick": "4.1",
+			"averagePick": "4.10",
 			"minPick": "4.01",
 			"maxPick": "5.01"
 		}, {
 			"id": "9436",
 			"averagePick": "4.13",
 			"minPick": "3.14",
-			"maxPick": "6"
+			"maxPick": "6.01"
 		}, {
 			"id": "11654",
 			"averagePick": "4.14",
@@ -310,13 +310,13 @@
 		}, {
 			"id": "11680",
 			"averagePick": "5",
-			"minPick": "4",
+			"minPick": "4.01",
 			"maxPick": "6.01"
 		}, {
 			"id": "9099",
 			"averagePick": "5.01",
-			"minPick": "3.1",
-			"maxPick": "6"
+			"minPick": "3.10",
+			"maxPick": "6.01"
 		}, {
 			"id": "9662",
 			"averagePick": "5.01",
@@ -345,7 +345,7 @@
 		}, {
 			"id": "12156",
 			"averagePick": "5.06",
-			"minPick": "4.1",
+			"minPick": "4.10",
 			"maxPick": "5.12"
 		}, {
 			"id": "10721",
@@ -379,7 +379,7 @@
 			"maxPick": "6.07"
 		}, {
 			"id": "12162",
-			"averagePick": "6",
+			"averagePick": "6.01",
 			"minPick": "5.07",
 			"maxPick": "6.11"
 		}, {
@@ -391,7 +391,7 @@
 			"id": "7393",
 			"averagePick": "6.03",
 			"minPick": "5.08",
-			"maxPick": "7"
+			"maxPick": "7.01"
 		}, {
 			"id": "9680",
 			"averagePick": "6.04",
@@ -405,7 +405,7 @@
 		}, {
 			"id": "9918",
 			"averagePick": "6.09",
-			"minPick": "5",
+			"minPick": "5.01",
 			"maxPick": "7.08"
 		}, {
 			"id": "9693",
@@ -425,12 +425,12 @@
 		}, {
 			"id": "10960",
 			"averagePick": "6.12",
-			"minPick": "5.1",
+			"minPick": "5.10",
 			"maxPick": "7.11"
 		}, {
 			"id": "11676",
 			"averagePick": "6.12",
-			"minPick": "5.1",
+			"minPick": "5.10",
 			"maxPick": "7.05"
 		}, {
 			"id": "12176",
@@ -451,7 +451,7 @@
 			"id": "9075",
 			"averagePick": "6.14",
 			"minPick": "5.13",
-			"maxPick": "7.1"
+			"maxPick": "7.10"
 		}, {
 			"id": "12187",
 			"averagePick": "6.15",
@@ -464,14 +464,14 @@
 			"maxPick": "7.12"
 		}, {
 			"id": "12155",
-			"averagePick": "7",
-			"minPick": "5.1",
+			"averagePick": "7.01",
+			"minPick": "5.10",
 			"maxPick": "8.01"
 		}, {
 			"id": "11244",
 			"averagePick": "7.01",
 			"minPick": "4.13",
-			"maxPick": "10"
+			"maxPick": "10.01"
 		}, {
 			"id": "9427",
 			"averagePick": "7.02",
@@ -499,7 +499,7 @@
 			"maxPick": "10.01"
 		}, {
 			"id": "9064",
-			"averagePick": "7.1",
+			"averagePick": "7.10",
 			"minPick": "4.04",
 			"maxPick": "10.11"
 		}, {
@@ -514,29 +514,29 @@
 			"maxPick": "8.13"
 		}, {
 			"id": "10743",
-			"averagePick": "8",
+			"averagePick": "8.01",
 			"minPick": "4.11",
 			"maxPick": "9.14"
 		}, {
 			"id": "11213",
-			"averagePick": "8",
+			"averagePick": "8.01",
 			"minPick": "7.03",
 			"maxPick": "8.08"
 		}, {
 			"id": "8416",
-			"averagePick": "8",
+			"averagePick": "8.01",
 			"minPick": "5.14",
 			"maxPick": "11.02"
 		}, {
 			"id": "12658",
 			"averagePick": "8.01",
 			"minPick": "7.06",
-			"maxPick": "9.1"
+			"maxPick": "9.10"
 		}, {
 			"id": "12620",
 			"averagePick": "8.01",
 			"minPick": "3.06",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12186",
 			"averagePick": "8.01",
@@ -561,10 +561,10 @@
 			"id": "12646",
 			"averagePick": "8.09",
 			"minPick": "7.07",
-			"maxPick": "11.1"
+			"maxPick": "11.10"
 		}, {
 			"id": "9189",
-			"averagePick": "8.1",
+			"averagePick": "8.10",
 			"minPick": "5.02",
 			"maxPick": "11.13"
 		}, {
@@ -576,22 +576,22 @@
 			"id": "10737",
 			"averagePick": "8.14",
 			"minPick": "7.12",
-			"maxPick": "11"
+			"maxPick": "11.01"
 		}, {
 			"id": "11250",
-			"averagePick": "9",
+			"averagePick": "9.01",
 			"minPick": "7.02",
 			"maxPick": "11.15"
 		}, {
 			"id": "10372",
 			"averagePick": "9.02",
-			"minPick": "6.1",
+			"minPick": "6.10",
 			"maxPick": "12.07"
 		}, {
 			"id": "10077",
 			"averagePick": "9.02",
 			"minPick": "5.11",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11247",
 			"averagePick": "9.03",
@@ -601,12 +601,12 @@
 			"id": "12626",
 			"averagePick": "9.07",
 			"minPick": "5.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9817",
 			"averagePick": "9.08",
 			"minPick": "8.02",
-			"maxPick": "11"
+			"maxPick": "11.01"
 		}, {
 			"id": "11613",
 			"averagePick": "9.08",
@@ -616,7 +616,7 @@
 			"id": "9898",
 			"averagePick": "9.08",
 			"minPick": "6.02",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10389",
 			"averagePick": "9.08",
@@ -624,19 +624,19 @@
 			"maxPick": "10.02"
 		}, {
 			"id": "11668",
-			"averagePick": "9.1",
+			"averagePick": "9.10",
 			"minPick": "6.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9278",
 			"averagePick": "9.11",
 			"minPick": "6.01",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10696",
 			"averagePick": "9.11",
 			"minPick": "3.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10742",
 			"averagePick": "9.14",
@@ -651,7 +651,7 @@
 			"id": "12154",
 			"averagePick": "10.02",
 			"minPick": "6.12",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "6997",
 			"averagePick": "10.03",
@@ -660,63 +660,63 @@
 		}, {
 			"id": "11656",
 			"averagePick": "10.03",
-			"minPick": "6.1",
-			"maxPick": "22"
+			"minPick": "6.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "10369",
 			"averagePick": "10.05",
 			"minPick": "6.11",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11229",
 			"averagePick": "10.08",
 			"minPick": "8.01",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9611",
-			"averagePick": "10.1",
+			"averagePick": "10.10",
 			"minPick": "8.09",
 			"maxPick": "13.09"
 		}, {
 			"id": "10297",
-			"averagePick": "10.1",
+			"averagePick": "10.10",
 			"minPick": "7.14",
 			"maxPick": "13.13"
 		}, {
 			"id": "11179",
-			"averagePick": "10.1",
+			"averagePick": "10.10",
 			"minPick": "6.01",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11199",
 			"averagePick": "10.11",
 			"minPick": "7.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11747",
 			"averagePick": "10.12",
 			"minPick": "6.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12152",
 			"averagePick": "10.13",
 			"minPick": "6.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12205",
 			"averagePick": "10.14",
 			"minPick": "7.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "4974",
-			"averagePick": "11",
+			"averagePick": "11.01",
 			"minPick": "8.09",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10651",
 			"averagePick": "11.02",
-			"minPick": "8",
-			"maxPick": "22"
+			"minPick": "8.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "9925",
 			"averagePick": "11.02",
@@ -726,202 +726,202 @@
 			"id": "11188",
 			"averagePick": "11.06",
 			"minPick": "7.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12657",
 			"averagePick": "11.08",
 			"minPick": "8.07",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9474",
-			"averagePick": "11.1",
-			"minPick": "8.1",
-			"maxPick": "22"
+			"averagePick": "11.10",
+			"minPick": "8.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "12857",
 			"averagePick": "11.11",
 			"minPick": "7.07",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12188",
 			"averagePick": "11.11",
 			"minPick": "8.11",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12629",
 			"averagePick": "11.14",
 			"minPick": "7.05",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11746",
 			"averagePick": "11.15",
-			"minPick": "9",
-			"maxPick": "22"
+			"minPick": "9.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "10870",
 			"averagePick": "12.01",
 			"minPick": "9.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9987",
 			"averagePick": "12.02",
 			"minPick": "9.02",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9078",
 			"averagePick": "12.03",
 			"minPick": "7.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "7942",
 			"averagePick": "12.05",
 			"minPick": "9.08",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11761",
 			"averagePick": "12.09",
 			"minPick": "10.11",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12611",
-			"averagePick": "12.1",
+			"averagePick": "12.10",
 			"minPick": "6.15",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10723",
 			"averagePick": "13",
 			"minPick": "8.12",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12159",
 			"averagePick": "13",
 			"minPick": "10.05",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12180",
 			"averagePick": "13.02",
 			"minPick": "8.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12098",
 			"averagePick": "13.03",
 			"minPick": "11.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9525",
 			"averagePick": "13.03",
 			"minPick": "8.15",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12632",
 			"averagePick": "13.04",
 			"minPick": "11.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12647",
 			"averagePick": "13.05",
 			"minPick": "9.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10500",
 			"averagePick": "13.06",
 			"minPick": "9.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12650",
 			"averagePick": "13.06",
 			"minPick": "8.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10303",
 			"averagePick": "13.06",
 			"minPick": "10.09",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0515",
 			"averagePick": "13.08",
 			"minPick": "9.01",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10983",
 			"averagePick": "13.08",
 			"minPick": "9.02",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12160",
 			"averagePick": "13.09",
 			"minPick": "10.15",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0511",
 			"averagePick": "13.09",
 			"minPick": "9.02",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0527",
 			"averagePick": "13.13",
 			"minPick": "9.03",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12648",
 			"averagePick": "13.14",
 			"minPick": "11.09",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0519",
 			"averagePick": "13.14",
 			"minPick": "9.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0512",
 			"averagePick": "14.03",
 			"minPick": "9.07",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0532",
 			"averagePick": "14.04",
 			"minPick": "9.06",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12381",
 			"averagePick": "14.05",
 			"minPick": "8.05",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11186",
 			"averagePick": "14.05",
 			"minPick": "10.03",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0506",
 			"averagePick": "14.07",
 			"minPick": "9.05",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0528",
-			"averagePick": "14.1",
+			"averagePick": "14.10",
 			"minPick": "9.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10262",
 			"averagePick": "14.13",
 			"minPick": "11.02",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0504",
 			"averagePick": "14.13",
 			"minPick": "9.11",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12634",
 			"averagePick": "14.15",
-			"minPick": "10.1",
-			"maxPick": "22"
+			"minPick": "10.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "0505",
 			"averagePick": "14.15",
 			"minPick": "9.08",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "8359",
 			"averagePick": "14.15",
@@ -929,19 +929,19 @@
 			"maxPick": "20.01"
 		}, {
 			"id": "9429",
-			"averagePick": "15",
+			"averagePick": "15.01",
 			"minPick": "10.09",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9319",
-			"averagePick": "15",
+			"averagePick": "15.01",
 			"minPick": "10.02",
 			"maxPick": "20.02"
 		}, {
 			"id": "0513",
 			"averagePick": "15.02",
-			"minPick": "9.1",
-			"maxPick": "22"
+			"minPick": "9.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "10976",
 			"averagePick": "15.02",
@@ -951,7 +951,7 @@
 			"id": "0524",
 			"averagePick": "15.03",
 			"minPick": "9.12",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9694",
 			"averagePick": "15.04",
@@ -960,7 +960,7 @@
 		}, {
 			"id": "11960",
 			"averagePick": "15.04",
-			"minPick": "10.1",
+			"minPick": "10.10",
 			"maxPick": "20.04"
 		}, {
 			"id": "8742",
@@ -981,7 +981,7 @@
 			"id": "12627",
 			"averagePick": "15.07",
 			"minPick": "10.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10872",
 			"averagePick": "15.08",
@@ -991,17 +991,17 @@
 			"id": "0501",
 			"averagePick": "15.08",
 			"minPick": "9.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12610",
 			"averagePick": "15.09",
-			"minPick": "10.1",
-			"maxPick": "22"
+			"minPick": "10.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "11947",
 			"averagePick": "15.09",
 			"minPick": "10.13",
-			"maxPick": "20.1"
+			"maxPick": "20.10"
 		}, {
 			"id": "11936",
 			"averagePick": "15.11",
@@ -1011,7 +1011,7 @@
 			"id": "0523",
 			"averagePick": "15.11",
 			"minPick": "9.09",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11945",
 			"averagePick": "15.12",
@@ -1020,353 +1020,353 @@
 		}, {
 			"id": "10699",
 			"averagePick": "16.06",
-			"minPick": "10",
-			"maxPick": "22"
+			"minPick": "10.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "10903",
 			"averagePick": "16.08",
 			"minPick": "11.07",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "8930",
 			"averagePick": "16.08",
 			"minPick": "10.11",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "8673",
 			"averagePick": "16.09",
-			"minPick": "11",
-			"maxPick": "22"
+			"minPick": "11.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "7194",
-			"averagePick": "16.1",
+			"averagePick": "16.10",
 			"minPick": "10.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10689",
-			"averagePick": "16.1",
+			"averagePick": "16.10",
 			"minPick": "12.01",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "8243",
 			"averagePick": "16.12",
 			"minPick": "11.05",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12636",
 			"averagePick": "16.14",
 			"minPick": "10.06",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12161",
 			"averagePick": "16.15",
 			"minPick": "12.06",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9087",
 			"averagePick": "16.15",
 			"minPick": "11.07",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10961",
-			"averagePick": "17",
+			"averagePick": "17.01",
 			"minPick": "11.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12645",
 			"averagePick": "17.01",
 			"minPick": "11.02",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10812",
 			"averagePick": "17.02",
-			"minPick": "12",
-			"maxPick": "22"
+			"minPick": "12.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "9196",
 			"averagePick": "17.02",
 			"minPick": "12.02",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10744",
 			"averagePick": "17.03",
-			"minPick": "12.1",
-			"maxPick": "22"
+			"minPick": "12.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "11257",
 			"averagePick": "17.04",
 			"minPick": "13.07",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10409",
 			"averagePick": "17.05",
-			"minPick": "12.1",
-			"maxPick": "22"
+			"minPick": "12.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "12178",
 			"averagePick": "17.05",
 			"minPick": "11.09",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12631",
 			"averagePick": "17.06",
 			"minPick": "10.08",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0510",
 			"averagePick": "17.06",
 			"minPick": "12.11",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "6982",
 			"averagePick": "17.06",
-			"minPick": "11.1",
-			"maxPick": "22"
+			"minPick": "11.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "12211",
 			"averagePick": "17.08",
 			"minPick": "11.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10312",
 			"averagePick": "17.09",
 			"minPick": "12.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9822",
 			"averagePick": "17.09",
 			"minPick": "12.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11211",
-			"averagePick": "17.1",
+			"averagePick": "17.10",
 			"minPick": "11.03",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0518",
-			"averagePick": "17.1",
-			"minPick": "13",
-			"maxPick": "22"
+			"averagePick": "17.10",
+			"minPick": "13.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "9250",
-			"averagePick": "17.1",
+			"averagePick": "17.10",
 			"minPick": "11.12",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "7150",
 			"averagePick": "17.11",
 			"minPick": "10.07",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9308",
 			"averagePick": "17.11",
 			"minPick": "12.15",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11695",
 			"averagePick": "17.14",
 			"minPick": "12.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12887",
 			"averagePick": "17.15",
 			"minPick": "11.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11227",
 			"averagePick": "18.01",
 			"minPick": "12.03",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "10720",
 			"averagePick": "18.01",
-			"minPick": "12",
-			"maxPick": "22"
+			"minPick": "12.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "10080",
 			"averagePick": "18.01",
 			"minPick": "13.01",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "5666",
 			"averagePick": "18.02",
 			"minPick": "13.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9843",
 			"averagePick": "18.02",
-			"minPick": "12.1",
-			"maxPick": "22"
+			"minPick": "12.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "12197",
 			"averagePick": "18.03",
 			"minPick": "12.03",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11177",
 			"averagePick": "18.04",
 			"minPick": "12.12",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11076",
 			"averagePick": "18.05",
 			"minPick": "11.15",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11675",
 			"averagePick": "18.05",
 			"minPick": "12.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12612",
 			"averagePick": "18.08",
 			"minPick": "10.12",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9307",
-			"averagePick": "18.1",
+			"averagePick": "18.10",
 			"minPick": "13.12",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "9299",
 			"averagePick": "19.02",
 			"minPick": "13.15",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0509",
 			"averagePick": "19.08",
-			"minPick": "10",
-			"maxPick": "22"
+			"minPick": "10.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "12721",
 			"averagePick": "19.13",
 			"minPick": "10.12",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "8153",
 			"averagePick": "19.13",
-			"minPick": "11",
-			"maxPick": "22"
+			"minPick": "11.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "0502",
 			"averagePick": "19.13",
 			"minPick": "9.15",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0503",
 			"averagePick": "21.03",
 			"minPick": "16.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0531",
 			"averagePick": "21.04",
 			"minPick": "16.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0522",
 			"averagePick": "21.05",
-			"minPick": "17",
-			"maxPick": "22"
+			"minPick": "17.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "0517",
 			"averagePick": "21.05",
 			"minPick": "17.02",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "7859",
 			"averagePick": "21.06",
 			"minPick": "17.09",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "6789",
 			"averagePick": "21.06",
-			"minPick": "17.1",
-			"maxPick": "22"
+			"minPick": "17.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "12417",
 			"averagePick": "21.06",
 			"minPick": "17.11",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0520",
 			"averagePick": "21.06",
 			"minPick": "17.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "8144",
 			"averagePick": "21.07",
 			"minPick": "17.15",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "3494",
 			"averagePick": "21.07",
-			"minPick": "18",
-			"maxPick": "22"
+			"minPick": "18.01",
+			"maxPick": "22.01"
 		}, {
 			"id": "0516",
 			"averagePick": "21.07",
 			"minPick": "18.01",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "11387",
 			"averagePick": "21.07",
 			"minPick": "18.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "12437",
 			"averagePick": "21.08",
 			"minPick": "18.06",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0525",
 			"averagePick": "21.08",
 			"minPick": "18.07",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0521",
 			"averagePick": "21.08",
-			"minPick": "18.1",
-			"maxPick": "22"
+			"minPick": "18.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "10868",
 			"averagePick": "21.09",
 			"minPick": "18.13",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "8851",
 			"averagePick": "21.09",
 			"minPick": "18.15",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0507",
 			"averagePick": "21.09",
 			"minPick": "19.02",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0530",
-			"averagePick": "21.1",
+			"averagePick": "21.10",
 			"minPick": "19.04",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0526",
-			"averagePick": "21.1",
+			"averagePick": "21.10",
 			"minPick": "19.07",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0514",
 			"averagePick": "21.11",
-			"minPick": "19.1",
-			"maxPick": "22"
+			"minPick": "19.10",
+			"maxPick": "22.01"
 		}, {
 			"id": "0508",
 			"averagePick": "21.11",
 			"minPick": "19.14",
-			"maxPick": "22"
+			"maxPick": "22.01"
 		}, {
 			"id": "0529",
 			"averagePick": "21.11",
-			"minPick": "20",
-			"maxPick": "22"
+			"minPick": "20.01",
+			"maxPick": "22.01"
 		}]
 	},
 	"version": "1.0",
