@@ -13,10 +13,23 @@ export const addStateEntry = ({ dispatch, state }, entry) => dispatch('ADDSTATEE
 export const fetchPlayers = ({ dispatch, state }) => {
   return fetchJson.fetchPlayers(values => {
     let rankings = values[0].json().adp.player.map((item, index) => {
+      let minPick = item.minPick
+      let maxPick = item.maxPick
+
+      if (minPick.inddexOf('.') > -1) {
+        let a = minPick.split('.')
+        minPick = (a[0] - 1) * state.settings.league.teams.length + a[1]
+      }
+
+      if (maxPick.inddexOf('.') > -1) {
+        let a = maxPick.split('.')
+        maxPick = (a[0] - 1) * state.settings.league.teams.length + a[1]
+      }
+
       return {
         playerID: item.id,
         overall: index + 1,
-        stdDev: math.std(item.minPick, item.maxPick)
+        stdDev: math.std(minPick, maxPick)
       }
     }) // minPick, maxPick, draftsSelectedIn, id, averagePick
 
