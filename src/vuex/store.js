@@ -66,14 +66,14 @@ const state = {
         { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 6 },
         { name: 'Christian’s Team', owner: 'Christian Boyer', draftOrder: 7 },
         { name: 'Don’t Stop Talibing', owner: 'James Hostick', draftOrder: 8 },
-        { name: '[BANDWAGON TEAM]', owner: 'Ellis Hicks', draftOrder: 9 },
+        { name: 'RIP Gronk’s Liver', owner: 'Ellis Hicks', draftOrder: 9 },
         { name: 'Timesheet Nazis', owner: 'Scott Hartwell', draftOrder: 10 },
         { name: 'tim’s Bold Team', owner: 'Tim Godfrey', draftOrder: 11 },
         { name: 'Harambe2016', owner: 'Luke Smith', draftOrder: 12 },
         { name: 'Team Dominique', owner: 'Dominique Reese', draftOrder: 13 },
         { name: 'My Team Sucks!', owner: 'Steven Grimes', draftOrder: 14 },
-        { name: 'Team Ashley', owner: 'Ashley Beard', draftOrder: 15 },
-        { name: 'Team Chase', owner: 'Chase Oubre', draftOrder: 16 }
+        { name: 'Breezy OnA SunnyDay', owner: 'Ashley Beard', draftOrder: 15 },
+        { name: 'sirkingchase', owner: 'Chase Oubre', draftOrder: 16 }
       ]
     },
     team: {
