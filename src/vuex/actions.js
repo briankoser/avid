@@ -60,7 +60,27 @@ export const fetchPlayers = ({ dispatch, state }) => {
   })
 }
 
-export const setTeamRankings = ({ dispatch, state }, rankings) => dispatch('SETTEAMRANKINGS', rankings)
+export const setTeamRankings = ({ dispatch, state }, ext, rankings) => {
+  console.log(state.players.find(player => player.name === 'Newton, Cam').id)
+  if (ext === 'csv') {
+    let teamRankings = rankings
+      .split('\n')
+      .map(line => {
+        let fields = line.split('|')
+        let playerName = fields[0].replace(/"/g, '')
+        console.log(playerName)
+        fields[0] = (state.players.find(player => player.name === playerName) || {id: playerName}).id
+        return fields.join('|')
+      })
+      .join('\n')
+
+    console.log(teamRankings)
+  }
+
+  if (ext === 'json') {
+    dispatch('SETTEAMRANKINGS', rankings)
+  }
+}
 
 export const undoLastPick = ({ dispatch, state }) => dispatch('UNDOLASTPICK')
 

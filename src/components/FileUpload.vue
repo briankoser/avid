@@ -15,8 +15,8 @@ export default {
     }
   },
   methods: {
-    sendFile: function (file) {
-      this.$dispatch('send-file', file)
+    sendFile: function (ext, file) {
+      this.$dispatch('send-file', ext, file)
     }
   },
   ready () {
@@ -60,7 +60,14 @@ function drop (e) {
 
   var reader = new window.FileReader()
   reader.onload = (e) => {
-    window.vueFileUpload.sendFile(JSON.parse(e.target.result))
+    let fileNameParts = file.name.split('.')
+    let ext = fileNameParts[fileNameParts.length - 1]
+    let result = e.target.result
+    if (ext === 'json') {
+      result = JSON.parse(e.target.result)
+    }
+
+    window.vueFileUpload.sendFile(ext, result)
   }
   reader.readAsText(file)
 

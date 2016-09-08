@@ -18,8 +18,8 @@ export default {
     'file-upload': FileUpload
   },
   events: {
-    'send-file': function (rankings) {
-      this.setTeamRankings(rankings)
+    'send-file': function (ext, rankings) {
+      this.setTeamRankings(ext, rankings)
     }
   }
 }
