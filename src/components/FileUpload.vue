@@ -19,7 +19,7 @@ export default {
       this.$dispatch('send-file', ext, file)
     }
   },
-  ready () {
+  mounted () {
     var dropzone = document.getElementById('formDropzone')
 
     if (dropzone) {

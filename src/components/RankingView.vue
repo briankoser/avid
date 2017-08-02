@@ -1,6 +1,8 @@
 <template>
-    <h1 class="delta">Rankings</h1>
-    <file-upload file-description="rankings.json"></file-upload>
+<div class="ranking-view">
+  <h1 class="delta">Rankings</h1>
+  <file-upload file-description="rankings.json"></file-upload>
+</div>
 </template>
 
 <script>

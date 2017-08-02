@@ -27,7 +27,7 @@ export default {
     window.vuePicker = this
   },
 
-  ready () {
+  mounted () {
     let pick = $('.picker .typeahead')
     let options = {
       autoSelect: true,
@@ -74,6 +74,9 @@ export default {
   methods: {
     addPick: function (playerID) {
       this.$dispatch('add-pick', playerID)
+      this.clearPick()
+    },
+    clearPick: function () {
       this.player = ''
     }
   }

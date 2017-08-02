@@ -16,7 +16,7 @@
 let $ = require('jquery')
 
 export default {
-  ready () {
+  mounted () {
     let scrollDown = (self) => {
       self.scrollTop = self.scrollHeight - self.clientHeight
     }

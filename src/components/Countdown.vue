@@ -21,7 +21,7 @@ export default {
     }
   },
 
-  ready () {
+  mounted () {
     window.setInterval(() => {
       if (this.seconds > 0) {
         this.seconds -= 1
