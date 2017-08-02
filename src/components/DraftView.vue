@@ -142,6 +142,7 @@ export default {
     },
     removePick: function () {
       this.undoLastPick()
+      this.current.pickNumber.overall -= 1
       this.retreatCurrentState()
       this.resetPickSecondsLeft()
     },
