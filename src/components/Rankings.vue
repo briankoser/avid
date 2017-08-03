@@ -1,10 +1,10 @@
 <template>
 <table :class="{ 'onlyDisplayAvailable': onlyDisplayAvailable }">
     <template v-for="player in playersByPosition(positionSelected)">
-        <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u' }">
+        <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u' }" v-bind:key="player.id">
             <td class="ranking">{{ player.userRanking.overall }}</td>
             <td :class="{'movement': true, 'up': player.userRanking.overall < player.ranking.overall, 'down': player.userRanking.overall > player.ranking.overall }"
-              v-bind-title="previousRankMessage">
+              v-bind:title="previousRankMessage(player.userRanking.overall, player.ranking.overall)">
                 {{ player.userRanking.overall < player.ranking.overall ? '↑' : '' }}
                 {{ player.userRanking.overall > player.ranking.overall ? '↓' : '' }}
             </td>
@@ -52,16 +52,14 @@ export default {
     }
   },
 
-  computed: {
-    previousRankMessage: function () {
-      return this.player.userRanking.overall !== this.player.ranking.overall ? 'Prev. Overall ' + this.player.ranking.overall : ''
-    }
-  },
-
   methods: {
     playersByPosition: function (position) {
       return this.players
         .filter(player => position === 'All' || player.positionKey === position)
+    },
+
+    previousRankMessage: function (currentRanking, previousRanking) {
+      return currentRanking !== previousRanking ? 'Prev. Overall ' + previousRanking : ''
     }
   }
 }

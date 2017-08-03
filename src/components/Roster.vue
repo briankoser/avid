@@ -2,7 +2,7 @@
   <aside>
     <select v-model="teamSelected">
       <template v-for="team in orderedTeams">
-      <option v-bind:selected="team.isUser ? 'selected' : null">{{ team.name }}</option>
+      <option v-bind:selected="team.isUser ? 'selected' : null" :key="team.draftOrder">{{ team.name }}</option>
       </template>
     </select>
     <!--<button v-on:click="" class="button-primary">Start draft!</button>-->
@@ -51,12 +51,13 @@ import { getRoster, getTeams } from '../vuex/getters'
 export default {
   data () {
     return {
-      teamSelected: ''
+      teamSelected: this.teams.find(team => team.isUser).name
     }
   },
 
   computed: {
     orderedTeams: function () {
+      console.log(this.teams)
       return this.$lodash.orderBy(this.teams, this.teamsByAlpha)
     }
   },

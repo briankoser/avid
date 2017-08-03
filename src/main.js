@@ -40,4 +40,4 @@ const app = new Vue({
   render: createEle => createEle(App)
 }).$mount('#app')
 
-console.log(util.inspect(app))
+console.log(app) // prevents compiler from complaining about unused var
