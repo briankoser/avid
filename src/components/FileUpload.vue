@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     sendFile: function (ext, file) {
-      this.$dispatch('send-file', ext, file)
+      this.$emit('upload', ext, file)
     }
   },
   mounted () {

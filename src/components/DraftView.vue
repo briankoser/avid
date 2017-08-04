@@ -16,7 +16,8 @@
               <countdown :seconds="current.pickSecondsLeft"></countdown>
           </div>
 
-          <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam"></pick-controls>
+          <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam" 
+            v-on:addPick="addPick" v-on:removePick="removePick"></pick-controls>
       </div>
   </div>
 
@@ -191,16 +192,6 @@ export default {
         const isEvenRound = this.current.round % 2
         this.current.teamIndex = isEvenRound ? this.current.teamIndex + 1 : this.current.teamIndex - 1
       }
-    }
-  },
-
-  events: {
-    'add-pick': function (playerID) {
-      this.addPick(playerID)
-      this.$broadcast('pick-added', playerID)
-    },
-    'remove-pick': function () {
-      this.removePick()
     }
   }
 }

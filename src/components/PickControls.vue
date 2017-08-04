@@ -32,7 +32,7 @@ export default {
 
   methods: {
     removePick: function () {
-      this.$dispatch('remove-pick')
+      this.$emit('removePick')
     }
   }
 }

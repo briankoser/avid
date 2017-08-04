@@ -73,7 +73,8 @@ export default {
 
   methods: {
     addPick: function (playerID) {
-      this.$dispatch('add-pick', playerID)
+      console.log('playerID: ' + playerID)
+      this.$emit('addPick', playerID)
       this.clearPick()
     },
     clearPick: function () {
