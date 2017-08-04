@@ -1,7 +1,7 @@
 <template>
-  <div class="picker">
-    <input class="typeahead alpha" type="text" placeholder="Player" v-model="player">
-  </div>
+<div class="picker">
+  <input class="typeahead alpha" type="text" placeholder="Player" v-model="player">
+</div>
 </template>
 
 <script>

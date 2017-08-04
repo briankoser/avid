@@ -1,7 +1,7 @@
 <template>
-    <form action="test" class="dropzone" id="formDropzone">
-        Drag {{fileDescription}} to upload
-    </form>
+<form action="test" class="dropzone" id="formDropzone">
+    Drag {{fileDescription}} to upload
+</form>
 </template>
 
 <script>
