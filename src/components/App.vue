@@ -9,9 +9,9 @@
       <nav class="site-nav secondary-bg">
         <router-link to="/ranking">Rank</router-link>
         <router-link to="/draft">Draft</router-link>
-        <router-link to="/report">Report</router-link>
+        <!-- <router-link to="/report">Report</router-link>
         <router-link to="/settings">Settings</router-link>
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">About</router-link> -->
       </nav>
       <roster></roster>
     </div>
