@@ -1,7 +1,7 @@
 <template>
-  <div class="picker">
-    <input class="typeahead alpha" type="text" placeholder="Player" v-model="player">
-  </div>
+<div class="picker">
+  <input class="typeahead alpha" type="text" placeholder="Player" v-model="player">
+</div>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
     window.vuePicker = this
   },
 
-  ready () {
+  mounted () {
     let pick = $('.picker .typeahead')
     let options = {
       autoSelect: true,
@@ -55,7 +55,7 @@ export default {
     })
 
     pick.bind('typeahead:select', function (ev, suggestion) {
-      window.vuePicker.addPick(suggestion)
+      window.vuePicker.savePick(suggestion)
     })
   },
 
@@ -72,8 +72,11 @@ export default {
   },
 
   methods: {
-    addPick: function (playerID) {
-      this.$dispatch('add-pick', playerID)
+    savePick: function (playerID) {
+      this.$emit('savePick', playerID)
+      this.clearPick()
+    },
+    clearPick: function () {
       this.player = ''
     }
   }

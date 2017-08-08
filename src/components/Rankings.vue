@@ -1,10 +1,10 @@
 <template>
 <table :class="{ 'onlyDisplayAvailable': onlyDisplayAvailable }">
     <template v-for="player in playersByPosition(positionSelected)">
-        <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u' }">
+        <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u' }" v-bind:key="player.id">
             <td class="ranking">{{ player.userRanking.overall }}</td>
             <td :class="{'movement': true, 'up': player.userRanking.overall < player.ranking.overall, 'down': player.userRanking.overall > player.ranking.overall }"
-              title="Prev. Overall {{ player.ranking.overall }}">
+              v-bind:title="previousRankMessage(player.userRanking.overall, player.ranking.overall)">
                 {{ player.userRanking.overall < player.ranking.overall ? '↑' : '' }}
                 {{ player.userRanking.overall > player.ranking.overall ? '↓' : '' }}
             </td>
@@ -13,7 +13,7 @@
             <td>{{ player.name }}</td>
             <td class="bye">
                 {{ player.nflTeam.bye }}
-                <img v-bind:src="logoPath(player.nflTeam.name)" alt="{{ player.nflTeam.name }}" class="team-logo" />
+                <img v-bind:src="logoPath(player.nflTeam.name)" v-bind:alt="player.nflTeam.name" class="team-logo" />
             </td>
         </tr>
     </template>
@@ -56,6 +56,10 @@ export default {
     playersByPosition: function (position) {
       return this.players
         .filter(player => position === 'All' || player.positionKey === position)
+    },
+
+    previousRankMessage: function (currentRanking, previousRanking) {
+      return currentRanking !== previousRanking ? 'Prev. Overall ' + previousRanking : ''
     }
   }
 }

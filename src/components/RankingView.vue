@@ -1,6 +1,8 @@
 <template>
-    <h1 class="delta">Rankings</h1>
-    <file-upload file-description="rankings.json"></file-upload>
+<div class="ranking-view">
+  <h1 class="delta">Rankings</h1>
+  <file-upload file-description="rankings.json" v-on:upload="uploadFile"></file-upload>
+</div>
 </template>
 
 <script>
@@ -17,8 +19,8 @@ export default {
   components: {
     'file-upload': FileUpload
   },
-  events: {
-    'send-file': function (ext, rankings) {
+  methods: {
+    uploadFile: function (ext, rankings) {
       this.setTeamRankings(ext, rankings)
     }
   }

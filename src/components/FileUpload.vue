@@ -1,7 +1,7 @@
 <template>
-    <form action="test" class="dropzone" id="formDropzone">
-        Drag {{fileDescription}} to upload
-    </form>
+<form action="test" class="dropzone" id="formDropzone">
+    Drag {{fileDescription}} to upload
+</form>
 </template>
 
 <script>
@@ -16,10 +16,10 @@ export default {
   },
   methods: {
     sendFile: function (ext, file) {
-      this.$dispatch('send-file', ext, file)
+      this.$emit('upload', ext, file)
     }
   },
-  ready () {
+  mounted () {
     var dropzone = document.getElementById('formDropzone')
 
     if (dropzone) {

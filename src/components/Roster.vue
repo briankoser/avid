@@ -1,8 +1,8 @@
 <template>
   <aside>
     <select v-model="teamSelected">
-      <template v-for="team in teams | orderBy teamsByAlpha">
-      <option v-bind:selected="team.isUser ? 'selected' : null">{{ team.name }}</option>
+      <template v-for="team in orderedTeams">
+      <option v-bind:selected="team.isUser ? 'selected' : null" :key="team.draftOrder">{{ team.name }}</option>
       </template>
     </select>
     <!--<button v-on:click="" class="button-primary">Start draft!</button>-->
@@ -21,7 +21,7 @@
         <th>Rank</th>
         <th>Pick</th>
       </tr>
-      <tr v-for="pick in section.picks" track-by="$index" :class="{ 'empty-row': !pick.player }">
+      <tr v-for="(pick, index) in section.picks" v-bind:key="index" :class="{ 'empty-row': !pick.player }">
         <template v-if="pick.player">
           <td class="player">{{ (pick.player || {}).name }}</td>
           <td class="round">{{ pick.round }}</td>
@@ -51,13 +51,25 @@ import { getRoster, getTeams } from '../vuex/getters'
 export default {
   data () {
     return {
-      teamSelected: ''
+      teamSelected: this.teams.find(team => team.isUser).name
+    }
+  },
+
+  computed: {
+    orderedTeams: function () {
+      console.log(this.teams)
+      return this.$lodash.orderBy(this.teams, this.teamsByAlpha)
     }
   },
 
   methods: {
     teamsByAlpha: function (a, b) {
-      return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
+      const getLowerCaseName = (team) => {
+        const name = (team || {}).name
+        return typeof (name || {}).toLowerCase === 'function' ? name.toLowerCase() : ''
+      }
+
+      return getLowerCaseName(a) > getLowerCaseName(b) ? 1 : -1
     }
   },
 

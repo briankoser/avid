@@ -16,25 +16,19 @@
 let $ = require('jquery')
 
 export default {
-  ready () {
+  mounted () {
+    this.$on('savePick', playerID => {
+      setTimeout(scrollDown, 50, $('.draft-picks')) // give Vue time to re-render
+    })
+
     let scrollDown = (self) => {
       self.scrollTop = self.scrollHeight - self.clientHeight
     }
-
-    $('.draft-picks').on('pickAdd', function (event) {
-      setTimeout(scrollDown, 50, this) // give Vue time to re-render
-    })
   },
 
   props: {
     rounds: {
       type: Array
-    }
-  },
-
-  events: {
-    'pick-added': function (playerID) {
-      $('.draft-picks').trigger('pickAdd')
     }
   }
 }

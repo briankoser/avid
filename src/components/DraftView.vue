@@ -1,29 +1,32 @@
 <template>
-    <div class="draft-view">
-        <div class="grid">
-            <div class="col-8">
-                <draft-picks :rounds="rounds"></draft-picks>
-                <button id="saveDraft" class="save-draft">Download</button>
-            </div>
-            <div class="col-4">
-                <draft-queue :current-team="currentTeam"></draft-queue>
-            </div>
-        </div>
+<div class="draft-view-parent">
+  <div class="draft-view">
+      <div class="grid">
+          <div class="col-8">
+              <draft-picks :rounds="rounds"></draft-picks>
+              <button id="saveDraft" class="save-draft">Download</button>
+          </div>
+          <div class="col-4">
+              <draft-queue :current-team="currentTeam"></draft-queue>
+          </div>
+      </div>
 
-        <div v-if="pickCountRemaining > 0" class="pickerArea"> <!--subtle-grey-bg-->
-            <div class="center">
-                <countdown :seconds.sync="current.pickSecondsLeft"></countdown>
-            </div>
+      <div v-if="pickCountRemaining > 0" class="pickerArea"> <!--subtle-grey-bg-->
+          <div class="center">
+              <countdown :seconds="current.pickSecondsLeft"></countdown>
+          </div>
 
-            <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam"></pick-controls>
-        </div>
-    </div>
+          <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam" 
+            @savePick="addPick" @removePick="removePick"></pick-controls>
+      </div>
+  </div>
 
-    <div v-if="pickCountRemaining === 0" class="postDraft">
-      Draft over!
-    </div>
+  <div v-if="pickCountRemaining === 0" class="postDraft">
+    Draft over!
+  </div>
 
-    <command-center></command-center>
+  <command-center></command-center>
+</div>
 </template>
 
 <script>
@@ -50,7 +53,7 @@ export default {
     window.vueDraft = this
   },
 
-  ready () {
+  mounted () {
     let saveDraft = () => {
       let a = document.createElement('a')
       a.setAttribute('href', 'data:text/plain;charset=utf-u,' + encodeURIComponent(JSON.stringify(window.vueDraft.picks)))
@@ -125,6 +128,7 @@ export default {
 
   methods: {
     addPick: function (newPlayer) {
+      console.log(this.$util.inspect(newPlayer))
       this.addStateEntry(Object.assign({}, this.current))
       this.resetPickSecondsLeft()
 
@@ -189,16 +193,6 @@ export default {
         const isEvenRound = this.current.round % 2
         this.current.teamIndex = isEvenRound ? this.current.teamIndex + 1 : this.current.teamIndex - 1
       }
-    }
-  },
-
-  events: {
-    'add-pick': function (playerID) {
-      this.addPick(playerID)
-      this.$broadcast('pick-added', playerID)
-    },
-    'remove-pick': function () {
-      this.removePick()
     }
   }
 }

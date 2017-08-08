@@ -7,11 +7,11 @@
     <div class="side-container col-4 dark-grey-bg white">
       <h1 class="site-header primary-bg">avid</h1>
       <nav class="site-nav secondary-bg">
-        <a v-link="{ path: '/ranking' }">Rank</a> 
-        <a v-link="{ path: '/draft' }">Draft</a>
-        <a v-link="{ path: '/report' }">Report</a>
-        <a v-link="{ path: '/settings' }">Settings</a>
-        <a v-link="{ path: '/about' }">About</a>
+        <router-link to="/ranking">Rank</router-link>
+        <router-link to="/draft">Draft</router-link>
+        <router-link to="/report">Report</router-link>
+        <router-link to="/settings">Settings</router-link>
+        <router-link to="/about">About</router-link>
       </nav>
       <roster></roster>
     </div>

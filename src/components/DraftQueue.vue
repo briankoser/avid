@@ -3,11 +3,11 @@
     <h1 class="primary-bg white keno">DRAFT ORDER</h1>
     <ol class="subtle-grey-bg tight">
         <li v-for="team in teams">
-            <span v-show="team.name === currentTeam">
-                <b class="primary" title="{{ team.owner }}">{{ team.name }}</b>
+            <span v-if="team.name === currentTeam">
+                <b class="primary" v-bind:title="team.owner">{{ team.name }}</b>
             </span>
             <span v-else>
-                <span :class="{ 'user-team': team.isUser }" title="{{ team.owner }}">{{ team.name }}</span>
+                <span :class="{ 'user-team': team.isUser }" v-bind:title="team.owner">{{ team.name }}</span>
             </span>
         </li>
     </ol>
