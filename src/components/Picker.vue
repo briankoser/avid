@@ -65,7 +65,7 @@ export default {
     }
   },
 
-  data () {
+  data: function () {
     return {
       player: ''
     }
