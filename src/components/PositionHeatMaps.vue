@@ -25,6 +25,7 @@ export default {
 <style scoped>
 .positionHeatMaps {
   display: flex;
+  height: 60px;
   line-height: 2em;
   padding: 5px 0;
   width: 500px;
