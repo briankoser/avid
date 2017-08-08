@@ -55,7 +55,7 @@ export default {
     })
 
     pick.bind('typeahead:select', function (ev, suggestion) {
-      window.vuePicker.addPick(suggestion)
+      window.vuePicker.savePick(suggestion)
     })
   },
 
@@ -72,9 +72,8 @@ export default {
   },
 
   methods: {
-    addPick: function (playerID) {
-      console.log('playerID: ' + playerID)
-      this.$emit('addPick', playerID)
+    savePick: function (playerID) {
+      this.$emit('savePick', playerID)
       this.clearPick()
     },
     clearPick: function () {

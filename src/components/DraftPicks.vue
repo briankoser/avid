@@ -17,7 +17,7 @@ let $ = require('jquery')
 
 export default {
   mounted () {
-    this.$on('addPick', playerID => {
+    this.$on('savePick', playerID => {
       setTimeout(scrollDown, 50, $('.draft-picks')) // give Vue time to re-render
     })
 

@@ -5,7 +5,7 @@
         <div class="team epsilon">{{ currentTeam }}</div>
     </div>
     <div class="col-8">
-        <picker :current-team="currentTeam"></picker>
+        <picker :current-team="currentTeam" @savePick="savePick"></picker>
     </div>
     <div class="col-12 right">
         <button v-on:click="removePick">Undo</button>
@@ -33,6 +33,9 @@ export default {
   methods: {
     removePick: function () {
       this.$emit('removePick')
+    },
+    savePick: function (newPlayer) {
+      this.$emit('savePick', newPlayer)
     }
   }
 }

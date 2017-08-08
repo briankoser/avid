@@ -17,7 +17,7 @@
           </div>
 
           <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam" 
-            v-on:addPick="addPick" v-on:removePick="removePick"></pick-controls>
+            @savePick="addPick" @removePick="removePick"></pick-controls>
       </div>
   </div>
 
@@ -128,6 +128,7 @@ export default {
 
   methods: {
     addPick: function (newPlayer) {
+      console.log(this.$util.inspect(newPlayer))
       this.addStateEntry(Object.assign({}, this.current))
       this.resetPickSecondsLeft()
 
