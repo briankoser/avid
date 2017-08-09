@@ -47,6 +47,7 @@ const state = {
     */
     league: {
       draftOrderType: 'ser',
+      keepers: true,
       positions: [
         { key: 'QB', min: 1, max: 6 },
         { key: 'RB', min: 1, max: 6 },
@@ -58,22 +59,14 @@ const state = {
       rosterSize: 11,
       secondsPerPick: 60,
       teams: [
-        { name: 'Mark’s Team', owner: 'Mark Garrett', draftOrder: 1 },
-        { name: 'Team Evan', owner: 'Evan Bernard', draftOrder: 2 },
-        { name: 'From Wentz It Came', owner: 'Brian Koser', draftOrder: 3, isUser: true },
-        { name: 'Sack Dak Quarterback', owner: 'Kristy King', draftOrder: 4 },
-        { name: 'London Sillinannies', owner: 'Zach Brown', draftOrder: 5 },
-        { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 6 },
-        { name: 'Christian’s Team', owner: 'Christian Boyer', draftOrder: 7 },
-        { name: 'Don’t Stop Talibing', owner: 'James Hostick', draftOrder: 8 },
-        { name: 'RIP Gronk’s Liver', owner: 'Ellis Hicks', draftOrder: 9 },
-        { name: 'Timesheet Nazis', owner: 'Scott Hartwell', draftOrder: 10 },
-        { name: 'tim’s Bold Team', owner: 'Tim Godfrey', draftOrder: 11 },
-        { name: 'Harambe2016', owner: 'Luke Smith', draftOrder: 12 },
-        { name: 'Team Dominique', owner: 'Dominique Reese', draftOrder: 13 },
-        { name: 'My Team Sucks!', owner: 'Steven Grimes', draftOrder: 14 },
-        { name: 'Breezy OnA SunnyDay', owner: 'Ashley Beard', draftOrder: 15 },
-        { name: 'sirkingchase', owner: 'Chase Oubre', draftOrder: 16 }
+        { name: 'Mark’s Team', owner: 'Mark Garrett', draftOrder: 1, keeper: '10273' },
+        { name: 'Team Evan', owner: 'Evan Bernard', draftOrder: 2, keeper: '9988' },
+        { name: 'From Wentz It Came', owner: 'Brian Koser', draftOrder: 3, keeper: '7836', isUser: true },
+        { name: 'Sack Dak Quarterback', owner: 'Kristy King', draftOrder: 4, keeper: '10271' },
+        { name: 'London Sillinannies', owner: 'Zach Brown', draftOrder: 5, keeper: '11679' },
+        { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 6, keeper: '10695' },
+        { name: 'Christian’s Team', owner: 'Christian Boyer', draftOrder: 7, keeper: '12171' },
+        { name: 'Don’t Stop Talibing', owner: 'James Hostick', draftOrder: 8, keeper: '12150' }
       ]
     },
     team: {
@@ -151,6 +144,9 @@ const mutations = {
   },
   UNDOSTATEENTRY (state) {
     state.history.pop()
+  },
+  UPDATEKEEPERS (state, keeperPicks) {
+    state.picks = keeperPicks
   }
 }
 

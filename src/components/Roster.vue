@@ -57,7 +57,6 @@ export default {
 
   computed: {
     orderedTeams: function () {
-      console.log(this.teams)
       return this.$lodash.orderBy(this.teams, this.teamsByAlpha)
     }
   },
