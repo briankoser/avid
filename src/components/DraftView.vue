@@ -41,8 +41,8 @@ import DraftPicks from './DraftPicks'
 import DraftQueue from './DraftQueue'
 import PickControls from './PickControls'
 
-import { addPick, addStateEntry, undoLastPick, undoStateEntry } from '../vuex/actions'
-import { getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getPlayer, getSecondsPerPick, getTeams } from '../vuex/getters'
+import { addPick, addStateEntry, undoLastPick, undoStateEntry, updateKeepers } from '../vuex/actions'
+import { getAreUsingKeepers, getDraftOrderTypes, getDraftOrderTypeLeague, getLastStateEntry, getPickCountRemaining, getPicks, getPlayer, getPlayers, getSecondsPerPick, getTeams } from '../vuex/getters'
 
 let $ = require('jquery')
 
@@ -62,6 +62,10 @@ export default {
     }
 
     $('#saveDraft').on('click', saveDraft)
+
+    if (this.areUsingKeepers) {
+      setTimeout(this.updateKeepers, 50)
+    }
   },
 
   components: {
@@ -74,12 +78,14 @@ export default {
 
   vuex: {
     getters: {
+      areUsingKeepers: getAreUsingKeepers,
       draftOrderTypes: getDraftOrderTypes,
       draftOrderType: getDraftOrderTypeLeague,
       getPlayer: getPlayer,
       lastStateEntry: getLastStateEntry,
       pickCountRemaining: getPickCountRemaining,
       picks: getPicks,
+      players: getPlayers,
       secondsPerPick: getSecondsPerPick,
       teams: getTeams
     },
@@ -87,7 +93,8 @@ export default {
       addPickToState: addPick,
       addStateEntry,
       undoLastPick,
-      undoStateEntry
+      undoStateEntry,
+      updateKeepersState: updateKeepers
     }
   },
 
@@ -187,11 +194,34 @@ export default {
         this.current.pickNumber.round += 1
       }
 
-      if (this.current.pickNumber.round === 1) {
+      if (this.current.pickNumber.round === 1 || (this.areUsingKeepers && this.current.round === 1)) {
         return
       } else {
-        const isEvenRound = this.current.round % 2
-        this.current.teamIndex = isEvenRound ? this.current.teamIndex + 1 : this.current.teamIndex - 1
+        const isEvenRound = !(this.current.round % 2)
+        this.current.teamIndex = isEvenRound === this.areUsingKeepers ? this.current.teamIndex + 1 : this.current.teamIndex - 1 // without keepers, move down (add) in odd rounds (eg round 1) and move up (subtract in even rounds); with keepers, it's the opposite
+      }
+    },
+    updateKeepers: function () {
+      if (this.current.round === 1) { // only add keepers once
+        let keeperPicks = []
+
+        let teams = this.teams.slice() // slice makes a copy of the array so we are not modifying the original
+
+        if (this.draftOrderType === this.draftOrderTypes.serpentine) {
+          teams.reverse()
+        }
+
+        teams.forEach(team => {
+          let player = this.players.find(p => p.id === team.keeper)
+          let pick = player === undefined ? undefined : new Pick(team.draftOrder, player, 1, team)
+
+          if (pick !== undefined) {
+            keeperPicks.push(pick)
+            this.updateCurrentState()
+          }
+        })
+
+        this.updateKeepersState(keeperPicks)
       }
     }
   }

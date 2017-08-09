@@ -72,8 +72,8 @@ export default {
   },
 
   methods: {
-    savePick: function (playerID) {
-      this.$emit('savePick', playerID)
+    savePick: function (player) {
+      this.$emit('savePick', player)
       this.clearPick()
     },
     clearPick: function () {

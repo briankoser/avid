@@ -31,10 +31,10 @@ export const fetchPlayers = ({ dispatch, state }) => {
         overall: index + 1,
         stdDev: math.std(minPick, maxPick)
       }
-    }) // minPick, maxPick, draftsSelectedIn, id, averagePick
+    }) // contains: minPick, maxPick, draftsSelectedIn, id, averagePick
 
-    let players = values[1].json().players.player // id, position, name, team
-    let byes = values[2].json() // team, bye
+    let players = values[1].json().players.player // contains: id, position, name, team
+    let byes = values[2].json() // contains: team, bye
 
     let rankedPlayers = players.map(player => {
       let id = player.id
@@ -61,7 +61,6 @@ export const fetchPlayers = ({ dispatch, state }) => {
 }
 
 export const setTeamRankings = ({ dispatch, state }, ext, rankings) => {
-  console.log(state.players.find(player => player.name === 'Newton, Cam').id)
   if (ext === 'csv') {
     let teamRankings = rankings
       .split('\n')
@@ -85,3 +84,5 @@ export const setTeamRankings = ({ dispatch, state }, ext, rankings) => {
 export const undoLastPick = ({ dispatch, state }) => dispatch('UNDOLASTPICK')
 
 export const undoStateEntry = ({ dispatch, state }) => dispatch('UNDOSTATEENTRY')
+
+export const updateKeepers = ({ dispatch, state }, keeperPicks) => dispatch('UPDATEKEEPERS', keeperPicks)

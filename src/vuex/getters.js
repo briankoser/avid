@@ -1,5 +1,9 @@
 import rankingsMixin from '../mixins/rankings'
 
+export function getAreUsingKeepers (state) {
+  return state.settings.league.keepers
+}
+
 export function getDraftOrderTypes (state) {
   return state.settings.app.draftOrderTypes
 }

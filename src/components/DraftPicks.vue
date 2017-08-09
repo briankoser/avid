@@ -1,7 +1,7 @@
 <template>
 <div class="draft-picks">
     <template v-for="round in rounds"> 
-    <h1 class="epsilon">Round {{ round.number }}</h1>
+    <h1 class="epsilon">Round {{ round.number }} <span v-if="areUsingKeepers && round.number === 1">(Keepers)</span></h1>
     <ol class="tight">
         <li v-for="pick in round.picks">
             {{ pick.team.name }} → <strong>{{ pick.player.name }}</strong> 
@@ -13,11 +13,13 @@
 </template>
 
 <script>
+import { getAreUsingKeepers } from '../vuex/getters'
+
 let $ = require('jquery')
 
 export default {
   mounted () {
-    this.$on('savePick', playerID => {
+    this.$on('savePick', player => {
       setTimeout(scrollDown, 50, $('.draft-picks')) // give Vue time to re-render
     })
 
@@ -29,6 +31,12 @@ export default {
   props: {
     rounds: {
       type: Array
+    }
+  },
+
+  vuex: {
+    getters: {
+      areUsingKeepers: getAreUsingKeepers
     }
   }
 }
