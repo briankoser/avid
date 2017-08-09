@@ -26,9 +26,9 @@
           <td class="player">{{ (pick.player || {}).name }}</td>
           <td class="round">{{ pick.round }}</td>
           <td class="rank">{{ (pick.player.ranking || {}).overall || 'U' }}</td>
-          <td class="pick">{{ pick.pickNumber.overall }}</td>
+          <td class="pick">{{ pick.pickNumber.overall || areUsingKeepers ? 'K' : '' }}</td>
           <td class="rank">{{ (pick.player.ranking || {}).position || 'U' }}</td>
-          <td class="pick">{{ pick.pickNumber.position }}</td>
+          <td class="pick">{{ pick.pickNumber.position || areUsingKeepers ? 'K' : '' }}</td>
           <td class="bye">{{ pick.player.nflTeam.bye }}</td>
         </template>
         <template v-else>
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { getRoster, getTeams } from '../vuex/getters'
+import { getAreUsingKeepers, getRoster, getTeams } from '../vuex/getters'
 
 export default {
   data () {
@@ -74,6 +74,7 @@ export default {
 
   vuex: {
     getters: {
+      areUsingKeepers: getAreUsingKeepers,
       rosters: getRoster,
       teams: getTeams
     }
