@@ -12,29 +12,28 @@ export const addStateEntry = ({ dispatch, state }, entry) => dispatch('ADDSTATEE
 
 export const fetchPlayers = ({ dispatch, state }) => {
   return fetchJson.fetchPlayers(values => {
+    // handle picks in the format: round.pick, e.g. "1.01"
+    let pickToInteger = (pick) => {
+      if (pick.indexOf('.') > -1) {
+        let a = pick.split('.')
+        return (a[0] - 1) * state.settings.league.teams.length + parseInt(a[1])
+      } else {
+        return pick
+      }
+    }
+
+    let standardDeviation = math.std(values[0].json().adp.player.map(item => pickToInteger(item.maxPick) - pickToInteger(item.minPick)))
+
     let rankings = values[0].json().adp.player.map((item, index) => {
-      let minPick = item.minPick
-      let maxPick = item.maxPick
-
-      if (minPick.indexOf('.') > -1) {
-        let a = minPick.split('.')
-        minPick = (a[0] - 1) * state.settings.league.teams.length + a[1]
-      }
-
-      if (maxPick.indexOf('.') > -1) {
-        let a = maxPick.split('.')
-        maxPick = (a[0] - 1) * state.settings.league.teams.length + a[1]
-      }
-
       return {
         playerID: item.id,
         overall: index + 1,
-        stdDev: math.std(minPick, maxPick)
+        stdDev: Math.round((pickToInteger(item.maxPick) - pickToInteger(item.minPick)) / standardDeviation)
       }
-    }) // contains: minPick, maxPick, draftsSelectedIn, id, averagePick
+    }) // values[0] contains: minPick, maxPick, draftsSelectedIn, id, averagePick
 
-    let players = values[1].json().players.player // contains: id, position, name, team
-    let byes = values[2].json() // contains: team, bye
+    let players = values[1].json().players.player // values[1] contains: id, position, name, team
+    let byes = values[2].json() // values[2] contains: team, bye
 
     let rankedPlayers = players.map(player => {
       let id = player.id

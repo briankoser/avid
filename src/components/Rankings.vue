@@ -7,8 +7,8 @@
               v-bind:title="previousRankMessage(player.userRanking.overall, player.ranking.overall)">
                 {{ player.userRanking.overall < player.ranking.overall ? '↑' : '' }}
                 {{ player.userRanking.overall > player.ranking.overall ? '↓' : '' }}
+                <span v-if="player.ranking.stdDev > 0" class="stdDev">σ{{ player.ranking.stdDev }}</span>
             </td>
-            <!--<td class="milli">σ{{ player.ranking.stdDev | round }}</td>-->
             <td>{{ player.positionKey }}</td>
             <td>{{ player.name }}</td>
             <td class="bye">
@@ -97,29 +97,8 @@ td:last-child {
 }
 
 
-.team-logo {
-  height: 20px;
-  width: 30px;
-  vertical-align: middle;
-}
-
-.onlyDisplayAvailable .unavailable {
-  display: none;
-}
-
-.unavailable {
-  font-style: italic;
-  opacity: .3;
-}
-
-.unavailable.userDrafted {
-  color: #4caf50;
-  font-style: normal;
-  opacity: 1;
-}
-
-.ranking {
-  padding-right: 0;
+.bye {
+  font-size: 0.6em;
 }
 
 .movement {
@@ -137,7 +116,33 @@ td:last-child {
   color: #ff1744;
 }
 
-.bye {
-  font-size: 0.6em;
+.onlyDisplayAvailable .unavailable {
+  display: none;
+}
+
+.ranking {
+  padding-right: 0;
+}
+
+.stdDev {
+  font-size: 0.7em;
+  padding-left: 0.2em;
+}
+
+.team-logo {
+  height: 20px;
+  width: 30px;
+  vertical-align: middle;
+}
+
+.unavailable {
+  font-style: italic;
+  opacity: .3;
+}
+
+.unavailable.userDrafted {
+  color: #4caf50;
+  font-style: normal;
+  opacity: 1;
 }
 </style>
