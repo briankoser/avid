@@ -188,15 +188,15 @@ a {
   color: #fafafa;
 }
 
-.site-title {
-  background-color: #4caf50;
-  color: #fafafa;
-  text-align: center;
-  border-left: 30px solid #bdbdbd;
-  border-right: 30px solid #bdbdbd;
+.site-nav a + a {
+  margin-left: 1em;
 }
 
-.site-nav a::before {
+.site-nav a + a.router-link-active {
+  margin-left: 0;
+}
+
+.site-nav a.router-link-active::before {
   content: '🏈';
   display: inline-block;
   font-size: .75em;
@@ -206,6 +206,14 @@ a {
 
 .site-nav a:not(:first-child)::before {
   padding-left: 20px;
+}
+
+.site-title {
+  background-color: #4caf50;
+  color: #fafafa;
+  text-align: center;
+  border-left: 30px solid #bdbdbd;
+  border-right: 30px solid #bdbdbd;
 }
 
 .rankings {
