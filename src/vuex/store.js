@@ -9,6 +9,7 @@ const state = {
   players: [],
   settings: {
     app: {
+      domes: ['ARI', 'ATL', 'DAL', 'DET', 'HOU', 'IND', 'MIN', 'NOS'],
       draftOrderTypes: {
         'random': 'ran',
         'sequential': 'seq',

@@ -4,6 +4,10 @@ export function getAreUsingKeepers (state) {
   return state.settings.league.keepers
 }
 
+export function getDomes (state) {
+  return state.settings.app.domes
+}
+
 export function getDraftOrderTypes (state) {
   return state.settings.app.draftOrderTypes
 }
