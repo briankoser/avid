@@ -78,6 +78,14 @@ const state = {
         { positionKey: 'PK', count: 1 },
         { positionKey: 'Def', count: 1 }
       ],
+      minimumSize: [
+        { positionKey: 'QB', count: 1 },
+        { positionKey: 'RB', count: 1 },
+        { positionKey: 'WR', count: 1 },
+        { positionKey: 'TE', count: 1 },
+        { positionKey: 'PK', count: 1 },
+        { positionKey: 'Def', count: 1 }
+      ],
       rankings: []
     }
 

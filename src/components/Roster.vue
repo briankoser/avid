@@ -21,7 +21,8 @@
         <th>Rank</th>
         <th>Pick</th>
       </tr>
-      <tr v-for="(pick, index) in section.picks" v-bind:key="index" :class="{ 'empty-row': !pick.player }">
+      <tr v-for="(pick, index) in section.picks" v-bind:key="index" 
+        :class="[{ 'empty-row': !pick.player }, spotRequired(section.positionKey, index) ? 'required' : 'not-required']">
         <template v-if="pick.player">
           <td class="player">{{ (pick.player || {}).name }}</td>
           <td class="round">{{ pick.round }}</td>
@@ -46,7 +47,7 @@
 </template>
 
 <script>
-import { getAreUsingKeepers, getRoster, getTeams } from '../vuex/getters'
+import { getAreUsingKeepers, getRoster, getRosterMinimumSize, getTeams } from '../vuex/getters'
 
 export default {
   data () {
@@ -62,6 +63,9 @@ export default {
   },
 
   methods: {
+    spotRequired: function (positionKey, index) {
+      return this.rosterMinimumSize.find(position => position.positionKey === positionKey).count >= index + 1
+    },
     teamsByAlpha: function (a, b) {
       const getLowerCaseName = (team) => {
         const name = (team || {}).name
@@ -76,6 +80,7 @@ export default {
     getters: {
       areUsingKeepers: getAreUsingKeepers,
       rosters: getRoster,
+      rosterMinimumSize: getRosterMinimumSize,
       teams: getTeams
     }
   }
@@ -121,9 +126,16 @@ td.bye {
 }
 
 .empty-row {
-  background-color: #bdbdbd;
   border-top: solid #424242 10px;
   height: 1.4em;
+}
+
+.empty-row.not-required {
+  background-color: #bdbdbd;
   opacity: 0.6;
+}
+
+.empty-row.required {
+  background-color: #fff;
 }
 </style>

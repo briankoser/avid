@@ -132,6 +132,10 @@ export function getRoster (state) {
   }
 }
 
+export function getRosterMinimumSize (state) {
+  return state.settings.team.minimumSize
+}
+
 export function getSecondsPerPick (state) {
   return state.settings.league.secondsPerPick
 }
