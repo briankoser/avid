@@ -15,15 +15,19 @@
       </nav>
       <roster></roster>
     </div>
+
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+import AppFooter from './AppFooter'
 import Roster from './Roster'
 import store from '../vuex/store'
 
 export default {
   components: {
+    AppFooter,
     Roster
   },
   store
@@ -108,7 +112,7 @@ a {
 }
 
 .secondary-bg {
-  background-color: #ff8f00;
+  background-color: #efab1c;
 }
 
 .black {

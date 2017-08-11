@@ -136,6 +136,6 @@ td.bye {
 }
 
 .empty-row.required {
-  background-color: #fff;
+  background-color: #fafafa;
 }
 </style>
