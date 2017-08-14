@@ -147,3 +147,11 @@ export function getSecondsPerPick (state) {
 export function getTeams (state) {
   return state.settings.league.teams.sort((a, b) => a.draftOrder - b.draftOrder)
 }
+
+export function getTeamsCount (state) {
+  return state.settings.league.teams.length
+}
+
+export function getTiers (state) {
+  return state.settings.team.tiers
+}

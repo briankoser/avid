@@ -87,7 +87,15 @@ const state = {
         { positionKey: 'PK', count: 1 },
         { positionKey: 'Def', count: 1 }
       ],
-      rankings: []
+      rankings: [],
+      tiers: [
+        { positionKey: 'QB', sizes: [3, 9, 3, 4, 6, 7] },
+        { positionKey: 'RB', sizes: [] },
+        { positionKey: 'WR', sizes: [] },
+        { positionKey: 'TE', sizes: [1] },
+        { positionKey: 'PK', sizes: [] },
+        { positionKey: 'Def', sizes: [] }
+      ]
     }
 
     /*

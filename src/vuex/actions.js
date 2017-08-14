@@ -16,7 +16,7 @@ export const fetchPlayers = ({ dispatch, state }) => {
     let pickToInteger = (pick) => {
       if (pick.indexOf('.') > -1) {
         let a = pick.split('.')
-        return (a[0] - 1) * state.settings.league.teams.length + parseInt(a[1])
+        return (a[0] - 1) * state.settings.league.teams.length + parseInt(a[1], 10)
       } else {
         return pick
       }

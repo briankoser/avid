@@ -1,7 +1,7 @@
 <template>
 <table :class="{ 'onlyDisplayAvailable': onlyDisplayAvailable }">
-    <template v-for="player in playersByPosition(positionSelected)">
-        <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u' }" v-bind:key="player.id">
+    <template v-for="(player, index) in playersByPosition(positionSelected)">
+        <tr :class="{ 'unavailable': player.pickStatus !== 'a', 'userDrafted': player.pickStatus === 'u', 'lastInTier': isLastInTier(positionSelected, index) }" v-bind:key="player.id">
             <td class="ranking">{{ player.userRanking.overall }}</td>
             <td :class="{'movement': true, 'up': player.userRanking.overall < player.ranking.overall, 'down': player.userRanking.overall > player.ranking.overall }"
               v-bind:title="previousRankMessage(player.userRanking.overall, player.ranking.overall)">
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { getDomes, getPlayers } from '../vuex/getters'
+import { getDomes, getPlayers, getTeamsCount, getTiers } from '../vuex/getters'
 import logoMixin from '../mixins/logo'
 import { fetchPlayers } from '../vuex/actions'
 
@@ -35,9 +35,32 @@ export default {
     }
   },
 
+  computed: {
+    lastInTierIndexes: function () {
+      return []
+    }
+  },
+
   methods: {
     isDomeKicker: function (positionKey, teamName) {
       return positionKey === 'PK' && this.domes.includes(teamName)
+    },
+
+    // todo: move to computed property
+    // todo: allow tiers of size 1
+    isLastInTier: function (positionKey, index) {
+      let teamsInLeague = this.teamsCount
+
+      let positionTiers = (this.tiers.find(tier => tier.positionKey === positionKey) || {}).sizes
+
+      if (positionTiers === undefined || positionTiers.length === 0) { // for position without tiers and for the "All" view, create tiers based on number of teams in league
+        return index > 1 && (index + 1) % teamsInLeague === 0
+      }
+
+      let lastInTierIndexes = positionTiers.map((value, index, array) => array.slice(0, index + 1)
+        .reduce((sum, value) => sum + parseInt(value, 10)))
+        .map(value => value - 1)
+      return lastInTierIndexes.find(i => i === index)
     },
 
     playersByPosition: function (position) {
@@ -67,7 +90,9 @@ export default {
     },
     getters: {
       domes: getDomes,
-      players: getPlayers
+      players: getPlayers,
+      teamsCount: getTeamsCount,
+      tiers: getTiers
     }
   }
 }
@@ -81,10 +106,6 @@ table {
 
 tr:nth-child(2n + 1) {
   background-color: #ececec;
-}
-
-tr:nth-child(16n) {
-  border-bottom: solid black 3px;
 }
 
 td {
@@ -118,6 +139,10 @@ td:last-child {
 
 .dome-parent {
   position: relative;
+}
+
+.lastInTier {
+  border-bottom: solid black 3px;
 }
 
 .movement {
