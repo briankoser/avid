@@ -37,7 +37,13 @@ export default {
 
   computed: {
     lastInTierIndexes: function () {
-      return []
+      return this.tiers.map(tier => {
+        let updatedTier = { positionKey: tier.positionKey }
+        updatedTier.lastInTier = tier.sizes
+          .map((value, index, array) => array.slice(0, index + 1).reduce((sum, value) => sum + parseInt(value, 10)))
+          .map(value => value - 1)
+        return updatedTier
+      })
     }
   },
 
@@ -46,21 +52,15 @@ export default {
       return positionKey === 'PK' && this.domes.includes(teamName)
     },
 
-    // todo: move to computed property
     // todo: allow tiers of size 1
     isLastInTier: function (positionKey, index) {
       let teamsInLeague = this.teamsCount
-
-      let positionTiers = (this.tiers.find(tier => tier.positionKey === positionKey) || {}).sizes
-
+      let positionTiers = (this.lastInTierIndexes.find(tier => tier.positionKey === positionKey) || {}).lastInTier
       if (positionTiers === undefined || positionTiers.length === 0) { // for position without tiers and for the "All" view, create tiers based on number of teams in league
         return index > 1 && (index + 1) % teamsInLeague === 0
       }
 
-      let lastInTierIndexes = positionTiers.map((value, index, array) => array.slice(0, index + 1)
-        .reduce((sum, value) => sum + parseInt(value, 10)))
-        .map(value => value - 1)
-      return lastInTierIndexes.find(i => i === index)
+      return positionTiers.find(i => i === index)
     },
 
     playersByPosition: function (position) {

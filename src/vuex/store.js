@@ -89,7 +89,7 @@ const state = {
       ],
       rankings: [],
       tiers: [
-        { positionKey: 'QB', sizes: [3, 9, 3, 4, 6, 7] },
+        { positionKey: 'QB', sizes: [3, 7, 3, 6, 6, 7] },
         { positionKey: 'RB', sizes: [] },
         { positionKey: 'WR', sizes: [] },
         { positionKey: 'TE', sizes: [1] },
