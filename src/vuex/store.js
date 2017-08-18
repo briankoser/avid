@@ -57,6 +57,14 @@ const state = {
         { key: 'PK', min: 1, max: 5 },
         { key: 'Def', min: 1, max: 5 }
       ],
+      rosterMinimumSize: [
+        { positionKey: 'QB', count: 1 },
+        { positionKey: 'RB', count: 1 },
+        { positionKey: 'WR', count: 1 },
+        { positionKey: 'TE', count: 1 },
+        { positionKey: 'PK', count: 1 },
+        { positionKey: 'Def', count: 1 }
+      ],
       rosterSize: 11,
       secondsPerPick: 60,
       teams: [
@@ -79,15 +87,15 @@ const state = {
         { positionKey: 'PK', count: 1 },
         { positionKey: 'Def', count: 1 }
       ],
-      minimumSize: [
-        { positionKey: 'QB', count: 1 },
-        { positionKey: 'RB', count: 1 },
-        { positionKey: 'WR', count: 1 },
-        { positionKey: 'TE', count: 1 },
-        { positionKey: 'PK', count: 1 },
-        { positionKey: 'Def', count: 1 }
-      ],
-      rankings: []
+      rankings: [],
+      tiers: [
+        { positionKey: 'QB', sizes: [3, 7, 3, 6, 6, 7] },
+        { positionKey: 'RB', sizes: [] },
+        { positionKey: 'WR', sizes: [] },
+        { positionKey: 'TE', sizes: [1] },
+        { positionKey: 'PK', sizes: [] },
+        { positionKey: 'Def', sizes: [] }
+      ]
     }
 
     /*
