@@ -51,13 +51,13 @@ const state = {
       keepers: false,
       positions: [
         { key: 'QB', min: 2, max: 4 },
-        { key: 'RB', min: 2, max: 11 },
-        { key: 'WR', min: 2, max: 11 },
-        { key: 'TE', min: 1, max: 10 },
-        { key: 'PK', min: 1, max: 4 },
-        { key: 'Def', min: 1, max: 4 }
+        { key: 'RB', min: 2, max: 6 },
+        { key: 'WR', min: 2, max: 6 },
+        { key: 'TE', min: 1, max: 6 },
+        { key: 'PK', min: 1, max: 3 },
+        { key: 'Def', min: 1, max: 3 }
       ],
-      rosterSize: 17,
+      rosterSize: 18,
       secondsPerPick: 60,
       teams: [
         { name: 'Team Dad', owner: 'Don Koser', draftOrder: 1 },
@@ -74,7 +74,7 @@ const state = {
       idealSize: [
         { positionKey: 'QB', count: 3 },
         { positionKey: 'RB', count: 5 },
-        { positionKey: 'WR', count: 5 },
+        { positionKey: 'WR', count: 6 },
         { positionKey: 'TE', count: 2 },
         { positionKey: 'PK', count: 1 },
         { positionKey: 'Def', count: 1 }
