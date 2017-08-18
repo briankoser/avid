@@ -60,7 +60,7 @@ export default {
         return index > 1 && (index + 1) % teamsInLeague === 0
       }
 
-      return positionTiers.find(i => i === index)
+      return positionTiers.find(i => i === index) !== undefined
     },
 
     playersByPosition: function (position) {
