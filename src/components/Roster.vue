@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { getAreUsingKeepers, getRoster, getRosterMinimumSize, getTeams } from '../vuex/getters'
+import { getAreUsingKeepers, getRoster, getRosterMinMaxSize, getTeams } from '../vuex/getters'
 
 export default {
   data () {
@@ -64,7 +64,7 @@ export default {
 
   methods: {
     spotRequired: function (positionKey, index) {
-      return this.rosterMinimumSize.find(position => position.positionKey === positionKey).count >= index + 1
+      return this.rosterMinMaxSize.find(position => position.key === positionKey).min >= index + 1
     },
     teamsByAlpha: function (a, b) {
       const getLowerCaseName = (team) => {
@@ -80,7 +80,7 @@ export default {
     getters: {
       areUsingKeepers: getAreUsingKeepers,
       rosters: getRoster,
-      rosterMinimumSize: getRosterMinimumSize,
+      rosterMinMaxSize: getRosterMinMaxSize,
       teams: getTeams
     }
   }
