@@ -22,18 +22,19 @@ export const fetchPlayers = ({ dispatch, state }) => {
       }
     }
 
-    let standardDeviation = math.std(values[0].json().adp.player.map(item => pickToInteger(item.maxPick) - pickToInteger(item.minPick)))
+    let rankingsRaw = values[0].json().adp.player // values[0] contains: minPick, maxPick, draftsSelectedIn, id, averagePick
+    let players = values[1].json().players.player // values[1] contains: id, position, name, team
+    let byes = values[2].json() // values[2] contains: team, bye
 
-    let rankings = values[0].json().adp.player.map((item, index) => {
+    let standardDeviation = math.std(rankingsRaw.map(item => pickToInteger(item.maxPick) - pickToInteger(item.minPick)))
+
+    let rankings = rankingsRaw.map((item, index) => {
       return {
         playerID: item.id,
         overall: index + 1,
         stdDev: Math.round((pickToInteger(item.maxPick) - pickToInteger(item.minPick)) / standardDeviation)
       }
-    }) // values[0] contains: minPick, maxPick, draftsSelectedIn, id, averagePick
-
-    let players = values[1].json().players.player // values[1] contains: id, position, name, team
-    let byes = values[2].json() // values[2] contains: team, bye
+    })
 
     let rankedPlayers = players.map(player => {
       let id = player.id
@@ -49,6 +50,10 @@ export const fetchPlayers = ({ dispatch, state }) => {
     .filter(player => getPositionKeysLeague(state).includes(player.positionKey))
     .filter(player => player.ranking.overall !== undefined)
     .sort((a, b) => a.ranking.overall - b.ranking.overall)
+    .map((player, index) => {
+      player.ranking.overall = index + 1
+      return player
+    }) // re-rank after unused positions are filtered out
 
     rankedPlayers = rankingsMixin.methods.setPositionRankings(rankedPlayers)
 
