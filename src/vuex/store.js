@@ -60,14 +60,14 @@ const state = {
       rosterSize: 18,
       secondsPerPick: 60,
       teams: [
-        { name: 'Team Dad', owner: 'Don Koser', draftOrder: 1 },
-        { name: 'Team Mom', owner: 'Sue Koser', draftOrder: 2 },
-        { name: 'From Wentz It Came', owner: 'Brian Koser', draftOrder: 3, isUser: true },
-        { name: 'Team Zach', owner: 'Zach Koser', draftOrder: 4 },
-        { name: 'Team Matt', owner: 'Matt Koser', draftOrder: 5 },
-        { name: 'Team Amanda', owner: 'Amanda Koser', draftOrder: 6 },
-        { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 7 },
-        { name: 'Team Megan', owner: 'Megan Hutt', draftOrder: 8 }
+        { name: 'Team Matt', owner: 'Matt Koser', draftOrder: 1 },
+        { name: 'Team Megan', owner: 'Megan Hutt', draftOrder: 2 },
+        { name: 'Team Amanda', owner: 'Amanda Koser', draftOrder: 3 },
+        { name: 'Team DadKos', owner: 'Don Koser', draftOrder: 4 },
+        { name: 'From Wentz It Came', owner: 'Brian Koser', draftOrder: 5, isUser: true },
+        { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 6 },
+        { name: 'Sith Knights', owner: 'Zach Koser', draftOrder: 7 },
+        { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 8 }
       ]
     },
     team: {
