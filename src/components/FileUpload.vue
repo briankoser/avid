@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { EventBus } from '../event-bus.js'
+
 export default {
   created: function () {
     window.vueFileUpload = this
@@ -16,7 +18,7 @@ export default {
   },
   methods: {
     sendFile: function (ext, file) {
-      this.$emit('upload', ext, file)
+      EventBus.$emit('upload', ext, file)
     }
   },
   mounted () {

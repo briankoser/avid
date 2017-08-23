@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { EventBus } from '../event-bus.js'
 import { getPicksIDs, getPositionKeysLeague, getPositionsTeamRemaining } from '../vuex/getters'
 import logoMixin from '../mixins/logo'
 
@@ -73,7 +74,7 @@ export default {
 
   methods: {
     savePick: function (player) {
-      this.$emit('savePick', player)
+      EventBus.$emit('save-pick', player)
       this.clearPick()
     },
     clearPick: function () {

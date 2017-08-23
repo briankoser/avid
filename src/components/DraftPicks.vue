@@ -13,13 +13,14 @@
 </template>
 
 <script>
+import { EventBus } from '../event-bus.js'
 import { getAreUsingKeepers } from '../vuex/getters'
 
 let $ = require('jquery')
 
 export default {
   mounted () {
-    this.$on('savePick', player => {
+    EventBus.$on('save-pick', player => {
       setTimeout(scrollDown, 50, $('.draft-picks')) // give Vue time to re-render
     })
 

@@ -16,8 +16,7 @@
               <countdown :seconds="current.pickSecondsLeft"></countdown>
           </div>
 
-          <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam" 
-            @savePick="addPick" @removePick="removePick"></pick-controls>
+          <pick-controls :current-pick="current.pickNumber.overall" :current-team="currentTeam"></pick-controls>
       </div>
   </div>
 
@@ -30,6 +29,8 @@
 </template>
 
 <script>
+import { EventBus } from '../event-bus.js'
+
 import NflTeam from '../classes/nflTeam'
 import Pick from '../classes/pick'
 import PickNumber from '../classes/pickNumber'
@@ -62,6 +63,14 @@ export default {
     }
 
     $('#saveDraft').on('click', saveDraft)
+
+    EventBus.$on('save-pick', newPlayer => {
+      this.addPick(newPlayer)
+    })
+
+    EventBus.$on('remove-pick', () => {
+      this.removePick()
+    })
 
     if (this.areUsingKeepers) {
       setTimeout(this.updateKeepers, 50)
@@ -135,7 +144,6 @@ export default {
 
   methods: {
     addPick: function (newPlayer) {
-      console.log(this.$util.inspect(newPlayer))
       this.addStateEntry(Object.assign({}, this.current))
       this.resetPickSecondsLeft()
 
