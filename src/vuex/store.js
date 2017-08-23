@@ -80,6 +80,7 @@ const state = {
         { positionKey: 'Def', count: 1 }
       ],
       rankings: [],
+      tags: [],
       tiers: [
         { positionKey: 'QB', sizes: [3, 7, 3, 6, 6, 7] },
         { positionKey: 'RB', sizes: [] },

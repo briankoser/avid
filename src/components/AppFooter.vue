@@ -3,7 +3,7 @@
     <section class="credits">
       Built by <a href="http://koser.us">Brian Koser</a> 🏈 
       With help from Vue, Gridlex, Typeahead.js, and others 🏈 
-      Dome icon modified, original by <a href="http://www.freepik.com">Freepik</a> from www.flaticon.com
+      Icons by <a href="http://www.freepik.com">Freepik</a> from www.flaticon.com
     </section>
     <section class="history">
       <article>From Wentz It Came (2016 CTS) 1<sup>st</sup>/16 🏆</article>
