@@ -27,9 +27,9 @@
           <td class="player">{{ (pick.player || {}).name }}</td>
           <td class="round">{{ pick.round }}</td>
           <td class="rank">{{ (pick.player.ranking || {}).overall || 'U' }}</td>
-          <td class="pick">{{ pick.pickNumber.overall || areUsingKeepers ? 'K' : '' }}</td>
+          <td class="pick">{{ pick.pickNumber.overall || (areUsingKeepers ? 'K' : '') }}</td>
           <td class="rank">{{ (pick.player.ranking || {}).position || 'U' }}</td>
-          <td class="pick">{{ pick.pickNumber.position || areUsingKeepers ? 'K' : '' }}</td>
+          <td class="pick">{{ pick.pickNumber.position || (areUsingKeepers ? 'K' : '') }}</td>
           <td class="bye">{{ pick.player.nflTeam.bye }}</td>
         </template>
         <template v-else>
