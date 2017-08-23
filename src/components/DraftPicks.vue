@@ -16,16 +16,17 @@
 import { EventBus } from '../event-bus.js'
 import { getAreUsingKeepers } from '../vuex/getters'
 
-let $ = require('jquery')
-
 export default {
   mounted () {
     EventBus.$on('save-pick', player => {
-      setTimeout(scrollDown, 50, $('.draft-picks')) // give Vue time to re-render
+      setTimeout(this.scrollToEnd, 50) // give Vue time to re-render
     })
+  },
 
-    let scrollDown = (self) => {
-      self.scrollTop = self.scrollHeight - self.clientHeight
+  methods: {
+    scrollToEnd: function () {
+      var container = this.$el
+      container.scrollTop = container.scrollHeight
     }
   },
 
