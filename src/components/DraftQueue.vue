@@ -4,10 +4,10 @@
     <ol class="subtle-grey-bg tight">
         <li v-for="team in teams">
             <span v-if="team.name === currentTeam">
-                <b class="primary" v-bind:title="team.owner">{{ team.name }}</b>
+                <b class="team primary" v-bind:title="team.owner">{{ team.name }}</b>
             </span>
             <span v-else>
-                <span :class="{ 'user-team': team.isUser }" v-bind:title="team.owner">{{ team.name }}</span>
+                <span :class="{ 'user-team': team.isUser, 'team': true }" v-bind:title="team.owner">{{ team.name }}</span>
             </span>
         </li>
     </ol>
@@ -49,6 +49,10 @@ export default {
 
 .draft-order ol {
   list-style-type: none;
+}
+
+.team {
+  cursor: help;
 }
 
 .user-team {
