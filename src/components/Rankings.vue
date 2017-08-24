@@ -15,6 +15,9 @@
                 <div class="tagIconParent" v-if="isTarget(player.id)" title="Target">
                     <svg class="tagIcon target" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M388.4 123.6l3.8-42.2c0.4-4.1 2.2-8 5.1-10.9l52.9-52.9c3.4-3.4 9-3.4 12.5 0l31.7 31.7c3.4 3.4 3.4 9 0 12.5l-52.9 52.9c-2.9 2.9-6.8 4.7-10.9 5.1L388.4 123.6z" class="a"/><circle cx="211.9" cy="300.1" r="211.9" class="b"/><circle cx="211.9" cy="300.1" r="158.9" class="c"/><circle cx="211.9" cy="300.1" r="105.9" class="b"/><circle cx="211.9" cy="300.1" r="53" class="c"/><path d="M211.9 309c-2.3 0-4.5-0.9-6.2-2.6 -3.4-3.4-3.4-9 0-12.5l291.3-291.3c3.4-3.4 9-3.4 12.5 0 3.4 3.4 3.4 9 0 12.5l-291.3 291.3C216.4 308.1 214.1 309 211.9 309z" fill="#464655"/><path d="M509.4 2.6c-3.4-3.4-9-3.4-12.5 0l-15.1 15.1 12.5 12.5 15.1-15.1C512.9 11.6 512.9 6 509.4 2.6z" class="a"/></svg>
                 </div>
+                <div class="tagIconParent" v-if="isOverpriced(player.id)" title="Overpriced">
+                    <svg class="tagIcon overpriced" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448.8 152.9L359.1 63.2c-27.2 27.2-71.3 27.2-98.5 0L0 323.8 188.2 512l260.6-260.6C421.6 224.2 421.6 180.1 448.8 152.9zM364.1 189.4c-11.4 11.4-30 11.4-41.4 0 -11.4-11.4-11.4-30 0-41.4 11.4-11.4 30-11.4 41.4 0C375.5 159.4 375.5 177.9 364.1 189.4z" fill="orange"/><path d="M350 174.3c-3.1 0-6.3-1.2-8.7-3.6 -4.8-4.8-4.8-12.6 0-17.4L491 3.6c4.8-4.8 12.6-4.8 17.4 0 4.8 4.8 4.8 12.6 0 17.4L358.7 170.7C356.3 173.1 353.2 174.3 350 174.3z" fill="#006b9f"/><path d="M99.4 349.6c-3.1 0-6.3-1.2-8.7-3.6 -4.8-4.8-4.8-12.6 0-17.4l142.6-142.6c4.8-4.8 12.6-4.8 17.4 0 4.8 4.8 4.8 12.6 0 17.4L108.1 346C105.7 348.4 102.6 349.6 99.4 349.6z" class="a"/><path d="M137.1 387.2c-3.1 0-6.3-1.2-8.7-3.6 -4.8-4.8-4.8-12.6 0-17.4l142.6-142.6c4.8-4.8 12.6-4.8 17.4 0 4.8 4.8 4.8 12.6 0 17.4L145.8 383.6C143.4 386 140.2 387.2 137.1 387.2z" class="a"/><path d="M174.7 424.8c-3.1 0-6.3-1.2-8.7-3.6 -4.8-4.8-4.8-12.6 0-17.4l93-93c4.8-4.8 12.6-4.8 17.4 0 4.8 4.8 4.8 12.6 0 17.4l-93 93C181 423.6 177.9 424.8 174.7 424.8z" class="a"/></svg>
+                </div>
                 <div class="tagIconParent" v-if="isDomeKicker(player.positionKey, player.nflTeam.name)" title="Dome">
                     <svg class="tagIcon dome" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 175.9"><path d="m247.7 175.9-239.3 0C3.8 175.9 0 168.4 0 159.2 0 115 13.9 74.2 39.1 44.1 63 15.7 94.6 0 128 0c33.5 0 65 15.7 88.9 44.1 25.2 30.1 39.1 70.9 39.1 115.1 0 9.2-3.7 16.7-8.3 16.7zM208.4 72.8C187 47.4 158.5 33.4 128 33.4 97.5 33.4 69 47.4 47.7 72.8 31.2 92.4 20.9 116.7 17.7 142.5l220.6 0C235.2 116.7 224.8 92.4 208.4 72.8Z"/></svg>
                 </div>
@@ -69,6 +72,10 @@ export default {
       }
 
       return positionTiers.find(i => i === index) !== undefined
+    },
+
+    isOverpriced: function (playerId) {
+      return this.isInTag('overpriced', playerId)
     },
 
     isTarget: function (playerId) {
@@ -142,17 +149,22 @@ td:last-child {
 
 
 /* Tags */
-.bye {
-  font-size: 0.6em;
+.tagIcon {
+  height: 25px;
+  margin-top: 3px;
+}
+
+.tagIconParent {
+  cursor: help;
+  display: inline-block;
 }
 
 .dome {
   width: 25px;
 }
 
-.tagIcon {
-  height: 25px;
-  margin-top: 3px;
+.overprice .a {
+  fill:#181818;
 }
 
 .target .a {
@@ -167,14 +179,13 @@ td:last-child {
   fill: #fff;
 }
 
-.tagIconParent {
-  cursor: help;
-  display: inline-block;
-}
-
 
 
 /* Other Classes */
+.bye {
+  font-size: 0.6em;
+}
+
 .lastInTier {
   border-bottom: solid black 3px;
 }
