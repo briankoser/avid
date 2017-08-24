@@ -58,7 +58,7 @@ const state = {
         { key: 'Def', min: 1, max: 3 }
       ],
       rosterSize: 18,
-      secondsPerPick: 60,
+      secondsPerPick: 0,
       teams: [
         { name: 'Team Matt', owner: 'Matt Koser', draftOrder: 1 },
         { name: 'Team Megan', owner: 'Megan Hutt', draftOrder: 2 },
