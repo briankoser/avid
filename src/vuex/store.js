@@ -58,7 +58,7 @@ const state = {
         { key: 'Def', min: 1, max: 3 }
       ],
       rosterSize: 18,
-      secondsPerPick: 60,
+      secondsPerPick: 0,
       teams: [
         { name: 'Team Matt', owner: 'Matt Koser', draftOrder: 1 },
         { name: 'Team Megan', owner: 'Megan Hutt', draftOrder: 2 },
@@ -80,6 +80,13 @@ const state = {
         { positionKey: 'Def', count: 1 }
       ],
       rankings: [],
+      tags: [
+        { name: 'avoid', players: ['2842', '6982', '7942', '9054', '9101', '9898', '10302', '10722', '11180', '11201', '11384', '11454', '11642', '11678', '11746', '12155', '13113', '13115', '13116'] },
+        { name: 'handcuff', players: ['9087', '10300', '12626', '13138'] },
+        { name: 'injuryprone', players: ['9054', '9693', '9823', '9902', '10695', '10722', '11248', '11670', '12151', '12186'] },
+        { name: 'overpriced', players: ['8670', '9099', '9662', '9693', '9823', '11644'] },
+        { name: 'target', players: ['7877', '8670', '8673', '9087', '9525', '9925', '10261', '10273', '10313', '10413', '10506', '10703', '11516', '11668', '11695', '12141', '12626', '13129'] }
+      ],
       tiers: [
         { positionKey: 'QB', sizes: [3, 7, 3, 6, 6, 7] },
         { positionKey: 'RB', sizes: [] },
