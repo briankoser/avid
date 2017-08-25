@@ -9,7 +9,7 @@
                 {{ player.userRanking.overall > player.ranking.overall ? '↓' : '' }}
                 <span v-if="player.ranking.stdDev > 0" class="stdDev">σ{{ player.ranking.stdDev }}</span>
             </td>
-            <td>{{ player.positionKey }}</td>
+            <td>{{ positionPlusRanking(player) }}</td>
             <td>{{ player.name }}</td>
             <td class="tags">
                 <div class="tagIconParent" v-if="isDomeKicker(player.positionKey, player.nflTeam.name)" title="Dome">
@@ -106,6 +106,10 @@ export default {
     playersByPosition: function (position) {
       return this.players
         .filter(player => position === 'All' || player.positionKey === position)
+    },
+
+    positionPlusRanking: function (player) {
+      return player.positionKey + player.ranking.position
     },
 
     previousRankMessage: function (currentRanking, previousRanking) {
