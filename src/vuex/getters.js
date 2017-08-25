@@ -140,6 +140,10 @@ export function getRosterMinMaxSize (state) {
   return state.settings.league.positions
 }
 
+export function getRosterSize (state) {
+  return state.settings.league.rosterSize
+}
+
 export function getSecondsPerPick (state) {
   return state.settings.league.secondsPerPick
 }

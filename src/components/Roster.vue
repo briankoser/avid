@@ -1,13 +1,18 @@
 <template>
-  <aside>
-    <select v-model="teamSelected">
-      <template v-for="team in orderedTeams">
-      <option v-bind:selected="team.isUser ? 'selected' : null" :key="team.draftOrder">{{ team.name }}</option>
-      </template>
-    </select>
+  <aside class="grid">
+    <div class="col-10">
+      <select v-model="teamSelected">
+        <template v-for="team in orderedTeams">
+        <option v-bind:selected="team.isUser ? 'selected' : null" :key="team.draftOrder">{{ team.name }}</option>
+        </template>
+      </select>
+    </div>
+    <div class="col-2">
+      <span class="rosterPicks">{{ picksMade(teamSelected) }}/{{ rosterSize }}</span>
+    </div>
     <!--<button v-on:click="" class="button-primary">Start draft!</button>-->
 
-    <table v-for="section in rosters(teamSelected)">
+    <table v-for="section in rosters(teamSelected)" :key="section.positionKey" class="col-12">
       <tr>
         <th rowspan="2" class="position">{{ section.positionKey }}</th>
         <th rowspan="2">Round</th>
@@ -21,7 +26,7 @@
         <th>Rank</th>
         <th>Pick</th>
       </tr>
-      <tr v-for="(pick, index) in section.picks" v-bind:key="index" 
+      <tr v-for="(pick, index) in section.picks" :key="index" 
         :class="[{ 'empty-row': !pick.player }, spotRequired(section.positionKey, index) ? 'required' : 'not-required']">
         <template v-if="pick.player">
           <td class="player">{{ (pick.player || {}).name }}</td>
@@ -47,7 +52,7 @@
 </template>
 
 <script>
-import { getAreUsingKeepers, getRoster, getRosterMinMaxSize, getTeams } from '../vuex/getters'
+import { getAreUsingKeepers, getPicks, getRoster, getRosterMinMaxSize, getRosterSize, getTeams } from '../vuex/getters'
 
 export default {
   data () {
@@ -63,9 +68,14 @@ export default {
   },
 
   methods: {
+    picksMade: function (teamSelected) {
+      return (this.picks.filter(pick => pick.team.name === teamSelected) || []).length
+    },
+
     spotRequired: function (positionKey, index) {
       return this.rosterMinMaxSize.find(position => position.key === positionKey).min >= index + 1
     },
+
     teamsByAlpha: function (a, b) {
       const getLowerCaseName = (team) => {
         const name = (team || {}).name
@@ -79,8 +89,10 @@ export default {
   vuex: {
     getters: {
       areUsingKeepers: getAreUsingKeepers,
+      picks: getPicks,
       rosters: getRoster,
       rosterMinMaxSize: getRosterMinMaxSize,
+      rosterSize: getRosterSize,
       teams: getTeams
     }
   }
