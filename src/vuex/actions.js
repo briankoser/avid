@@ -71,7 +71,6 @@ export const setTeamRankings = ({ dispatch, state }, ext, rankings) => {
       .map(line => {
         let fields = line.split('|')
         let playerName = fields[0].replace(/"/g, '')
-        console.log(playerName)
         fields[0] = (state.players.find(player => player.name === playerName) || {id: playerName}).id
         return fields.join('|')
       })
