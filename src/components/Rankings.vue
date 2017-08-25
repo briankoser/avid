@@ -5,9 +5,9 @@
             <td class="ranking">{{ player.userRanking.overall }}</td>
             <td :class="{'movement': true, 'up': player.userRanking.overall < player.ranking.overall, 'down': player.userRanking.overall > player.ranking.overall }"
               v-bind:title="previousRankMessage(player.userRanking.overall, player.ranking.overall)">
+                <span v-if="player.ranking.stdDev > 0" class="stdDev">σ{{ player.ranking.stdDev }}</span>
                 {{ player.userRanking.overall < player.ranking.overall ? '↑' : '' }}
                 {{ player.userRanking.overall > player.ranking.overall ? '↓' : '' }}
-                <span v-if="player.ranking.stdDev > 0" class="stdDev">σ{{ player.ranking.stdDev }}</span>
             </td>
             <td>{{ positionPlusRanking(player) }}</td>
             <td>{{ player.name }}</td>
@@ -155,7 +155,7 @@ tr:nth-child(2n + 1) {
 }
 
 td {
-  padding-left: 20px;
+  padding: 2px 6px 2px 18px;
 }
 
 td:first-child,
@@ -259,6 +259,7 @@ td:last-child {
   cursor: help;
   font-size: 0.85em;
   padding-left: 0;
+  padding-right: 0;
 }
 
 .movement.up {
