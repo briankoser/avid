@@ -46,36 +46,89 @@ const state = {
     /*
       Family settings
     */
+    // league: {
+    //   draftOrderType: 'ser',
+    //   keepers: false,
+    //   positions: [
+    //     { key: 'QB', min: 2, max: 4 },
+    //     { key: 'RB', min: 2, max: 6 },
+    //     { key: 'WR', min: 2, max: 6 },
+    //     { key: 'TE', min: 1, max: 6 },
+    //     { key: 'PK', min: 1, max: 3 },
+    //     { key: 'Def', min: 1, max: 3 }
+    //   ],
+    //   rosterSize: 18,
+    //   secondsPerPick: 0,
+    //   teams: [
+    //     { name: 'Ya Ertz Me? Foles Reals', owner: 'Matt Koser', draftOrder: 1 },
+    //     { name: 'Queens of the Forest', owner: 'Megan Hutt', draftOrder: 2 },
+    //     { name: 'Kung Fu Manda', owner: 'Amanda Koser', draftOrder: 3 },
+    //     { name: 'PApa Phillyman', owner: 'Don Koser', draftOrder: 4 },
+    //     { name: 'From Wentz It Came', owner: 'Brian Koser', draftOrder: 5, isUser: true },
+    //     { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 6 },
+    //     { name: 'Sith Knights', owner: 'Zach Koser', draftOrder: 7 },
+    //     { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 8 }
+    //   ]
+    // },
+    // team: {
+    //   idealSize: [
+    //     { positionKey: 'QB', count: 3 },
+    //     { positionKey: 'RB', count: 5 },
+    //     { positionKey: 'WR', count: 6 },
+    //     { positionKey: 'TE', count: 2 },
+    //     { positionKey: 'PK', count: 1 },
+    //     { positionKey: 'Def', count: 1 }
+    //   ],
+    //   rankings: [],
+    //   tags: [
+    //     { name: 'avoid', players: ['2842', '6982', '7942', '9054', '9101', '9898', '10302', '10722', '11180', '11201', '11384', '11454', '11642', '11678', '11746', '12155', '13113', '13115', '13116', '13188'] },
+    //     { name: 'handcuff', players: ['9087', '10300', '12626', '13138'] },
+    //     { name: 'injuryprone', players: ['9054', '9693', '9823', '9902', '10695', '10722', '11248', '11670', '12151', '12186'] },
+    //     { name: 'overpriced', players: ['8670', '9099', '9662', '9693', '9823', '11644'] },
+    //     { name: 'target', players: ['0509', '0527', '7394', '7877', '8360', '8670', '8673', '9087', '9525', '9881', '9925', '10261', '10273', '10313', '10413', '10506', '10703', '10709', '11516', '11668', '11688', '11695', '12141', '12626', '13129'] }
+    //   ],
+    //   tiers: [
+    //     { positionKey: 'QB', sizes: [3, 7, 3, 6, 6, 7] },
+    //     { positionKey: 'RB', sizes: [] },
+    //     { positionKey: 'WR', sizes: [] },
+    //     { positionKey: 'TE', sizes: [1, 10] },
+    //     { positionKey: 'PK', sizes: [] },
+    //     { positionKey: 'Def', sizes: [4, 3] }
+    //   ]
+    // }
+    /*
+      CTS settings
+    */
     league: {
       draftOrderType: 'ser',
       keepers: false,
       positions: [
-        { key: 'QB', min: 2, max: 4 },
+        { key: 'QB', min: 1, max: 6 },
         { key: 'RB', min: 2, max: 6 },
         { key: 'WR', min: 2, max: 6 },
         { key: 'TE', min: 1, max: 6 },
-        { key: 'PK', min: 1, max: 3 },
-        { key: 'Def', min: 1, max: 3 }
+        { key: 'PK', min: 1, max: 5 },
+        { key: 'Def', min: 1, max: 5 }
       ],
-      rosterSize: 18,
-      secondsPerPick: 0,
+      rosterSize: 14,
+      secondsPerPick: 60,
       teams: [
-        { name: 'Team Matt', owner: 'Matt Koser', draftOrder: 1 },
-        { name: 'Team Megan', owner: 'Megan Hutt', draftOrder: 2 },
-        { name: 'Team Amanda', owner: 'Amanda Koser', draftOrder: 3 },
-        { name: 'Team DadKos', owner: 'Don Koser', draftOrder: 4 },
-        { name: 'From Wentz It Came', owner: 'Brian Koser', draftOrder: 5, isUser: true },
-        { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 6 },
-        { name: 'Sith Knights', owner: 'Zach Koser', draftOrder: 7 },
-        { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 8 }
+        { name: 'Travis\'s Team', owner: 'Travis Clinkscales', draftOrder: 1 },
+        { name: 'Pun Goes Here', owner: 'Brian Koser', draftOrder: 2, isUser: true },
+        { name: 'Slow White Bronco', owner: 'Luke Smith', draftOrder: 3 },
+        { name: 'tim\'s unmatched team', owner: 'Tim Godfrey', draftOrder: 4 },
+        { name: 'Scott', owner: 'Scott Hartwell', draftOrder: 5 },
+        { name: 'Kristy', owner: 'Kristy King', draftOrder: 6 },
+        { name: 'Team 7', owner: '?', draftOrder: 7 },
+        { name: 'Chase', owner: 'Chase Oubre', draftOrder: 8 }
       ]
     },
     team: {
       idealSize: [
         { positionKey: 'QB', count: 3 },
-        { positionKey: 'RB', count: 5 },
-        { positionKey: 'WR', count: 6 },
-        { positionKey: 'TE', count: 2 },
+        { positionKey: 'RB', count: 4 },
+        { positionKey: 'WR', count: 4 },
+        { positionKey: 'TE', count: 1 },
         { positionKey: 'PK', count: 1 },
         { positionKey: 'Def', count: 1 }
       ],
@@ -96,52 +149,6 @@ const state = {
         { positionKey: 'Def', sizes: [4, 3] }
       ]
     }
-    /*
-      CTS settings
-    */
-    // league: {
-    //   draftOrderType: 'ser',
-    //   keepers: true,
-    //   positions: [
-    //     { key: 'QB', min: 1, max: 6 },
-    //     { key: 'RB', min: 1, max: 6 },
-    //     { key: 'WR', min: 1, max: 6 },
-    //     { key: 'TE', min: 1, max: 6 },
-    //     { key: 'PK', min: 1, max: 5 },
-    //     { key: 'Def', min: 1, max: 5 }
-    //   ]
-    //   rosterSize: 11,
-    //   secondsPerPick: 60,
-    //   teams: [
-    //     { name: 'Mark’s Team', owner: 'Mark Garrett', draftOrder: 1, keeper: '10273' },
-    //     { name: 'Team Evan', owner: 'Evan Bernard', draftOrder: 2, keeper: '9988' },
-    //     { name: 'From Wentz It Came', owner: 'Brian Koser', draftOrder: 3, keeper: '7836', isUser: true },
-    //     { name: 'Sack Dak Quarterback', owner: 'Kristy King', draftOrder: 4, keeper: '10271' },
-    //     { name: 'London Sillinannies', owner: 'Zach Brown', draftOrder: 5, keeper: '11679' },
-    //     { name: 'Alderaan Explosions', owner: 'Brandon Ellison', draftOrder: 6, keeper: '10695' },
-    //     { name: 'Christian’s Team', owner: 'Christian Boyer', draftOrder: 7, keeper: '12171' },
-    //     { name: 'Don’t Stop Talibing', owner: 'James Hostick', draftOrder: 8, keeper: '12150' }
-    //   ]
-    // },
-    // team: {
-    //   idealSize: [
-    //     { positionKey: 'QB', count: 3 },
-    //     { positionKey: 'RB', count: 2 },
-    //     { positionKey: 'WR', count: 2 },
-    //     { positionKey: 'TE', count: 1 },
-    //     { positionKey: 'PK', count: 1 },
-    //     { positionKey: 'Def', count: 1 }
-    //   ],
-    //   rankings: [],
-    //   tiers: [
-    //     { positionKey: 'QB', sizes: [3, 7, 3, 6, 6, 7] },
-    //     { positionKey: 'RB', sizes: [] },
-    //     { positionKey: 'WR', sizes: [] },
-    //     { positionKey: 'TE', sizes: [1] },
-    //     { positionKey: 'PK', sizes: [] },
-    //     { positionKey: 'Def', sizes: [] }
-    //   ]
-    // }
 
     /*
       Crossroads settings
@@ -160,7 +167,7 @@ const state = {
     //   rosterSize: 17,
     //   secondsPerPick: 60,
     //   teams: [
-    //     { name: 'The Commish', owner: 'Aaron Smith', draftOrder: 12 },
+    //     { name: 'The Commish', owner: 'Aaron Smith', draftOrder: 12, keeper: '7836' },
     //     { name: '’Aints -', owner: 'Matt McLean' draftOrder: 11 },
     //     { name: 'Play It Again Sam', owner: 'Brian Koser', draftOrder: 10, isUser: true },
     //     { name: 'O. J.', owner: 'Tuck Chastain', draftOrder: 9 },
