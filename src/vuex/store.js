@@ -113,14 +113,14 @@ const state = {
       rosterSize: 14,
       secondsPerPick: 60,
       teams: [
-        { name: 'yerfdogt', owner: 'Tim Godfrey', draftOrder: 1 },
-        { name: 'Pun Goes Here', owner: 'Brian Koser', draftOrder: 2, isUser: true },
-        { name: 'Kristymacs', owner: 'Kristy King', draftOrder: 3 },
-        { name: 'tclinkscales', owner: 'Travis Clinkscales', draftOrder: 4 },
-        { name: 'Chase', owner: 'Chase Oubre', draftOrder: 5 },
-        { name: 'Slow White Bronco', owner: 'Luke Smith', draftOrder: 6 },
-        { name: 'Steven', owner: 'Steven Grimes', draftOrder: 7 },
-        { name: 'Scott', owner: 'Scott Hartwell', draftOrder: 8 }
+        { name: 'Chase', owner: 'Chase Oubre', draftOrder: 1 },
+        { name: 'Slow White Bronco', owner: 'Luke Smith', draftOrder: 2 },
+        { name: 'Scott', owner: 'Scott Hartwell', draftOrder: 3 },
+        { name: 'Kristymacs', owner: 'Kristy King', draftOrder: 4 },
+        { name: 'yerfdogt', owner: 'Tim Godfrey', draftOrder: 5 },
+        { name: 'tclinkscales', owner: 'Travis Clinkscales', draftOrder: 6 },
+        { name: 'My Team Suxx', owner: 'Steven Grimes', draftOrder: 7 },
+        { name: 'Pun Goes Here', owner: 'Brian Koser', draftOrder: 8, isUser: true }
         // { name: 'Team 1', owner: '?', draftOrder: 1 },
         // { name: 'Team 2', owner: '?', draftOrder: 2, isUser: true },
         // { name: 'Team 3', owner: '?', draftOrder: 3 },
