@@ -1,5 +1,5 @@
 # avid
-Fantasy Football draft helper. Vue.js under the hood.
+Fantasy Football draft helper. Vue.js under the hood. Hosted at [avid.koser.us](http://avid.koser.us).
 
 ## Build Setup
 
