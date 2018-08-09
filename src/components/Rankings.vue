@@ -31,10 +31,7 @@
                     <svg class="tagIcon overpriced" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448.8 152.9L359.1 63.2c-27.2 27.2-71.3 27.2-98.5 0L0 323.8 188.2 512l260.6-260.6C421.6 224.2 421.6 180.1 448.8 152.9zM364.1 189.4c-11.4 11.4-30 11.4-41.4 0 -11.4-11.4-11.4-30 0-41.4 11.4-11.4 30-11.4 41.4 0C375.5 159.4 375.5 177.9 364.1 189.4z" fill="orange"/><path d="M350 174.3c-3.1 0-6.3-1.2-8.7-3.6 -4.8-4.8-4.8-12.6 0-17.4L491 3.6c4.8-4.8 12.6-4.8 17.4 0 4.8 4.8 4.8 12.6 0 17.4L358.7 170.7C356.3 173.1 353.2 174.3 350 174.3z" fill="#006b9f"/><path d="M99.4 349.6c-3.1 0-6.3-1.2-8.7-3.6 -4.8-4.8-4.8-12.6 0-17.4l142.6-142.6c4.8-4.8 12.6-4.8 17.4 0 4.8 4.8 4.8 12.6 0 17.4L108.1 346C105.7 348.4 102.6 349.6 99.4 349.6z" class="a"/><path d="M137.1 387.2c-3.1 0-6.3-1.2-8.7-3.6 -4.8-4.8-4.8-12.6 0-17.4l142.6-142.6c4.8-4.8 12.6-4.8 17.4 0 4.8 4.8 4.8 12.6 0 17.4L145.8 383.6C143.4 386 140.2 387.2 137.1 387.2z" class="a"/><path d="M174.7 424.8c-3.1 0-6.3-1.2-8.7-3.6 -4.8-4.8-4.8-12.6 0-17.4l93-93c4.8-4.8 12.6-4.8 17.4 0 4.8 4.8 4.8 12.6 0 17.4l-93 93C181 423.6 177.9 424.8 174.7 424.8z" class="a"/></svg>
                 </div>
             </td>
-            <td class="bye">
-                {{ player.nflTeam.bye }}
-                <img v-bind:src="logoPath(player.nflTeam.name)" v-bind:alt="player.nflTeam.name" class="team-logo" />
-            </td>
+            <td class="bye"> {{ player.nflTeam.bye }} <img v-bind:src="logoPath(player.nflTeam.name)" v-bind:alt="player.nflTeam.name" class="team-logo" /></td>
         </tr>
     </template>
 </table>
@@ -155,7 +152,7 @@ tr:nth-child(2n + 1) {
 }
 
 td {
-  padding: 2px 6px 2px 18px;
+  padding: 0;
 }
 
 td:first-child,
