@@ -160,10 +160,12 @@ export default {
       this.addPickToState(pick)
     },
     removePick: function () {
-      this.undoLastPick()
-      this.current.pickNumber.overall -= 1
-      this.retreatCurrentState()
-      this.resetPickSecondsLeft()
+      if (this.current.pickNumber.overall > 1) {
+        this.undoLastPick()
+        this.current.pickNumber.overall -= 1
+        this.retreatCurrentState()
+        this.resetPickSecondsLeft()
+      }
     },
     resetPickSecondsLeft: function () {
       this.current.pickSecondsLeft = this.secondsPerPick
