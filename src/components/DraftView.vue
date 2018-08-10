@@ -195,6 +195,7 @@ export default {
     updateCurrentStateSerpentine: function () {
       this.current.pickNumber.overall += 1
 
+      // update current round and round pick number
       if (this.current.pickNumber.overall % (this.teams.length) === 1) {
         this.current.round += 1
         this.current.pickNumber.round = 1
@@ -202,10 +203,11 @@ export default {
         this.current.pickNumber.round += 1
       }
 
+      // update team picking
       if (this.current.pickNumber.round === 1 || (this.areUsingKeepers && this.current.round === 1)) {
         return
       } else {
-        const isEvenRound = !(this.current.round % 2)
+        const isEvenRound = this.current.round % 2 === 0
         this.current.teamIndex = isEvenRound === this.areUsingKeepers ? this.current.teamIndex + 1 : this.current.teamIndex - 1 // without keepers, move down (add) in odd rounds (eg round 1) and move up (subtract in even rounds); with keepers, it's the opposite
       }
     },
