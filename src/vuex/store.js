@@ -48,7 +48,7 @@ const state = {
     */
     league: {
       draftOrderType: 'ser',
-      keepers: true,
+      keepers: false, // can't use until code handles only some players having keepers
       positions: [
         { key: 'QB', min: 2, max: 4 },
         { key: 'RB', min: 2, max: 6 },
