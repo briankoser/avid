@@ -2,7 +2,7 @@
 <div class="draft-order milli">
     <h1 class="primary-bg white keno">DRAFT ORDER</h1>
     <ol class="subtle-grey-bg tight">
-        <li v-for="team in teams">
+        <li v-for="team in teams" v-bind:key="team.name">
             <span v-if="team.name === currentTeam">
                 <b class="team primary" v-bind:title="team.owner">{{ team.name }}</b>
             </span>

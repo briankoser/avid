@@ -5,7 +5,7 @@
         <div class="col-4">
             <select v-model="positionSelected">
                 <option>All</option>
-                <option v-for="positionKey in positionKeys">{{ positionKey }}</option>
+                <option v-for="positionKey in positionKeys" :key="positionKey">{{ positionKey }}</option>
             </select>
             <label>
                 <input type="checkbox" v-model="onlyDisplayAvailable">Undrafted
