@@ -67,7 +67,11 @@ const state = {
         { name: 'Insert Pun Here', owner: 'Brian Koser', draftOrder: 5, isUser: true },
         { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 6 },
         { name: 'Sith Knights', owner: 'Zach Koser', draftOrder: 7 },
-        { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 8 }
+        { name: 'Melissa Team', owner: 'Melissa Koser', draftOrder: 8 },
+        { name: 'Melody Team', owner: 'Melody Tijerina', draftOrder: 9 },
+        { name: 'Tim Team', owner: 'Tim Binzel', draftOrder: 10 },
+        { name: 'Nathan Team', owner: 'Nathan Reimers', draftOrder: 11 },
+        { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 12 }
       ]
     },
     team: {
