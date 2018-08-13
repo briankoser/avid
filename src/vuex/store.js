@@ -50,14 +50,14 @@ const state = {
       draftOrderType: 'ser',
       keepers: false, // can't use until code handles only some players having keepers
       positions: [
-        { key: 'QB', min: 2, max: 4 },
+        { key: 'QB', min: 2, max: 3 },
         { key: 'RB', min: 2, max: 6 },
         { key: 'WR', min: 2, max: 6 },
         { key: 'TE', min: 1, max: 6 },
         { key: 'PK', min: 1, max: 3 },
         { key: 'Def', min: 1, max: 3 }
       ],
-      rosterSize: 18,
+      rosterSize: 16,
       secondsPerPick: 0,
       teams: [
         { name: 'Ya Ertz Me? Foles Reals', owner: 'Matt Koser', draftOrder: 1 },
@@ -78,7 +78,7 @@ const state = {
       idealSize: [
         { positionKey: 'QB', count: 3 },
         { positionKey: 'RB', count: 5 },
-        { positionKey: 'WR', count: 6 },
+        { positionKey: 'WR', count: 5 },
         { positionKey: 'TE', count: 2 },
         { positionKey: 'PK', count: 1 },
         { positionKey: 'Def', count: 1 }
@@ -92,10 +92,10 @@ const state = {
         { name: 'target', players: ['0509', '0527', '7394', '7877', '8360', '8670', '8673', '9087', '9525', '9881', '9925', '10261', '10273', '10313', '10413', '10506', '10703', '10709', '11516', '11668', '11688', '11695', '12141', '12626', '13129'] }
       ],
       tiers: [
-        { positionKey: 'QB', sizes: [3, 7, 3, 6, 6, 7] },
-        { positionKey: 'RB', sizes: [] },
-        { positionKey: 'WR', sizes: [] },
-        { positionKey: 'TE', sizes: [1, 10] },
+        { positionKey: 'QB', sizes: [5, 4, 4, 5, 8, 6] },
+        { positionKey: 'RB', sizes: [3, 3, 6, 3, 10, 6] },
+        { positionKey: 'WR', sizes: [1, 7, 13, 8, 8, 7] },
+        { positionKey: 'TE', sizes: [3, 3, 6] },
         { positionKey: 'PK', sizes: [] },
         { positionKey: 'Def', sizes: [4, 3] }
       ]
