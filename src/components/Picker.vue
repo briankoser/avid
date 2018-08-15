@@ -4,6 +4,8 @@
 </div>
 </template>
 
+
+
 <script>
 import { EventBus } from '../event-bus.js'
 import { getPicksIDs, getPositionKeysLeague, getPositionsTeamRemaining } from '../vuex/getters'
@@ -107,10 +109,12 @@ let engine = new Bloodhound({
   }
 })
 
-let teamPositionsRemaining = (id) => window.vuePicker.positionLimits(id)
-let filterLimits = (suggestions) => suggestions.filter(x => teamPositionsRemaining(window.vuePicker.currentTeam).includes(x.position))
-let filterPicked = (suggestions) => suggestions.filter(x => !window.vuePicker.picks.includes(x.id))
+let teamPositionsRemaining = id => window.vuePicker.positionLimits(id)
+let filterLimits = suggestions => suggestions.filter(x => teamPositionsRemaining(window.vuePicker.currentTeam).includes(x.position))
+let filterPicked = suggestions => suggestions.filter(x => !window.vuePicker.picks.includes(x.id))
 </script>
+
+
 
 <style>
 .picker .typeahead,
