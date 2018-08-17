@@ -48,7 +48,7 @@ const state = {
     */
     league: {
       draftOrderType: 'ser',
-      keepers: false, // can't use until code handles only some players having keepers
+      keepers: false,
       positions: [
         { key: 'QB', min: 2, max: 3 },
         { key: 'RB', min: 2, max: 6 },
@@ -60,18 +60,18 @@ const state = {
       rosterSize: 16,
       secondsPerPick: 0,
       teams: [
-        { name: 'Ya Ertz Me? Foles Reals', owner: 'Matt Koser', draftOrder: 1 },
-        { name: 'Queens of the Forest', owner: 'Megan Hutt', draftOrder: 2 },
-        { name: 'Kung Fu Manda', owner: 'Amanda Koser', draftOrder: 3 },
-        { name: 'PApa Phillyman', owner: 'Don Koser', draftOrder: 4 },
-        { name: 'Insert Pun Here', owner: 'Brian Koser', draftOrder: 5, isUser: true },
-        { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 6 },
-        { name: 'Sith Knights', owner: 'Zach Koser', draftOrder: 7 },
-        { name: 'Melissa Team', owner: 'Melissa Koser', draftOrder: 8 },
-        { name: 'Melody Team', owner: 'Melody Tijerina', draftOrder: 9 },
-        { name: 'Tim Team', owner: 'Tim Binzel', draftOrder: 10 },
-        { name: 'Nathan Team', owner: 'Nathan Reimers', draftOrder: 11 },
-        { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 12 }
+        { name: 'Force the Door', owner: 'Nathan Reimers', draftOrder: 1, keeper: '' },
+        { name: 'Tim Team', owner: 'Tim Binzel', draftOrder: 2, keeper: '' },
+        { name: 'Melody Team', owner: 'Melody Tijerina', draftOrder: 3, keeper: '' },
+        { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 4, keeper: '13132' },
+        { name: 'Ya Ertz Me? Foles Reals', owner: 'Matt Koser', draftOrder: 5, keeper: '' },
+        { name: 'Sith Knights', owner: 'Zach Koser', draftOrder: 6, keeper: '7836' },
+        { name: 'Insert Pun Here', owner: 'Brian Koser', draftOrder: 7, keeper: '9988', isUser: true },
+        { name: 'Kung Fu Manda', owner: 'Amanda Koser', draftOrder: 8, keeper: '11232' },
+        { name: 'Queens of the Forest', owner: 'Megan Hutt', draftOrder: 9, keeper: '' },
+        { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 10, keeper: '12150' },
+        { name: 'Melissa Team', owner: 'Melissa Koser', draftOrder: 11, keeper: '' },
+        { name: 'PApa Phillyman', owner: 'Don Koser', draftOrder: 12, keeper: '11192' }
       ]
     },
     team: {
@@ -79,23 +79,23 @@ const state = {
         { positionKey: 'QB', count: 3 },
         { positionKey: 'RB', count: 5 },
         { positionKey: 'WR', count: 5 },
-        { positionKey: 'TE', count: 2 },
+        { positionKey: 'TE', count: 1 },
         { positionKey: 'PK', count: 1 },
         { positionKey: 'Def', count: 1 }
       ],
       rankings: [],
       tags: [
-        { name: 'avoid', players: ['2842', '6982', '7942', '9054', '9101', '9898', '10302', '10722', '11180', '11201', '11384', '11454', '11642', '11678', '11746', '12155', '13113', '13115', '13116', '13188'] },
-        { name: 'handcuff', players: ['9087', '10300', '12626', '13138'] },
+        { name: 'avoid', players: ['2842'] },
+        { name: 'handcuff', players: ['9087'] },
         { name: 'injuryprone', players: ['9054', '9693', '9823', '9902', '10695', '10722', '11248', '11670', '12151', '12186'] },
-        { name: 'overpriced', players: ['8670', '9099', '9662', '9693', '9823', '11644'] },
-        { name: 'target', players: ['0509', '0527', '7394', '7877', '8360', '8670', '8673', '9087', '9525', '9881', '9925', '10261', '10273', '10313', '10413', '10506', '10703', '10709', '11516', '11668', '11688', '11695', '12141', '12626', '13129'] }
+        { name: 'overpriced', players: ['8670'] },
+        { name: 'target', players: ['0509'] }
       ],
       tiers: [
-        { positionKey: 'QB', sizes: [5, 4, 4, 5, 8, 6] },
+        { positionKey: 'QB', sizes: [4, 5, 4, 5, 8, 6] },
         { positionKey: 'RB', sizes: [3, 3, 6, 3, 10, 6] },
         { positionKey: 'WR', sizes: [1, 7, 13, 8, 8, 7] },
-        { positionKey: 'TE', sizes: [3, 3, 6] },
+        { positionKey: 'TE', sizes: [3, 6, 3] },
         { positionKey: 'PK', sizes: [] },
         { positionKey: 'Def', sizes: [4, 3] }
       ]
