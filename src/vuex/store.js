@@ -48,7 +48,7 @@ const state = {
     */
     league: {
       draftOrderType: 'ser',
-      keepers: false,
+      keepers: true,
       positions: [
         { key: 'QB', min: 2, max: 3 },
         { key: 'RB', min: 2, max: 6 },
@@ -60,17 +60,17 @@ const state = {
       rosterSize: 16,
       secondsPerPick: 0,
       teams: [
-        { name: 'Force the Door', owner: 'Nathan Reimers', draftOrder: 1, keeper: '' },
-        { name: 'Tim Team', owner: 'Tim Binzel', draftOrder: 2, keeper: '' },
-        { name: 'Melody Team', owner: 'Melody Tijerina', draftOrder: 3, keeper: '' },
+        { name: 'Force the Door', owner: 'Nathan Reimers', draftOrder: 1, keeper: '13113' },
+        { name: 'Tim Team', owner: 'Tim Binzel', draftOrder: 2, keeper: '5848' },
+        { name: 'Melody Team', owner: 'Melody Tijerina', draftOrder: 3, keeper: '11679' },
         { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 4, keeper: '13132' },
-        { name: 'Ya Ertz Me? Foles Reals', owner: 'Matt Koser', draftOrder: 5, keeper: '' },
+        { name: 'Ya Ertz Me? Foles Reals', owner: 'Matt Koser', draftOrder: 5, keeper: '13604' },
         { name: 'Sith Knights', owner: 'Zach Koser', draftOrder: 6, keeper: '7836' },
         { name: 'Insert Pun Here', owner: 'Brian Koser', draftOrder: 7, keeper: '9988', isUser: true },
         { name: 'Kung Fu Manda', owner: 'Amanda Koser', draftOrder: 8, keeper: '11232' },
-        { name: 'Queens of the Forest', owner: 'Megan Hutt', draftOrder: 9, keeper: '' },
+        { name: 'Queens of the Forest', owner: 'Megan Hutt', draftOrder: 9, keeper: '12171' },
         { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 10, keeper: '12150' },
-        { name: 'Melissa Team', owner: 'Melissa Koser', draftOrder: 11, keeper: '' },
+        { name: 'Melissa Team', owner: 'Melissa Koser', draftOrder: 11, keeper: '12625' },
         { name: 'PApa Phillyman', owner: 'Don Koser', draftOrder: 12, keeper: '11192' }
       ]
     },
@@ -85,15 +85,15 @@ const state = {
       ],
       rankings: [],
       tags: [
-        { name: 'avoid', players: ['2842'] },
-        { name: 'handcuff', players: ['9087'] },
-        { name: 'injuryprone', players: ['9054', '9693', '9823', '9902', '10695', '10722', '11248', '11670', '12151', '12186'] },
+        { name: 'avoid', players: ['0515', '9448', '11671', '11657', '12620', '12634'] },
+        { name: 'handcuff', players: ['10077', '10699', '11193', '11199', '11390', '13163', '13188', '13378', '13593', '13629'] },
+        { name: 'injuryprone', players: ['10722', '13608'] },
         { name: 'overpriced', players: ['8670'] },
-        { name: 'target', players: ['0509'] }
+        { name: 'target', players: ['8247', '9250', '9525', '9831', '9918', '10276', '10312', '10389', '10527', '10708', '10973', '11228', '11406', '11705', '11925', '12152', '12175', '12181', '12205', '12618', '12647', '12665', '13136', '13153', '13164', '13290', '13364', '13492', '13617', '13622', '13630', '13635', '13636', '13672'] }
       ],
       tiers: [
         { positionKey: 'QB', sizes: [4, 5, 4, 5, 8, 6] },
-        { positionKey: 'RB', sizes: [3, 3, 6, 3, 10, 6] },
+        { positionKey: 'RB', sizes: [3, 3, 5, 3, 11, 6] },
         { positionKey: 'WR', sizes: [1, 7, 13, 8, 8, 7] },
         { positionKey: 'TE', sizes: [3, 6, 3] },
         { positionKey: 'PK', sizes: [] },

@@ -32,6 +32,7 @@ npm run build
     6. Move file to /static/adpRankings-{teamCount}teams-{specialScoring}.json
         - eg /static/adpRankings-12teams-2qb-half.json
     7. Update `rankings` in /src/services/fetchJson.js to get the new rankings file.
+3. Update personal rankings
 
 
 
