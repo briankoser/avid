@@ -68,9 +68,9 @@ const state = {
         { name: 'Sith Knights', owner: 'Zach Koser', draftOrder: 6, keeper: '7836' },
         { name: 'Insert Pun Here', owner: 'Brian Koser', draftOrder: 7, keeper: '9988', isUser: true },
         { name: 'Kung Fu Manda', owner: 'Amanda Koser', draftOrder: 8, keeper: '11232' },
-        { name: 'Queens of the Forest', owner: 'Megan Hutt', draftOrder: 9, keeper: '12171' },
+        { name: 'Queens of the Forest', owner: 'Megan Hutt', draftOrder: 9, keeper: '12625' },
         { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 10, keeper: '12150' },
-        { name: 'Melissa Team', owner: 'Melissa Koser', draftOrder: 11, keeper: '12625' },
+        { name: 'Melissa Team', owner: 'Melissa Koser', draftOrder: 11, keeper: '12171' },
         { name: 'PApa Phillyman', owner: 'Don Koser', draftOrder: 12, keeper: '11192' }
       ]
     },
@@ -89,7 +89,7 @@ const state = {
         { name: 'handcuff', players: ['10077', '10699', '11193', '11199', '11390', '13163', '13188', '13378', '13593', '13629'] },
         { name: 'injuryprone', players: ['10722', '13608'] },
         { name: 'overpriced', players: ['8670'] },
-        { name: 'target', players: ['8247', '9250', '9525', '9831', '9918', '10077', '10276', '10312', '10389', '10527', '10708', '10973', '11228', '11406', '11705', '11812', '11925', '12152', '12175', '12181', '12205', '12618', '12647', '12665', '13136', '13153', '13164', '13277', '13290', '13364', '13492', '13617', '13622', '13630', '13635', '13636', '13672'] }
+        { name: 'target', players: ['8247', '9250', '9525', '9831', '9918', '10077', '10276', '10312', '10389', '10708', '10973', '11228', '11406', '11705', '11812', '11925', '12152', '12175', '12181', '12205', '12618', '12647', '12665', '13136', '13153', '13164', '13277', '13290', '13364', '13492', '13617', '13622', '13630', '13635', '13636', '13672'] }
       ],
       tiers: [
         { positionKey: 'QB', sizes: [4, 5, 4, 5, 8, 6] },
