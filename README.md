@@ -33,7 +33,9 @@ npm run build
         - eg /static/adpRankings-12teams-2qb-half.json
     7. Update `rankings` in /src/services/fetchJson.js to get the new rankings file.
 3. Update personal rankings
-
+    1. File is located at /static/rankings.json
+    2. Format is: `[{id": "7836", "ranking": 24}]`
+4. Deploy files from /dist folder
 
 
 
