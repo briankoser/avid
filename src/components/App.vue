@@ -75,6 +75,12 @@ a {
   text-decoration: none;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  height: 1em; 
+  width: 1em;
+}
+
 
 /*
   FONT SIZING
