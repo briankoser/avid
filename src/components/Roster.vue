@@ -7,6 +7,12 @@
         </template>
       </select>
     </div>
+    <!-- Freeze roster view: blocked on #16 so I can access current team-->
+    <!-- <div class="col-3">
+      <label>
+          <input type="checkbox" v-model="freezeRosterView"> Freeze
+      </label>
+    </div> -->
     <div class="col-2">
       <span class="rosterPicks">{{ picksMade(teamSelected) }}/{{ rosterSize }}</span>
     </div>
@@ -57,6 +63,7 @@ import { getAreUsingKeepers, getPicks, getRoster, getRosterMinMaxSize, getRoster
 export default {
   data () {
     return {
+      // freezeRosterView: true,
       teamSelected: this.teams.find(team => team.isUser).name
     }
   },
