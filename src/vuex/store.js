@@ -60,18 +60,18 @@ const state = {
       rosterSize: 16,
       secondsPerPick: 0,
       teams: [
-        { name: 'Force the Door', owner: 'Nathan Reimers', draftOrder: 1, keeper: '13113' },
-        { name: 'Tim Team', owner: 'Tim Binzel', draftOrder: 2, keeper: '5848' },
-        { name: 'Melody Team', owner: 'Melody Tijerina', draftOrder: 3, keeper: '11679' },
-        { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 4, keeper: '13132' },
-        { name: 'Ya Ertz Me? Foles Reals', owner: 'Matt Koser', draftOrder: 5, keeper: '13604' },
-        { name: 'Sith Knights', owner: 'Zach Koser', draftOrder: 6, keeper: '7836' },
-        { name: 'Insert Pun Here', owner: 'Brian Koser', draftOrder: 7, keeper: '9988', isUser: true },
-        { name: 'Kung Fu Manda', owner: 'Amanda Koser', draftOrder: 8, keeper: '11232' },
-        { name: 'Queens of the Forest', owner: 'Megan Hutt', draftOrder: 9, keeper: '12625' },
-        { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 10, keeper: '12150' },
-        { name: 'Melissa Team', owner: 'Melissa Koser', draftOrder: 11, keeper: '12171' },
-        { name: 'PApa Phillyman', owner: 'Don Koser', draftOrder: 12, keeper: '11192' }
+        { name: 'Force the Door', owner: 'Nathan Reimers', draftOrder: 12, keeper: '13113' },
+        { name: 'Tim Team', owner: 'Tim Binzel', draftOrder: 11, keeper: '5848' },
+        { name: 'Mile High Magic', owner: 'Melody Tijerina', draftOrder: 10, keeper: '11679' },
+        { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 9, keeper: '13132' },
+        { name: 'Ya Ertz Me? Foles Reals', owner: 'Matt Koser', draftOrder: 8, keeper: '13604' },
+        { name: `Zach's What I'm Tolkien About`, owner: 'Zach Koser', draftOrder: 7, keeper: '7836' },
+        { name: 'I Say Kickaree Kee', owner: 'Brian Koser', draftOrder: 6, keeper: '9988', isUser: true },
+        { name: 'Kung Fu Manda', owner: 'Amanda Koser', draftOrder: 5, keeper: '11232' },
+        { name: 'Queens of the Forest', owner: 'Megan Hutt', draftOrder: 4, keeper: '12625' },
+        { name: 'Pensacola Pandas', owner: 'Josh Hutt', draftOrder: 3, keeper: '12150' },
+        { name: 'Melissa Team', owner: 'Melissa Koser', draftOrder: 2, keeper: '12171' },
+        { name: 'PApa Phillyman', owner: 'Don Koser', draftOrder: 1, keeper: '11192' }
       ]
     },
     team: {
