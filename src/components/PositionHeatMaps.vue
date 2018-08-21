@@ -45,14 +45,14 @@ export default {
 }
 
 .pick.available {
-  background-color: #76ff03;
+  background-color: var(--color-green);
 }
 
 .pick.drafted {
-  background-color: #ff1744;
+  background-color: var(--color-red);
 }
 
 .pick.userDrafted {
-  background-color: #2979ff;
+  background-color: var(--color-blue);
 }
 </style>

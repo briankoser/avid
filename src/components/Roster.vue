@@ -145,16 +145,16 @@ td.bye {
 }
 
 .empty-row {
-  border-top: solid #424242 10px;
+  border-top: solid var(--color-grey-dark) 10px;
   height: 1.4em;
 }
 
 .empty-row.not-required {
-  background-color: #bdbdbd;
+  background-color: var(--color-grey-light);
   opacity: 0.6;
 }
 
 .empty-row.required {
-  background-color: #fafafa;
+  background-color: var(--color-white);
 }
 </style>

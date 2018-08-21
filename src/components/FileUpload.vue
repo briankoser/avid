@@ -83,15 +83,15 @@ form {
     text-align: center;
 }
 .dropzone {
-    border: 2px solid rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--color-black-dark);
     border-radius: 4px;
-    background: white;
+    background: var(--color-white-true);
     min-height: 150px;
     padding: 20px;
 }
 
 .hover {
-    background-color: #ececec;
-    border: 4px dashed black;
+    background-color: var(--color-grey-subtle);
+    border: 4px dashed var(--color-black-true);
 }
 </style>

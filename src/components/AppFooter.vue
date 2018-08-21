@@ -16,14 +16,14 @@
 
 <style>
 footer {
-  color: #fafafa;
+  color: var(--color-white);
   padding: 1em;
   text-align: right;
   width: 100%;
 }
 
 footer a {
-  color: #fafafa;
+  color: var(--color-white);
   text-decoration: underline;
 }
 

@@ -148,7 +148,7 @@ table {
 }
 
 tr:nth-child(2n + 1) {
-  background-color: #ececec;
+  background-color: var(--color-grey-subtle);
 }
 
 td {
@@ -206,7 +206,7 @@ td:last-child {
 }
 
 .handcuff .d {
-  fill: #333;
+  fill: var(--color-black);
 }
 
 .injuryProne .a {
@@ -234,7 +234,7 @@ td:last-child {
 }
 
 .target .b {
-  fill: #4caf50;
+  fill: var(--color-primary);
 }
 
 .target .c {
@@ -260,12 +260,12 @@ td:last-child {
 }
 
 .movement.up {
-  color: #4caf50;
+  color: var(--color-primary);
   vertical-align: top;
 }
 
 .movement.down {
-  color: #ff1744;
+  color: var(--color-red);
 }
 
 .onlyDisplayAvailable .unavailable {
@@ -293,7 +293,7 @@ td:last-child {
 }
 
 .unavailable.userDrafted {
-  color: #4caf50;
+  color: var(--color-primary);
   font-style: normal;
   opacity: 1;
 }

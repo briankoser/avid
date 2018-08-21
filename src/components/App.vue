@@ -36,6 +36,28 @@ export default {
 
 <style>
 /*
+  VARIABLES
+*/
+:root {
+    --color-black-true: hsl(0, 0%, 0%);
+    --color-black-dark: hsl(0, 0%, 13%);
+    --color-black: hsl(0, 0%, 20%);
+    --color-grey-dark: hsl(0, 0%, 26%);
+    --color-grey-light: hsl(0, 0%, 74%);
+    --color-grey-subtle: hsl(0, 0%, 93%);
+    --color-white: hsl(0, 0%, 98%);
+    --color-white-true: hsl(0, 0%, 100%);
+
+    --color-primary: hsl(122, 39%, 49%);
+    --color-secondary-bright: hsl(34, 100%, 50%);
+    --color-secondary-dark: hsl(41, 87%, 52%);
+
+    --color-blue: hsl(218, 100%, 58%);
+    --color-green: hsl(93, 100%, 51%);
+    --color-red: hsl(348, 100%, 55%);
+}
+
+/*
   LAYOUT
 */
 *, 
@@ -45,8 +67,8 @@ export default {
 }
 
 body {
-  background-color: #fafafa;
-  color: #333;
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 
 table {
@@ -71,7 +93,7 @@ table {
   ELEMENTS
 */
 a {
-  color: #42b983;
+  color: hsl(153, 47%, 49%);
   text-decoration: none;
 }
 
@@ -106,59 +128,59 @@ input[type="radio"] {
   COLORS
 */
 .primary {
-  color: #4caf50;
+  color: var(--color-primary);
 }
 
 .primary-bg {
-  background-color: #4caf50;
+  background-color: var(--color-primary);
 }
 
 .secondary {
-  color: #ff8f00;
+  color: var(--color-secondary-bright);
 }
 
 .secondary-bg {
-  background-color: #efab1c;
+  background-color: var(--color-secondary-dark);
 }
 
 .black {
-  color: #212121;
+  color: var(--color-black-dark);
 }
 
 .black-bg {
-  background-color: #212121;
+  background-color: var(--color-black-dark);
 }
 
 .dark-grey {
-  color: #424242;
+  color: var(--color-grey-dark);
 }
 
 .dark-grey-bg {
-  background-color: #424242;
+  background-color: var(--color-grey-dark);
 }
 
 .light-grey {
-  color: #bdbdbd;
+  color: var(--color-grey-light);
 }
 
 .light-grey-bg {
-  background-color: #bdbdbd;
+  background-color: var(--color-grey-light);
 }
 
 .subtle-grey {
-  color: #ececec;
+  color: var(--color-grey-subtle);
 }
 
 .subtle-grey-bg {
-  background-color: #ececec;
+  background-color: var(--color-grey-subtle);
 }
 
 .white {
-  color: #fafafa;
+  color: var(--color-white);
 }
 
 .white-bg {
-  background-color: #fafafa;
+  background-color: var(--color-white);
 }
 
 
@@ -191,7 +213,7 @@ input[type="radio"] {
 }
 
 .site-nav a {
-  color: #fafafa;
+  color: var(--color-white);
 }
 
 .site-nav a + a {
@@ -215,11 +237,11 @@ input[type="radio"] {
 }
 
 .site-title {
-  background-color: #4caf50;
-  color: #fafafa;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   text-align: center;
-  border-left: 30px solid #bdbdbd;
-  border-right: 30px solid #bdbdbd;
+  border-left: 30px solid var(--color-grey-light);
+  border-right: 30px solid var(--color-grey-light);
 }
 
 .rankings {

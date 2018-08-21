@@ -119,7 +119,7 @@ let filterPicked = suggestions => suggestions.filter(x => !window.vuePicker.pick
 <style>
 .picker .typeahead,
 .picker .tt-hint {
-  border: 2px solid #ccc;
+  border: 2px solid var(--color-grey-light);
   border-radius: 8px;
   line-height: 30px;
   outline: none;
@@ -133,25 +133,24 @@ let filterPicked = suggestions => suggestions.filter(x => !window.vuePicker.pick
 }
 
 .picker .typeahead {
-  background-color: #fff;
+  background-color: var(--color-white-true);
   font-size: 2em;
   height: 1.6em;
 }
 
 .picker .typeahead:focus {
-  border: 2px solid #4caf50;
+  border: 2px solid var(--color-primary);
 }
 
 .picker .tt-hint {
-  color: #999
+  color: var(--color-grey-light);
 }
 
 .picker .tt-menu {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: var(--color-white-true);
+  border: 1px solid var(--color-grey-light);
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px var(--color-black-dark);
   margin-top: 5px;
 }
 
@@ -169,13 +168,13 @@ let filterPicked = suggestions => suggestions.filter(x => !window.vuePicker.pick
 
 .picker .tt-suggestion:hover {
   cursor: pointer;
-  color: #fff;
-  background-color: #4caf50;
+  color: var(--color-white-true);
+  background-color: var(--color-primary);
 }
 
 .picker .tt-suggestion.tt-cursor {
-  color: #fff;
-  background-color: #4caf50;
+  color: var(--color-white-true);
+  background-color: var(--color-primary);
 }
 
 .picker .tt-suggestion p {
