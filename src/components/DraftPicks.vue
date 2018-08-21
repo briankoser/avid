@@ -1,13 +1,15 @@
 <template>
 <div class="draft-picks">
     <template v-for="round in rounds"> 
-    <h1 class="epsilon">Round {{ round.number }} <span v-if="areUsingKeepers && round.number === 1">(Keepers)</span></h1>
-    <ol class="tight">
-        <li v-for="pick in round.picks">
-            {{ pick.team.name }} → <strong>{{ pick.player.name }}</strong> 
-            <span class="position milli">{{ pick.player.position }}</span>
-        </li>
-    </ol>
+      <div v-bind:key="round.number">
+        <h1 class="epsilon">Round {{ round.number }} <span v-if="areUsingKeepers && round.number === 1">(Keepers)</span></h1>
+        <ol class="tight">
+            <li v-for="pick in round.picks" v-bind:key="pick">
+                {{ pick.team.name }} → <strong>{{ pick.player.name }}</strong> 
+                <span class="position milli">{{ pick.player.position }}</span>
+            </li>
+        </ol>
+      </div>
     </template>
 </div>
 </template>
