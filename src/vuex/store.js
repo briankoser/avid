@@ -48,7 +48,7 @@ const state = {
     */
     league: {
       draftOrderType: 'ser',
-      keepers: true,
+      keepers: false, // issue #52
       positions: [
         { key: 'QB', min: 2, max: 3 },
         { key: 'RB', min: 2, max: 6 },

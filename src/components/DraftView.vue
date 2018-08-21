@@ -215,8 +215,6 @@ export default {
     },
     updateKeepers: function () {
       if (this.current.round === 1) { // only add keepers once
-        let keeperPicks = []
-
         let teams = this.teams.slice() // slice makes a copy of the array so we are not modifying the original
 
         if (this.draftOrderType === this.draftOrderTypes.serpentine) {
@@ -225,15 +223,18 @@ export default {
 
         teams.forEach(team => {
           let player = this.players.find(p => p.id === team.keeper)
-          let pick = player === undefined ? undefined : new Pick(team.draftOrder, player, 1, team)
+          let overallPosition = this.draftOrderType === this.draftOrderTypes.serpentine
+            ? this.teams.length - team.draftOrder + 1
+            : team.draftOrder
+          let pickNumberPosition = this.picks.filter(pick => pick.player.positionKey === player.positionKey).length + 1
+          let pickNumber = new PickNumber(overallPosition, pickNumberPosition, 1)
+          let pick = player === undefined ? undefined : new Pick(pickNumber, player, 1, team)
 
           if (pick !== undefined) {
-            keeperPicks.push(pick)
             this.updateCurrentState()
+            this.addPickToState(pick)
           }
         })
-
-        this.updateKeepersState(keeperPicks)
       }
     }
   }
