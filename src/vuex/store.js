@@ -58,11 +58,11 @@ const state = {
         { key: 'Def', min: 1, max: 3 }
       ],
       rosterSize: 16,
-      secondsPerPick: 0,
+      secondsPerPick: 60,
       teams: [
-        { name: 'Force the Door', owner: 'Nathan Reimers', draftOrder: 12, keeper: '13113' },
-        { name: 'Tim Team', owner: 'Tim Binzel', draftOrder: 11, keeper: '5848' },
-        { name: 'Mile High Magic', owner: 'Melody Tijerina', draftOrder: 10, keeper: '11679' },
+        { name: 'Force the Door', owner: 'Nathan Reimers', draftOrder: 12, keeper: '5848' },
+        { name: 'Tim Team', owner: 'Tim Binzel', draftOrder: 11, keeper: '13129' },
+        { name: 'Mile High Magic', owner: 'Melody Tijerina', draftOrder: 10, keeper: '13138' },
         { name: 'Mom’s Marauders', owner: 'Sue Koser', draftOrder: 9, keeper: '13132' },
         { name: 'Ya Ertz Me? Foles Reals', owner: 'Matt Koser', draftOrder: 8, keeper: '13604' },
         { name: `Zach's What I'm Tolkien About`, owner: 'Zach Koser', draftOrder: 7, keeper: '7836' },
@@ -89,7 +89,7 @@ const state = {
         { name: 'handcuff', players: ['10077', '10699', '11193', '11199', '11390', '13163', '13188', '13378', '13593', '13629'] },
         { name: 'injuryprone', players: ['10722', '13608'] },
         { name: 'overpriced', players: ['8670'] },
-        { name: 'target', players: ['8247', '9250', '9525', '9831', '9918', '10077', '10276', '10312', '10389', '10708', '10960', '10973', '11228', '11239', '11406', '11705', '11812', '11925', '12152', '12175', '12181', '12205', '12465', '12618', '12647', '12665', '13136', '13153', '13164', '13277', '13290', '13364', '13492', '13617', '13630', '13635', '13636', '13672'] }
+        { name: 'target', players: ['8247', '9250', '9525', '9831', '9918', '10077', '10276', '10312', '10389', '10708', '10723', '10960', '10973', '11228', '11239', '11406', '11657', '11680', '11705', '11812', '11925', '12152', '12175', '12181', '12205', '12465', '12618', '12647', '12665', '13136', '13153', '13164', '13277', '13290', '13364', '13492', '13617', '13630', '13635', '13636', '13672'] }
       ],
       tiers: [
         { positionKey: 'QB', sizes: [4, 5, 4, 5, 8, 6] },
