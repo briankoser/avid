@@ -35,9 +35,8 @@ npm run build
 3. Update personal rankings
     1. File is located at /static/rankings.json
     2. Format is: `[{id": "7836", "ranking": 24}]`
-4. Deploy files from /dist folder
-
-
+4. Build for deployment: `npm run build`
+5. Deploy files from /dist folder
 
 For detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
