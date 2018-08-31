@@ -117,16 +117,16 @@ const state = {
       rosterSize: 14,
       secondsPerPick: 60,
       teams: [
-        { name: `Tim's Mediocre Team`, owner: 'Tim Godfrey', draftOrder: 1 },
-        { name: 'Suh-Tang Clan', owner: 'Luke Smith', draftOrder: 2 },
-        { name: 'Wentz Upon a Time', owner: 'Brian Koser', draftOrder: 3, isUser: true },
-        { name: 'Game of Jones', owner: 'Kristy King', draftOrder: 4 },
-        { name: 'My Team Suxx!', owner: 'Steven Grimes', draftOrder: 5 },
-        { name: 'Prestige Worldwide', owner: 'Scott Hartwell', draftOrder: 6 },
-        { name: 'Dom', owner: 'Dom Reese', draftOrder: 7 },
-        { name: 'Branden', owner: 'Branden Poe', draftOrder: 8 },
-        { name: 'Josh', owner: 'Josh Wainwright', draftOrder: 9 },
-        { name: 'Zac', owner: 'Zac Smith', draftOrder: 10 }
+        { name: 'Prestige Worldwide', owner: 'Scott Hartwell', draftOrder: 1 },
+        { name: `Branden's Best Team`, owner: 'Branden Poe', draftOrder: 2 },
+        { name: `Tim's Mediocre Team`, owner: 'Tim Godfrey', draftOrder: 3 },
+        { name: 'Dom', owner: 'Dom Reese', draftOrder: 4 },
+        { name: 'Wentz Upon a Time', owner: 'Brian Koser', draftOrder: 5, isUser: true },
+        { name: 'The Alabama Randoms', owner: 'Josh Wainwright', draftOrder: 6 },
+        { name: 'Some Injured Guys', owner: 'Zac Smith', draftOrder: 7 },
+        { name: 'My Team Suxx!', owner: 'Steven Grimes', draftOrder: 8 },
+        { name: 'Suh-Tang Clan', owner: 'Luke Smith', draftOrder: 9 },
+        { name: 'Game of Jones', owner: 'Kristy King', draftOrder: 10 }
       ]
     },
     team: {
