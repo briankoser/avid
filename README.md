@@ -17,7 +17,7 @@ npm run build
 ## Season Set Up
 
 1. Update players
-    1. Get the XML file from My Fantasy League
+    1. Get the JSON file from My Fantasy League
         - [Example API Call](https://www72.myfantasyleague.com/2018/export?TYPE=players&DETAILS=&SINCE=&PLAYERS=&JSON=1)
         - [Developers API](https://www72.myfantasyleague.com/2018/api_info?STATE=test&CMD=export&TYPE=players)
     2. [Format JSON](http://jsonlint.com)
