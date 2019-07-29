@@ -18,9 +18,9 @@ npm run build
 
 1. Update players
     1. Get the XML file from My Fantasy League
-        - [Example API Call](https://www72.myfantasyleague.com/2018/export?TYPE=players&DETAILS=&SINCE=&PLAYERS=&JSON=0)
+        - [Example API Call](https://www72.myfantasyleague.com/2018/export?TYPE=players&DETAILS=&SINCE=&PLAYERS=&JSON=1)
         - [Developers API](https://www72.myfantasyleague.com/2018/api_info?STATE=test&CMD=export&TYPE=players)
-    2. Convert the XML to JSON
+    2. [Format JSON](http://jsonlint.com)
     3. Move file to /static/players.json
 2. Update rankings
     1. Go to http://www03.myfantasyleague.com/{year}/adp
