@@ -1,27 +1,27 @@
 [{
 	"team": "ARI",
-	"bye": 9
+	"bye": 12
 }, {
 	"team": "ATL",
-	"bye": 8
+	"bye": 9
 }, {
 	"team": "BAL",
-	"bye": 10
+	"bye": 8
 }, {
 	"team": "BUF",
-	"bye": 11
+	"bye": 6
 }, {
 	"team": "CAR",
-	"bye": 4
+	"bye": 7
 }, {
 	"team": "CHI",
-	"bye": 5
+	"bye": 6
 }, {
 	"team": "CIN",
 	"bye": 9
 }, {
 	"team": "CLE",
-	"bye": 11
+	"bye": 7
 }, {
 	"team": "DAL",
 	"bye": 8
@@ -30,70 +30,70 @@
 	"bye": 10
 }, {
 	"team": "DET",
-	"bye": 6
+	"bye": 5
 }, {
 	"team": "GBP",
-	"bye": 7
+	"bye": 11
 }, {
 	"team": "HOU",
 	"bye": 10
 }, {
 	"team": "IND",
-	"bye": 9
+	"bye": 6
 }, {
 	"team": "JAC",
-	"bye": 9
+	"bye": 10
 }, {
 	"team": "KCC",
 	"bye": 12
 }, {
 	"team": "LAC",
-	"bye": 8
-}, {
-	"team": "LAR",
 	"bye": 12
 }, {
+	"team": "LAR",
+	"bye": 9
+}, {
 	"team": "MIA",
-	"bye": 11
+	"bye": 5
 }, {
 	"team": "MIN",
-	"bye": 10
+	"bye": 12
 }, {
 	"team": "NEP",
-	"bye": 11
+	"bye": 10
 }, {
 	"team": "NOS",
-	"bye": 6
+	"bye": 9
 }, {
 	"team": "NYG",
-	"bye": 9
-}, {
-	"team": "NYJ",
 	"bye": 11
 }, {
+	"team": "NYJ",
+	"bye": 4
+}, {
 	"team": "OAK",
-	"bye": 7
+	"bye": 6
 }, {
 	"team": "PHI",
-	"bye": 9
+	"bye": 10
 }, {
 	"team": "PIT",
 	"bye": 7
 }, {
 	"team": "SEA",
-	"bye": 7
-}, {
-	"team": "SFO",
 	"bye": 11
 }, {
+	"team": "SFO",
+	"bye": 4
+}, {
 	"team": "TBB",
-	"bye": 5
+	"bye": 7
 }, {
 	"team": "TEN",
-	"bye": 8
+	"bye": 11
 }, {
 	"team": "WAS",
-	"bye": 4
+	"bye": 10
 }, {
 	"team": "FA",
 	"bye": 0
