@@ -60,7 +60,7 @@ const state = {
       rosterSize: 16,
       secondsPerPick: 60,
       teams: [
-        { name: 'Santa Clarita Ramily', owner: 'Mike Binzel', draftOrder: 12, keeper: '' },
+        { name: 'The Donald, Aaron Donald', owner: 'Mike Binzel', draftOrder: 12, keeper: '' },
         { name: 'MileHigh Magic', owner: 'Melody Tijerina', draftOrder: 11, keeper: '' },
         { name: 'The Thunder Thors', owner: 'Ian Bucy', draftOrder: 10, keeper: '' },
         { name: 'Settlers of Saquon', owner: 'Matt Koser', draftOrder: 9, keeper: '13604' },
@@ -86,15 +86,15 @@ const state = {
       rankings: [],
       tags: [
         { name: 'avoid', players: ['4925', '5848', '7391', '8062', '9064', '9075', '9448', '9925', '9988', '10261', '10703', '10722', '10948', '11192', '11247', '11670', '11680', '11695', '12150', '12151', '12175', '12181', '12626', '12676', '13129', '13146', '13153', '13192', '13277', '13299', '13591', '13629', '14057', '14058', '14059'] },
-        { name: 'handcuff', players: ['11390', '13404', '13608', '14223'] },
+        { name: 'handcuff', players: ['11390', '12386', '13404', '13608', '14087', '14223'] },
         { name: 'injuryprone', players: ['11660', '11761'] },
         { name: 'overpriced', players: [''] },
-        { name: 'target', players: ['7394', '9662', '9918', '10273', '10276', '10700', '11248', '11257', '11516', '11677', '11747', '11760', '11886', '12140', '12187', '12263', '12620', '12634', '12647', '12665', '12677', '13158', '13163', '13164', '13234', '13364', '13404', '13589', '13590', '13593', '13605', '13607', '13612', '13621', '13633', '13634', '13635', '13671', '14056', '14073', '14079'] }
+        { name: 'target', players: ['7394', '9662', '9918', '10273', '10276', '10700', '10960', '11248', '11257', '11516', '11677', '11747', '11760', '11886', '12140', '12187', '12263', '12620', '12634', '12647', '12665', '12677', '13158', '13163', '13164', '13234', '13364', '13404', '13589', '13590', '13593', '13605', '13607', '13612', '13621', '13633', '13634', '13635', '13671', '13793', '14056', '14073', '14079'] }
       ],
       tiers: [
         { positionKey: 'QB', sizes: [4, 5, 4, 5, 8, 6] },
-        { positionKey: 'RB', sizes: [4] },
-        { positionKey: 'WR', sizes: [6] },
+        { positionKey: 'RB', sizes: [4, 10, 10, 5, 5, 6, 6, 6, 7] },
+        { positionKey: 'WR', sizes: [6, 4, 6, 4, 5, 7, 8] },
         { positionKey: 'TE', sizes: [1, 2, 2] },
         { positionKey: 'PK', sizes: [] },
         { positionKey: 'Def', sizes: [] }
