@@ -124,7 +124,7 @@ const state = {
         { name: `Branden's Best Team`, owner: 'Branden Poe', draftOrder: 5 },
         { name: 'The Alabama Randoms', owner: 'Josh Wainwright', draftOrder: 6 },
         { name: 'Suh-Tang Clan', owner: 'Luke Smith', draftOrder: 7 },
-        { name: 'Wentz Upon a Time', owner: 'Brian Koser', draftOrder: 8, isUser: true }
+        { name: 'Burton Goffster', owner: 'Brian Koser', draftOrder: 8, isUser: true }
       ]
     },
     team: {
