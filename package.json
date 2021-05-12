@@ -14,7 +14,7 @@
     "babel-runtime": "^6.0.0",
     "gridlex": "^2.2.0",
     "jquery": "^3.4.0",
-    "mathjs": "^3.4.1",
+    "mathjs": "^7.5.1",
     "normalize.css": "^4.2.0",
     "typeahead.js": "^0.11.1",
     "vue": "^2.0.0",
